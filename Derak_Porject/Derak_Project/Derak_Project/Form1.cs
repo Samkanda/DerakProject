@@ -19,7 +19,10 @@ namespace Derak_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            backgroundPictureBox.Image = Image.FromFile("../../images/PlayingBackground.jpg");
+            backgroundPictureBox.Refresh();
+            backgroundPictureBox.Visible = true;
+            button_play.Visible = false;
         }
     }
 }
