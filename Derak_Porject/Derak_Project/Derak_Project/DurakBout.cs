@@ -25,25 +25,7 @@ namespace Derak_Project
             }
         }
 
-        // a dangerous but simple strategy objects when assigned are add checks to the setter to help ensure no one tries to pass bad info 
-        private static Hand defender;
-        public static Hand Defender
-        {
-            get { return defender; }
-            set
-            {
-                defender = value;
-            }
-        }
-        private static Hand attacker;
-        public static Hand Attacker
-        {
-            get { return attacker; }
-            set
-            {
-                attacker = value;
-            }
-        }
+        
 
 
 

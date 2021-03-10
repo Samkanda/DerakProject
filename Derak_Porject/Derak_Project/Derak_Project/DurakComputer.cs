@@ -17,7 +17,7 @@ namespace Derak_Project
         public override void TakeTurn()
         {
             //TurnEndHandler();
-            FinishTurn();
+            SendTurnEndEvent();
         }
     }
 }

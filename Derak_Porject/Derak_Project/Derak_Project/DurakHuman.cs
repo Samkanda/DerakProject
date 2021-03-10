@@ -28,7 +28,7 @@ namespace Derak_Project
         {
             if (IsTurn)
             {
-                FinishTurn();
+                SendTurnEndEvent();
             }
         }
 

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+// NOTE: dont write any game logic in here, its bad, write it in the classes.
 namespace Derak_Project
 {
     public partial class Form1 : Form
@@ -16,25 +19,12 @@ namespace Derak_Project
         public Form1()
         {
             InitializeComponent();
-            //original console test I had
-            DurakDeck deck = new DurakDeck();
-            
+
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakHuman());
-            
-            deck.Shuffle();
-
-            foreach (DurakHand player in players)
-            {
-                player.DrawToMinimum(deck);
-                Console.WriteLine(player.ToString());
-            }
-            Hand.TurnEnded += delegate () { players.PassTurn(); };
-            players.PassTurn();
-            
-
+            players.NewTurn();
         }
 
         private void button1_Click(object sender, EventArgs e)

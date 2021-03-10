@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    public delegate void TurnEndHandler();
+    public delegate void TurnEndEvent_Handler();
     abstract class Hand : Cards
     {
 
 
-        public static event TurnEndHandler TurnEnded;
+        public static event TurnEndEvent_Handler TurnEndEvent;
 
 
 
         public abstract void TakeTurn();
 
-        protected void FinishTurn()
+        protected void SendTurnEndEvent()
         {
-            TurnEnded();
+            TurnEndEvent();
         }
 
         public void DrawTo(Cards drawPile, int handSize)
