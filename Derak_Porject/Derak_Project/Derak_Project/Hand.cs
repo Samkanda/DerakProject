@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
+    public delegate void TurnEndHandler();
     abstract class Hand : Cards
     {
+
+
+        public static event TurnEndHandler TurnEnded;
+
+
+
         public abstract void TakeTurn();
+
+        protected void FinishTurn()
+        {
+            TurnEnded();
+        }
 
         public void DrawTo(Cards drawPile, int handSize)
         {
@@ -16,6 +28,7 @@ namespace Derak_Project
             {
                 this.Add(drawPile.Extract());// unhandled exception if drawpile empty 
             }
+            
         }
 
         public override string ToString()
@@ -27,6 +40,9 @@ namespace Derak_Project
             }
             return output;
         }
+
+
+
 
     }
 }

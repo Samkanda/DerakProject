@@ -52,6 +52,7 @@
     <Compile Include="DurakBout.cs" />
     <Compile Include="DurakComputer.cs" />
     <Compile Include="DurakDeck.cs" />
+    <Compile Include="DurakGameController.cs" />
     <Compile Include="DurakHand.cs" />
     <Compile Include="DurakHuman.cs" />
     <Compile Include="Form1.cs">
