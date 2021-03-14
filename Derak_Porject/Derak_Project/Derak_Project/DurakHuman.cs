@@ -8,15 +8,32 @@ namespace Derak_Project
 {
     class DurakHuman : DurakHand
     {
+        private bool IsTurn = false;
+
+
 
 
         public DurakHuman() : base()
         {
+
         }
 
         public override void TakeTurn()
         {
+            IsTurn = true;
 
         }
+
+        public void EndTurn()
+        {
+            if (IsTurn)
+            {
+                SendTurnEndEvent();
+            }
+        }
+
+
+
+
     }
 }

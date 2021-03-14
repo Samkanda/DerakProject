@@ -8,14 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
+// NOTE: dont write any game logic in here, its bad, write it in the classes.
 namespace Derak_Project
 {
     public partial class Form1 : Form
     {
+        DurakGameController players = new DurakGameController();
         public Form1()
         {
             InitializeComponent();
+<<<<<<< HEAD
             pictures = new PictureBox[32];
+=======
+
+            players.Add(new DurakComputer());
+            players.Add(new DurakComputer());
+            players.Add(new DurakComputer());
+            players.Add(new DurakHuman());
+            players.NewTurn();
+>>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -75,6 +88,11 @@ namespace Derak_Project
                 pictures[counter].Left = ( counter * 10) + 100;
                 this.Controls.Add(pictures[counter]);
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            (players[3] as DurakHuman).EndTurn();
         }
     }
 }
