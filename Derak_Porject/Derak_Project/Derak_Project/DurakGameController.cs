@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakGameController : List<Hand>
+    class DurakGameController : List<DurakHand>
     {
         private int caret = 0;
         public static int ultra = 0;
@@ -16,12 +16,21 @@ namespace Derak_Project
         public DurakGameController() : base()
         {
             //TODO might be a better way to write this
-            Hand.TurnEndEvent += delegate () { this.NewTurn(); };
+            Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.NewTurn(); };
+            Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
+
         }
 
-        public void NewTurn()
+        private void playCard(Card cardPlayed)
+        {
+            Console.WriteLine(cardPlayed.ToString());
+        }
+
+
+
+        private void NewTurn()
         {
             ultra++;
             if (caret >= this.Count)
@@ -29,8 +38,9 @@ namespace Derak_Project
                 caret = 0;
             }
             Console.WriteLine(ultra + " / " + caret);
-            this[caret++].TakeTurn();// NOTE: stack overflow exception?
 
+            Deal();
+            this[caret++].TakeTurn();
         }
 
         public void Deal()
@@ -38,7 +48,7 @@ namespace Derak_Project
             foreach (DurakHand player in this)
             {
                 player.DrawToMinimum(deck);
-                Console.WriteLine(player.ToString());
+                //Console.WriteLine(player.ToString());
             }
         }
 
@@ -46,7 +56,11 @@ namespace Derak_Project
         {
             deck.Shuffle();
             Deal();
-
+            foreach (DurakHand player in this)
+            {
+                Console.WriteLine(player.ToString());
+            }
+            NewTurn();
         }
 
         //TODO get rid of this garbage. store ints that refer to positions in the list obv

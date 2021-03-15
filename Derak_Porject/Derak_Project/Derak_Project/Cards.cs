@@ -37,7 +37,9 @@ namespace Derak_Project
         //grab card at position
         public Card Extract(int position)
         {
-            return new Card();
+            Card temp = this[position];
+            this.RemoveAt(position);
+            return temp;
         }
         //grab first card in list that matches given card
         public Card Extract(Card matching)

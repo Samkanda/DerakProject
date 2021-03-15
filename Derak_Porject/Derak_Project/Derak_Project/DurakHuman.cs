@@ -32,6 +32,11 @@ namespace Derak_Project
             }
         }
 
+        public void PlayerPlayCard()
+        {
+            PlayCard(0);
+        }
+
 
 
 

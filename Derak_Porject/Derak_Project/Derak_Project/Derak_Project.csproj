@@ -49,12 +49,13 @@
     <Compile Include="Card.cs" />
     <Compile Include="Cards.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="DurakBout.cs" />
+    <Compile Include="DurakBattle.cs" />
     <Compile Include="DurakComputer.cs" />
     <Compile Include="DurakDeck.cs" />
     <Compile Include="DurakGameController.cs" />
     <Compile Include="DurakHand.cs" />
     <Compile Include="DurakHuman.cs" />
+    <Compile Include="DurakRole.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

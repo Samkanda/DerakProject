@@ -14,10 +14,12 @@ namespace Derak_Project
 
         }
 
+        
         public override void TakeTurn()
         {
-            //TurnEndHandler();
+
             SendTurnEndEvent();
+            // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }
     }
 }

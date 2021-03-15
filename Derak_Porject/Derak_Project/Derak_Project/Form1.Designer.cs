@@ -32,19 +32,17 @@ namespace Derak_Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.backgroundPictureBox = new System.Windows.Forms.PictureBox();
             this.button_play = new System.Windows.Forms.Button();
-<<<<<<< HEAD
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDealCards = new System.Windows.Forms.Button();
-=======
-            this.button1 = new System.Windows.Forms.Button();
->>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // backgroundPictureBox
             // 
-            this.backgroundPictureBox.Image = global::Derak_Project.Properties.Resources.Durak_Background;
+            this.backgroundPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("backgroundPictureBox.Image")));
             this.backgroundPictureBox.Location = new System.Drawing.Point(0, 1);
             this.backgroundPictureBox.Name = "backgroundPictureBox";
             this.backgroundPictureBox.Size = new System.Drawing.Size(801, 444);
@@ -63,7 +61,6 @@ namespace Derak_Project
             this.button_play.UseVisualStyleBackColor = true;
             this.button_play.Click += new System.EventHandler(this.button1_Click);
             // 
-<<<<<<< HEAD
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -84,29 +81,36 @@ namespace Derak_Project
             this.btnDealCards.Text = "Deal Cards";
             this.btnDealCards.UseVisualStyleBackColor = true;
             this.btnDealCards.Click += new System.EventHandler(this.btnDealCards_Click);
-=======
-            // button1
             // 
-            this.button1.Location = new System.Drawing.Point(682, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
->>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(679, 284);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(109, 83);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "End turn";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(559, 284);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(101, 83);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "play First card Test";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-<<<<<<< HEAD
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnDealCards);
             this.Controls.Add(this.pictureBox1);
-=======
-            this.Controls.Add(this.button1);
->>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
             this.Controls.Add(this.button_play);
             this.Controls.Add(this.backgroundPictureBox);
             this.Name = "Form1";
@@ -121,12 +125,13 @@ namespace Derak_Project
 
         private System.Windows.Forms.PictureBox backgroundPictureBox;
         private System.Windows.Forms.Button button_play;
-<<<<<<< HEAD
+
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDealCards;
-=======
+
         private System.Windows.Forms.Button button1;
->>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

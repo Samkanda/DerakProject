@@ -19,16 +19,12 @@ namespace Derak_Project
         public Form1()
         {
             InitializeComponent();
-<<<<<<< HEAD
             pictures = new PictureBox[32];
-=======
 
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakHuman());
-            players.NewTurn();
->>>>>>> 3db3c8f0a85669c32cd65d1e8a9d2288b7f05a6e
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +35,7 @@ namespace Derak_Project
             button_play.Visible = false;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.Visible = true;
+            players.StartGame();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -93,6 +90,16 @@ namespace Derak_Project
         private void button1_Click_1(object sender, EventArgs e)
         {
             (players[3] as DurakHuman).EndTurn();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            (players[3] as DurakHuman).EndTurn();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            (players[3] as DurakHuman).PlayerPlayCard();
         }
     }
 }

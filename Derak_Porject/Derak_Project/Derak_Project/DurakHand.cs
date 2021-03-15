@@ -15,6 +15,10 @@ namespace Derak_Project
             DrawTo(drawPile, MinimumHandSize);
         }
 
+        protected void PlayCard(int index)
+        {
+            SendCardPlayed(this.Extract(index));
+        }
 
     }
 }
