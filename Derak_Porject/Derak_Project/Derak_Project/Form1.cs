@@ -29,12 +29,12 @@ namespace Derak_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            backgroundPictureBox.Image = Image.FromFile("../../images/PlayingBackground.jpg");
-            backgroundPictureBox.Refresh();
-            backgroundPictureBox.Visible = true;
-            button_play.Visible = false;
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.Visible = true;
+            pbBackground.Image = Image.FromFile("../../images/PlayingBackground.jpg");
+            pbBackground.Refresh();
+            pbBackground.Visible = true;
+            btnPlay.Visible = false;
+            pbCardDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCardDisplay.Visible = true;
             players.StartGame();
         }
 
