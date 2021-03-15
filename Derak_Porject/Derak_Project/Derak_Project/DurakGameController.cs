@@ -12,6 +12,7 @@ namespace Derak_Project
         public static int ultra = 0;
         //TODO: switch to private? possibly take out of controller
         private DurakDeck deck;
+        private List<DurakBattle> PlayingField;
 
         public DurakGameController() : base()
         {
@@ -20,6 +21,7 @@ namespace Derak_Project
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
+            PlayingField = new List<DurakBattle>();
 
         }
 
@@ -39,7 +41,7 @@ namespace Derak_Project
             }
             Console.WriteLine(ultra + " / " + caret);
 
-            Deal();
+            this[caret++].UpdateInfo(PlayingField);
             this[caret++].TakeTurn();
         }
 

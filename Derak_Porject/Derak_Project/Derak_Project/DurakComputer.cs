@@ -21,5 +21,11 @@ namespace Derak_Project
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }
+        public void TakeTurn(int hello)
+        {
+
+            SendTurnEndEvent();
+            // RUNS RECURSIVELY NOTHING BELOW THIS POINT
+        }
     }
 }

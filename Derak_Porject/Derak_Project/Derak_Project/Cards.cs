@@ -16,7 +16,6 @@ namespace Derak_Project
             for (int i = 0; i < length; i++)
             {
                 temp.Add(this.Extract());
-
             }
             return new Cards();
         }
