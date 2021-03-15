@@ -49,7 +49,6 @@ namespace Derak_Project
             this.pbBackground.TabIndex = 0;
             this.pbBackground.TabStop = false;
             this.pbBackground.Visible = false;
-            this.pbBackground.Click += new System.EventHandler(this.backgroundPictureBox_Click);
             // 
             // btnPlay
             // 
@@ -59,7 +58,7 @@ namespace Derak_Project
             this.btnPlay.TabIndex = 1;
             this.btnPlay.Text = "Play";
             this.btnPlay.UseVisualStyleBackColor = true;
-            this.btnPlay.Click += new System.EventHandler(this.button1_Click);
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // pbCardDisplay
             // 
@@ -70,7 +69,6 @@ namespace Derak_Project
             this.pbCardDisplay.TabIndex = 2;
             this.pbCardDisplay.TabStop = false;
             this.pbCardDisplay.Visible = false;
-            this.pbCardDisplay.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnDealCards
             // 
@@ -90,7 +88,7 @@ namespace Derak_Project
             this.btnEndTurn.TabIndex = 4;
             this.btnEndTurn.Text = "End turn";
             this.btnEndTurn.UseVisualStyleBackColor = true;
-            this.btnEndTurn.Click += new System.EventHandler(this.button2_Click);
+            this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
             // btnFirstCardTest
             // 
@@ -100,7 +98,7 @@ namespace Derak_Project
             this.btnFirstCardTest.TabIndex = 5;
             this.btnFirstCardTest.Text = "play First card Test";
             this.btnFirstCardTest.UseVisualStyleBackColor = true;
-            this.btnFirstCardTest.Click += new System.EventHandler(this.button3_Click);
+            this.btnFirstCardTest.Click += new System.EventHandler(this.btnFirstCardTest_Click);
             // 
             // Form1
             // 

@@ -27,7 +27,7 @@ namespace Derak_Project
             players.Add(new DurakHuman());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPlay_Click(object sender, EventArgs e)
         {
             pbBackground.Image = Image.FromFile("../../images/PlayingBackground.jpg");
             pbBackground.Refresh();
@@ -36,17 +36,6 @@ namespace Derak_Project
             pbCardDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
             pbCardDisplay.Visible = true;
             players.StartGame();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-           
-           
-        }
-
-        private void backgroundPictureBox_Click(object sender, EventArgs e)
-        {
-
         }
 
         private PictureBox[] pictures;
@@ -87,17 +76,12 @@ namespace Derak_Project
             }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnEndTurn_Click(object sender, EventArgs e)
         {
             (players[3] as DurakHuman).EndTurn();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            (players[3] as DurakHuman).EndTurn();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnFirstCardTest_Click(object sender, EventArgs e)
         {
             (players[3] as DurakHuman).PlayerPlayCard();
         }
