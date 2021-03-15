@@ -41,7 +41,7 @@ namespace Derak_Project
             }
             Console.WriteLine(ultra + " / " + caret);
 
-            this[caret++].UpdateInfo(PlayingField);
+            this[caret].UpdateInfo(PlayingField);
             this[caret++].TakeTurn();
         }
 

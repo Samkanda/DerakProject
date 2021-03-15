@@ -17,13 +17,7 @@ namespace Derak_Project
         
         public override void TakeTurn()
         {
-
-            SendTurnEndEvent();
-            // RUNS RECURSIVELY NOTHING BELOW THIS POINT
-        }
-        public void TakeTurn(int hello)
-        {
-
+            PlayCard(0);
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }
