@@ -12,7 +12,7 @@ namespace Derak_Project
         public static int ultra = 0;
         //TODO: switch to private? possibly take out of controller
         private DurakDeck deck;
-        private List<DurakBattle> PlayingField;
+        public List<DurakBattle> PlayingField;
 
         public DurakGameController() : base()
         {
@@ -27,7 +27,36 @@ namespace Derak_Project
 
         private void playCard(Card cardPlayed)
         {
-            Console.WriteLine(cardPlayed.ToString());
+            int pseudoCaret = caret - 1;
+            if(pseudoCaret < 0)
+            {
+                pseudoCaret = this.Count - 1;
+            }
+
+            if(this[pseudoCaret].Role == DurakRole.Attacker)
+            {
+                PlayingField.Add(new DurakBattle(cardPlayed));
+            }
+            else if(this[pseudoCaret].Role == DurakRole.Extra)
+            {
+                Console.WriteLine(cardPlayed.ToString());
+                PlayingField.Add(new DurakBattle(cardPlayed));
+            } 
+            else if (this[pseudoCaret].Role == DurakRole.Defender)
+            {
+                bool used = false;
+                foreach (DurakBattle set in PlayingField)
+                {
+                    if(set.Defense == null && !used)
+                    {
+                        set.Defense = cardPlayed;
+                        used = true;
+                    }
+                }
+            }
+
+
+
         }
 
 

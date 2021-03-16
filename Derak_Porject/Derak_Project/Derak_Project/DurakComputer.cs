@@ -11,7 +11,7 @@ namespace Derak_Project
 
         public DurakComputer()
         {
-
+            Role = DurakRole.Extra;
         }
 
         

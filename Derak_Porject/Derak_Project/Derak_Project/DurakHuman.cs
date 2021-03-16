@@ -15,7 +15,7 @@ namespace Derak_Project
 
         public DurakHuman() : base()
         {
-
+            Role = DurakRole.Defender;
         }
 
         public override void TakeTurn()

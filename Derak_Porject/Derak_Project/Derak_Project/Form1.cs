@@ -78,6 +78,10 @@ namespace Derak_Project
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
+            foreach (DurakBattle set in players.PlayingField)
+            {
+                Console.WriteLine(set.ToString());
+            }
             (players[3] as DurakHuman).EndTurn();
         }
 

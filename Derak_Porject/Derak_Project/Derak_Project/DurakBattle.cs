@@ -9,12 +9,12 @@ namespace Derak_Project
     class DurakBattle
     {
         private Card myAttack;
-        Card Attack
+        public Card Attack
         {
             get { return myAttack; }
         }
         private Card myDefense;
-        Card Defense
+        public Card Defense
         {
             get { return myDefense; }
             set
@@ -40,7 +40,20 @@ namespace Derak_Project
             }
         }
 
-        
+        public override string ToString()
+        {
+            if(Defense != null)
+            {
+                return Attack.ToString() + " >>>> " + Defense.ToString();
+            } 
+            else
+            {
+                return Attack.ToString() + " >>>> ";
+            }
+            
+        }
+
+
 
 
 

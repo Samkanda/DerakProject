@@ -13,7 +13,7 @@ namespace Derak_Project
         private DurakRole myRole;
         public DurakRole Role
         {
-            get { return Role; }
+            get { return myRole; }
             set
             {
                 myRole = value;
