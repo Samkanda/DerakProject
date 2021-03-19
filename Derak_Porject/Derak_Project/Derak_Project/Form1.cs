@@ -35,6 +35,8 @@ namespace Derak_Project
             btnPlay.Visible = false;
             pbCardDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
             pbCardDisplay.Visible = true;
+            btnEndTurn.Visible = true;
+            btnFirstCardTest.Visible = true;
             players.StartGame();
         }
 

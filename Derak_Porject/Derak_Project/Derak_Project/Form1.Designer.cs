@@ -88,6 +88,7 @@ namespace Derak_Project
             this.btnEndTurn.TabIndex = 4;
             this.btnEndTurn.Text = "End turn";
             this.btnEndTurn.UseVisualStyleBackColor = true;
+            this.btnEndTurn.Visible = false;
             this.btnEndTurn.Click += new System.EventHandler(this.btnEndTurn_Click);
             // 
             // btnFirstCardTest
@@ -98,6 +99,7 @@ namespace Derak_Project
             this.btnFirstCardTest.TabIndex = 5;
             this.btnFirstCardTest.Text = "play First card Test";
             this.btnFirstCardTest.UseVisualStyleBackColor = true;
+            this.btnFirstCardTest.Visible = false;
             this.btnFirstCardTest.Click += new System.EventHandler(this.btnFirstCardTest_Click);
             // 
             // Form1
