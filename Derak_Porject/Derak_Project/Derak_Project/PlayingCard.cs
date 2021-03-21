@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System;
 using System.Drawing;
-using Derak_Project;
-namespace DurakClient
+namespace Derak_Project
 {
     /// <summary>
     /// 

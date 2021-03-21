@@ -75,6 +75,7 @@ namespace DurakClient
             this.pbDeck.Size = new System.Drawing.Size(68, 100);
             this.pbDeck.TabIndex = 4;
             this.pbDeck.TabStop = false;
+            this.pbDeck.Click += new System.EventHandler(this.pbDeck_Click_1);
             // 
             // button1
             // 

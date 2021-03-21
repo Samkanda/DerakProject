@@ -80,7 +80,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Desktop\CardBox1\CardBox1.csproj">
+    <ProjectReference Include="..\CardBox1\CardBox1.csproj">
       <Project>{02ac67f6-26a3-4cdb-b0ad-c7cedfb5d81a}</Project>
       <Name>CardBox1</Name>
     </ProjectReference>

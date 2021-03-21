@@ -38,7 +38,7 @@ namespace DurakClient
         /// <summary>
         /// Used to generate PlayingCard objects from a Deck
         /// </summary>
-        private DurakHand myDealer = new DurakHand(new Deck(false));
+        //private DurakHand myDealer = new DurakHand(new Deck(false));
 
   
 
@@ -59,8 +59,7 @@ namespace DurakClient
         {
             // Set the deck image to a card back image
             pbDeck.Image = (new PlayingCard()).GetCardImage();
-            // Wire the out of cards event handler 
-            myDealer.OutOfCards += myDealer_OutOfCards;
+          
         }
 
         /// <summary>
@@ -110,7 +109,7 @@ namespace DurakClient
                 // Create a new card
                 PlayingCard card = new PlayingCard();
                 // Draw a card from the card dealer. If it worked...
-                if (myDealer.DrawCard(ref card, true))
+                if ()
                 {
                     // Create a new CardBox control based on the card drawn
                     CardBox aCardBox = new CardBox(card);
@@ -324,7 +323,7 @@ namespace DurakClient
             pnlPlay.Controls.Clear();
 
             // Load the card dealer 
-            myDealer.LoadCardDealer();
+            
 
             // Set the image to a card back
             pbDeck.Image = (new PlayingCard()).GetCardImage();
@@ -332,6 +331,19 @@ namespace DurakClient
         }
         #endregion
 
+        private void pbDeck_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        void dsdf(Cards sada)
+        {
+            foreach(Card ss in sada)
+            {
+                CardBox aCardBox = new CardBox();
+                pnlCardHome.Controls.Add(aCardBox);
+            }
+        }
     }
 }
     

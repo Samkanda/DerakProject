@@ -16,3 +16,15 @@ C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBo
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.CoreCompileInputs.cache
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.dll
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.pdb
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\CardBox1.dll
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\CardBox1.pdb
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.exe
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.pdb
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.exe.config
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csprojAssemblyReference.cache
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.CardBox.resources
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.GenerateResource.cache
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.CoreCompileInputs.cache
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.CopyComplete
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.dll
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.pdb

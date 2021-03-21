@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Tutorial_8;
+using Derak_Project;
 
 namespace CardBox1
 {
@@ -40,7 +40,7 @@ namespace CardBox1
         /// <summary>
         /// Suit Property: sets/gets the underlying Card object's Suit
         /// </summary>
-        public CardSuit Suit
+        public Suit Suit
         {
             set
             {
@@ -53,7 +53,7 @@ namespace CardBox1
         /// <summary>
         /// Rank Property: sets/gets the underlying Card object's Rank
         /// </summary>
-        public CardRank Rank
+        public Rank Rank
         {
             set
             {

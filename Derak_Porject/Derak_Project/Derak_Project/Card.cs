@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class Card
+    public class Card
     {
         /// <summary>
         /// enum for card's suit

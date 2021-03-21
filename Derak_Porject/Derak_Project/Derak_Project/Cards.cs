@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class Cards : List<Card>
+    public class Cards : List<Card>
     {
         //retrieve all cards in container
         public Cards ExtractAll()
