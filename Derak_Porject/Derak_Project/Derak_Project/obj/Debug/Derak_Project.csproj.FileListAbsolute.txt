@@ -18,3 +18,13 @@ C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Derak
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.csproj.CoreCompileInputs.cache
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.exe
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.pdb
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.exe.config
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.exe
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.pdb
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.csprojAssemblyReference.cache
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.Form1.resources
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.Properties.Resources.resources
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.csproj.GenerateResource.cache
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.csproj.CoreCompileInputs.cache
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.exe
+C:\Users\shoai\source\repos\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.pdb

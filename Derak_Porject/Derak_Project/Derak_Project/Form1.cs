@@ -19,25 +19,77 @@ namespace Derak_Project
         public Form1()
         {
             InitializeComponent();
+            pictures = new PictureBox[32];
 
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakHuman());
-            players.NewTurn();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnPlay_Click(object sender, EventArgs e)
         {
-            backgroundPictureBox.Image = Image.FromFile("../../images/PlayingBackground.jpg");
-            backgroundPictureBox.Refresh();
-            backgroundPictureBox.Visible = true;
-            button_play.Visible = false;
+            pbBackground.Image = Image.FromFile("../../images/PlayingBackground.jpg");
+            pbBackground.Refresh();
+            pbBackground.Visible = true;
+            btnPlay.Visible = false;
+            pbCardDisplay.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbCardDisplay.Visible = true;
+            btnEndTurn.Visible = true;
+            btnFirstCardTest.Visible = true;
+            players.StartGame();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private PictureBox[] pictures;
+        public const string imagePath = @"../../images/";
+        private void btnDealCards_Click(object sender, EventArgs e)
         {
+            CreateControls();
+            DisplayControls();
+        }
+
+        private void CreateControls()
+        {
+            for (var counter = 0; counter < 6; counter++)
+            {
+                var newPictureBox = new PictureBox();
+                newPictureBox.Width = 75;
+                newPictureBox.Height = 100;
+                pictures[counter] = SizeImage(newPictureBox, counter + 2);
+            }
+        }
+
+        private PictureBox SizeImage(PictureBox pb, int i)
+        {
+            Image img = Image.FromFile(imagePath + i.ToString() + "C.jpg");
+            pb.Image = img;
+            pb.SizeMode = PictureBoxSizeMode.CenterImage;
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            //pb.MouseClick = //function 
+            return pb;
+        }
+
+        private void DisplayControls()
+        {
+            for (var counter = 0; counter < 5; counter ++)
+            {
+                pictures[counter].Left = ( counter * 10) + 100;
+                this.Controls.Add(pictures[counter]);
+            }
+        }
+
+        private void btnEndTurn_Click(object sender, EventArgs e)
+        {
+            foreach (DurakBattle set in players.PlayingField)
+            {
+                Console.WriteLine(set.ToString());
+            }
             (players[3] as DurakHuman).EndTurn();
+        }
+
+        private void btnFirstCardTest_Click(object sender, EventArgs e)
+        {
+            (players[3] as DurakHuman).PlayerPlayCard();
         }
     }
 }

@@ -6,22 +6,62 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakGameController : List<Hand>
+    class DurakGameController : List<DurakHand>
     {
         private int caret = 0;
         public static int ultra = 0;
         //TODO: switch to private? possibly take out of controller
         private DurakDeck deck;
+        public List<DurakBattle> PlayingField;
 
         public DurakGameController() : base()
         {
             //TODO might be a better way to write this
-            Hand.TurnEndEvent += delegate () { this.NewTurn(); };
+            Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.NewTurn(); };
+            Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
+            PlayingField = new List<DurakBattle>();
+
         }
 
-        public void NewTurn()
+        private void playCard(Card cardPlayed)
+        {
+            int pseudoCaret = caret - 1;
+            if(pseudoCaret < 0)
+            {
+                pseudoCaret = this.Count - 1;
+            }
+
+            if(this[pseudoCaret].Role == DurakRole.Attacker)
+            {
+                PlayingField.Add(new DurakBattle(cardPlayed));
+            }
+            else if(this[pseudoCaret].Role == DurakRole.Extra)
+            {
+                Console.WriteLine(cardPlayed.ToString());
+                PlayingField.Add(new DurakBattle(cardPlayed));
+            } 
+            else if (this[pseudoCaret].Role == DurakRole.Defender)
+            {
+                bool used = false;
+                foreach (DurakBattle set in PlayingField)
+                {
+                    if(set.Defense == null && !used)
+                    {
+                        set.Defense = cardPlayed;
+                        used = true;
+                    }
+                }
+            }
+
+
+
+        }
+
+
+
+        private void NewTurn()
         {
             ultra++;
             if (caret >= this.Count)
@@ -29,8 +69,9 @@ namespace Derak_Project
                 caret = 0;
             }
             Console.WriteLine(ultra + " / " + caret);
-            this[caret++].TakeTurn();// NOTE: stack overflow exception?
 
+            this[caret].UpdateInfo(PlayingField);
+            this[caret++].TakeTurn();
         }
 
         public void Deal()
@@ -38,7 +79,7 @@ namespace Derak_Project
             foreach (DurakHand player in this)
             {
                 player.DrawToMinimum(deck);
-                Console.WriteLine(player.ToString());
+                //Console.WriteLine(player.ToString());
             }
         }
 
@@ -46,7 +87,11 @@ namespace Derak_Project
         {
             deck.Shuffle();
             Deal();
-
+            foreach (DurakHand player in this)
+            {
+                Console.WriteLine(player.ToString());
+            }
+            NewTurn();
         }
 
         //TODO get rid of this garbage. store ints that refer to positions in the list obv

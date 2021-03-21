@@ -15,7 +15,7 @@ namespace Derak_Project
 
         public DurakHuman() : base()
         {
-
+            Role = DurakRole.Defender;
         }
 
         public override void TakeTurn()
@@ -30,6 +30,11 @@ namespace Derak_Project
             {
                 SendTurnEndEvent();
             }
+        }
+
+        public void PlayerPlayCard()
+        {
+            PlayCard(0);
         }
 
 

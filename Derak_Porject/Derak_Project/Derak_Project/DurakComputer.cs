@@ -11,13 +11,15 @@ namespace Derak_Project
 
         public DurakComputer()
         {
-
+            Role = DurakRole.Extra;
         }
 
+        
         public override void TakeTurn()
         {
-            //TurnEndHandler();
+            PlayCard(0);
             SendTurnEndEvent();
+            // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }
     }
 }

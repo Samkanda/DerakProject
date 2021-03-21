@@ -49,12 +49,13 @@
     <Compile Include="Card.cs" />
     <Compile Include="Cards.cs" />
     <Compile Include="Deck.cs" />
-    <Compile Include="DurakBout.cs" />
+    <Compile Include="DurakBattle.cs" />
     <Compile Include="DurakComputer.cs" />
     <Compile Include="DurakDeck.cs" />
     <Compile Include="DurakGameController.cs" />
     <Compile Include="DurakHand.cs" />
     <Compile Include="DurakHuman.cs" />
+    <Compile Include="DurakRole.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +95,165 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\Durak Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\2C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\2D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\2H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\2S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\3C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\3D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\3H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\3S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\4C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\4D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\4H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\4S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\5C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\5D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\5H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\5S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\6C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\6D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\6H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\6S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\7C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\7D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\7H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\7S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\8C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\8D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\8H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\8S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\9C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\9D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\9H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\9S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\AS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\10C.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\10D.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\10H.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\10S.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\AC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\AD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\AH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\JC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\JD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\JH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\JS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\KS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\QC.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\QD.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\QH.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\QS.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\blue_back.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
