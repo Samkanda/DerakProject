@@ -14,6 +14,7 @@ namespace Derak_Project
 
 
         public static event EventHandler TurnEndEvent;
+        public static event EventHandler TurnBeginEvent;
         public static event EventHandler<Card> CardPlayed;
 
         public abstract void TakeTurn();
@@ -21,6 +22,11 @@ namespace Derak_Project
         protected void SendTurnEndEvent()
         {
             TurnEndEvent(this, new EventArgs());
+        }
+
+        protected void SendTurnbeginEvent()
+        {
+            TurnBeginEvent(this, new EventArgs());
         }
 
         protected void SendCardPlayed(Card playedCard)

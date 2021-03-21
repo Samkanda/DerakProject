@@ -32,7 +32,7 @@ namespace Derak_Project
         /// </summary>
         public readonly Rank rank;//*/
 
-        protected bool faceUp = false;
+        protected bool faceUp = true;
         public bool FaceUp
         {
             get { return faceUp; }
@@ -65,7 +65,7 @@ namespace Derak_Project
                 imageName = "blue_back";
             } else
             {
-                imageName = mySuit.ToString() + "" + myRank.ToString();
+                imageName = myRank.ToString() + "_" + mySuit.ToString();
             }
             cardImage = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
             return cardImage;

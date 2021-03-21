@@ -89,7 +89,7 @@ namespace Derak_Project
 
         private void btnFirstCardTest_Click(object sender, EventArgs e)
         {
-            (players[3] as DurakHuman).PlayerPlayCard();
+            //(players[3] as DurakHuman).PlayerPlayCard();
         }
     }
 }

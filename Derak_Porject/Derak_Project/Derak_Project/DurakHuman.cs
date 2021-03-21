@@ -21,7 +21,7 @@ namespace Derak_Project
         public override void TakeTurn()
         {
             IsTurn = true;
-
+            SendTurnbeginEvent();
         }
 
         public void EndTurn()
@@ -32,9 +32,15 @@ namespace Derak_Project
             }
         }
 
-        public void PlayerPlayCard()
+        public void PlayerPlayCard(Card target)
         {
-            PlayCard(0);
+            for(int i = 0; i < this.Count; i++)
+            {
+                if(target == this[i])
+                {
+                    PlayCard(i);
+                }
+            }
         }
 
 

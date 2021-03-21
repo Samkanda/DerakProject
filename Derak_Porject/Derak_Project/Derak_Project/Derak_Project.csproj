@@ -98,115 +98,115 @@
     <None Include="images\Durak Background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2_Club.jpg" />
+    <None Include="images\Two_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2_Diamond.jpg" />
+    <None Include="images\Two_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2_Heart.jpg" />
+    <None Include="images\Two_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2_Spade.jpg" />
+    <None Include="images\Two_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3_Club.jpg" />
+    <None Include="images\Three_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3_Diamond.jpg" />
+    <None Include="images\Three_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3_Heart.jpg" />
+    <None Include="images\Three_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3_Spade.jpg" />
+    <None Include="images\Three_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4_Club.jpg" />
+    <None Include="images\Four_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4_Diamond.jpg" />
+    <None Include="images\Four_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4_Heart.jpg" />
+    <None Include="images\Four_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4_Spade.jpg" />
+    <None Include="images\Four_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5_Club.jpg" />
+    <None Include="images\Five_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5_Diamond.jpg" />
+    <None Include="images\Five_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5_Heart.jpg" />
+    <None Include="images\Five_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5_Spade.jpg" />
+    <None Include="images\Five_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6_Club.jpg" />
+    <None Include="images\Six_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6_Diamond.jpg" />
+    <None Include="images\Six_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6_Heart.jpg" />
+    <None Include="images\Six_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6_Spade.jpg" />
+    <None Include="images\Six_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7_Club.jpg" />
+    <None Include="images\Seven_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7_Diamond.jpg" />
+    <None Include="images\Seven_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7_Heart.jpg" />
+    <None Include="images\Seven_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7_Spade.jpg" />
+    <None Include="images\Seven_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8_Club.jpg" />
+    <None Include="images\Eight_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8_Diamond.jpg" />
+    <None Include="images\Eight_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8_Heart.jpg" />
+    <None Include="images\Eight_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8_Spade.jpg" />
+    <None Include="images\Eight_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9_Club.jpg" />
+    <None Include="images\Nine_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9_Diamond.jpg" />
+    <None Include="images\Nine_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9_Heart.jpg" />
+    <None Include="images\Nine_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9_Spade.jpg" />
+    <None Include="images\Nine_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\Ace_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10_Club.jpg" />
+    <None Include="images\Ten_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10_Diamond.jpg" />
+    <None Include="images\Ten_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10Heart.jpg" />
+    <None Include="images\Ten_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10_Spade.jpg" />
+    <None Include="images\Ten_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\Ace_Club.jpg" />
@@ -221,7 +221,7 @@
     <None Include="images\Jack_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\Jake_Diamond.jpg" />
+    <None Include="images\Jack_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\Jack_Heart.jpg" />

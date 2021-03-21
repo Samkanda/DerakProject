@@ -28,6 +28,10 @@ namespace DurakClient
             players.Add(new DurakComputer());
             players.Add(new DurakComputer());
             players.Add(new DurakHuman());
+
+            Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
+
+            //pbDeck = new CardBox(new Card());
             players.StartGame();
         }
 
@@ -44,22 +48,40 @@ namespace DurakClient
         static private Size regularSize = new Size(65, 107);
 
         /// <summary>
-        /// Used to generate PlayingCard objects from a Deck
+        /// When a CardBox is clicked, move to the opposite panel.
         /// </summary>
-        //private DurakHand myDealer = new DurakHand(new Deck(false));
+        void CardBox_Click(object sender, EventArgs e)
+        {
+            // Convert sender to a CardBox
+            CardBox aCardBox = sender as CardBox;
 
-  
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                // if the card is in the home panel...
+                if (aCardBox.Parent == pnlCardHome)
+                {
+                    try
+                    {
+                        //TODO make dynamic
+                        (players[3] as DurakHuman).PlayerPlayCard(aCardBox.Card);
+                        // Remove the card from the home panel
+                        // Add the control to the play panel
+                        pnlCardHome.Controls.Remove(aCardBox);
+                        pnlCardDefend.Controls.Add(aCardBox);
+                        RealignCards(pnlCardHome);
+                        RealignCards(pnlCardDefend);
+                    } 
+                    catch
+                    {
 
-        /// <summary>
-        /// Refers to the card being dragged from one panel to another.
-        /// </summary>
+                    }
+                    
+                }
 
+            }
 
-        #endregion
-
-        #region FORM AND STATIC CONTROL EVENT HANDLERS
-
-
+        }
         /// <summary>
         /// Initializes the card dealer/deck on form Load.
         /// </summary>
@@ -77,193 +99,46 @@ namespace DurakClient
         {
             this.Close();
         }
-
-        /// <summary>
-        /// Clears the panels and resets the card dealer.
-        /// </summary>
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            // Reset the card dealer
-            ResetDealer();
-
-            //// Set option back to click
-            //optClick.Checked = true;
-        }
-
-        /// <summary>
-        /// Resets the card dealer when the options are changed.
-        /// </summary>
-        private void optClick_CheckedChanged(object sender, EventArgs e)
-        {
-            //ResetDealer();
-        }
-
-        /// <summary>
-        /// Deal a card or reset the deck on clicking the deck.
-        /// </summary>
-        private void pbDeck_Click(object sender, EventArgs e)
-        {
-            /*
-            // If the deck is empty (no image)
-            if (pbDeck.Image == null)
-            {
-                // Reset the dealer
-                //ResetDealer();
-            }
-            else
-            {
-                // Otherwise
-
-                // Create a new card
-                Card card = new Card();
-                // Draw a card from the card dealer. If it worked...
-                if (true)
-                {
-                    // Create a new CardBox control based on the card drawn
-                    CardBox aCardBox = new CardBox(card);
-                    // Wire events handlers to the new control:
-                    // if Click radio button is checked...
-                    // Wire CardBox_Click
-
-                    // otherwise...
-                    // wire CardBox_MouseDown, CardBox_DragEnter, and CardBox_DragDrop
-
-                    // wire CardBox_MouseEnter for the "POP" visual effect
-                    // wire CardBox_MouseLeave for the regular visual effect
-
-                    // Add the new control to the appropriate panel
-                    pnlCardHome.Controls.Add(aCardBox);
-                    // Realign the controls in the panel so they appear correctly.
-                    RealignCards(pnlCardHome);
-                }
-
-                // Display the number of cards remaining in the deck. 
-            }//*/
-            //lblCardCount.Text = myDealer.CardsRemaining.ToString();
-        }
-
-        /// <summary>
-        /// Removes the card back image when the deck is out of cards.
-        /// </summary>
-        private void myDealer_OutOfCards(object sender, EventArgs e)
-        {
-            //pbDeck.Image = null;
-        }
-
-        /// <summary>
-        /// Make the mouse pointer a "move" pointer when a drag enters a Panel.
-        /// </summary>
-
-
-        // Make the mouse pointer a "move" pointer
-
-
-        /// <summary>
-        /// Move a card/control when it is dropped from one Panel to another.
-        /// </summary>
-
-
-        // If there is a CardBox to move
-        // Determine which Panel is which
-        // If neither panel is null (no conversion issue)
-        // if the Panels are not the same 
-        // (this would happen if a card is dragged from one spot in the Panel to another)
-        // Remove the card from the Panel it started in
-        // Add the card to the Panel it was dropped in 
-        // Realign cards in both Panels
-
-
-        #endregion
-
-        #region CARD BOX EVENT HANDLERS
-
         /// <summary>
         ///  CardBox controls grow in size when the mouse is over it.
         /// </summary>
+        void CardBox_MouseEnter(object sender, EventArgs e)
+        {
+            // Convert sender to a CardBox
+            CardBox aCardBox = sender as CardBox;
+
+            // If the conversion worked
+            if (aCardBox != null)
+            {
+                // Enlarge the card for visual effect
+                aCardBox.Size = new Size(regularSize.Width + POP, regularSize.Height + POP);
+                // move the card to the top edge of the panel.
+                aCardBox.Top = 0;
+            }
 
 
-        // Convert sender to a CardBox
+        }
 
-        // If the conversion worked
-        // Enlarge the card for visual effect
-        // move the card to the top edge of the panel.
 
         /// <summary>
         /// CardBox control shrinks to regular size when the mouse leaves.
         /// </summary>
-
-        // Convert sender to a CardBox
-        // If the conversion worked
-        // resize the card back to regular size
-        // move the card down to accommodate for the smaller size.
-
-        /// <summary>
-        /// Initiate a card move on the start of a drag.
-        /// </summary>
-
-        // Set dragCard 
-        // If the conversion worked
-        // Set the data to be dragged and the allowed effect dragging will have.
-
-
-        /// <summary>
-        /// When a CardBox is clicked, move to the opposite panel.
-        /// </summary>
-        void CardBox_Click(object sender, EventArgs e)
+        void CardBox_MouseLeave(object sender, EventArgs e)
         {
             // Convert sender to a CardBox
-
+            CardBox aCardBox = sender as CardBox;
 
             // If the conversion worked
-            // if the card is in the home panel...
-
-            // Remove the card from the home panel
-            // Add the control to the play panel
-
-            // otherwise...
-            // Remove the card from the play panel
-            // Add the control to the home panel
-
-            // Realign the cards 
+            if (aCardBox != null)
+            {
+                // resize the card back to regular size
+                aCardBox.Size = new Size(regularSize.Width, regularSize.Height);
+                // move the card to the top edge of the panel.
+                aCardBox.Top = POP;
+            }
 
 
         }
-
-        /// <summary>
-        /// When a drag is enters a card, enter the parent panel instead.
-        /// </summary>
-        private void CardBox_DragEnter(object sender, DragEventArgs e)
-        {
-            //// Convert sender to a CardBox
-            //MyCardBox.CardBox aCardBox = sender as MyCardBox.CardBox;
-
-            //// If the conversion worked
-            //if (aCardBox != null)
-            //{
-            //    // Do the operation on the parent panel instead
-            //    Panel_DragEnter(aCardBox.Parent, e);
-            //}
-        }
-
-        /// <summary>
-        /// When a drag is dropped on a card, drop on the parent panel instead.
-        /// </summary>
-        private void CardBox_DragDrop(object sender, DragEventArgs e)
-        {
-            //// Convert sender to a CardBox
-            //MyCardBox.CardBox aCardBox = sender as MyCardBox.CardBox;
-
-            //// If the conversion worked
-            //if (aCardBox != null)
-            //{
-            //    // Do the operation on the parent panel instead
-            //    Panel_DragDrop(aCardBox.Parent, e);
-            //}
-        }
-
-        #endregion
-
-        #region HELPER METHODS
 
         /// <summary>
         /// Repositions the cards in a panel so that they are evenly distributed in the area available.
@@ -320,47 +195,73 @@ namespace DurakClient
 
             }
         }
-
-        /// <summary>
-        /// Clears the panels and reloads the deck.
-        /// </summary>
-        void ResetDealer()
-        {
-            // Clear the panels
-            pnlCardHome.Controls.Clear();
-            pnlPlay.Controls.Clear();
-
-            // Load the card dealer 
-            
-
-            // Set the image to a card back
-            //pbDeck.Image = (new PlayingCard()).GetCardImage();
-
-        }
         #endregion
 
         private void pbDeck_Click_1(object sender, EventArgs e)
         {
-            dsdf(players[3]);
+            
 
         }
 
-        void dsdf(Cards sada)
+        void UpdateUI(Cards sada)
         {
-            foreach(Card ss in sada)
+            pnlCardDefend.Controls.Clear();
+            pnlCardAttack.Controls.Clear();
+            pnlCardHome.Controls.Clear();
+            foreach (Card ss in sada)
             {
                 CardBox aCardBox = new CardBox(ss);
                 pnlCardHome.Controls.Add(aCardBox);
-                pbDeck = new CardBox(ss);
+                aCardBox.Click += CardBox_Click;
+                // wire CardBox_MouseEnter for the "POP" visual effect
+                aCardBox.MouseEnter += CardBox_MouseEnter;
+                // wire CardBox_MouseLeave for the regular visual effect
+                aCardBox.MouseLeave += CardBox_MouseLeave;
+            }
+            foreach(DurakBattle front in players.PlayingField)
+            {
+                CardBox aCardBoxA = new CardBox(front.Attack);
+                pnlCardAttack.Controls.Add(aCardBoxA);
+                if(front.Defense != null)
+                {
+                    CardBox aCardBoxD = new CardBox(front.Defense);
+                    pnlCardDefend.Controls.Add(aCardBoxD);
+                }
+                
             }
             //pnlCardHome.Controls.Add(new CardBox());
             Console.WriteLine("test");
             RealignCards(pnlCardHome);
+            RealignCards(pnlCardAttack);
+            RealignCards(pnlCardDefend);
+        }
+
+        private void Turn_Begin(object sender, EventArgs e)
+        {
+            //cool way to check if the current player is a human
+            if(sender as DurakHuman != null)
+            {
+                UpdateUI(players[3]);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dsdf(players[3]);
+            
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (DurakBattle set in players.PlayingField)
+            {
+                Console.WriteLine(set.ToString());
+            }
+            (players[3] as DurakHuman).EndTurn();
         }
     }
 }

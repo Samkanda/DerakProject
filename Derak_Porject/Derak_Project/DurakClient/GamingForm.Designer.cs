@@ -29,13 +29,14 @@ namespace DurakClient
         /// </summary>
         private void InitializeComponent()
         {
-            Derak_Project.Card card1 = new Derak_Project.Card();
+            Derak_Project.Card card2 = new Derak_Project.Card();
             this.pbMyPictureBox = new System.Windows.Forms.PictureBox();
-            this.pnlPlay = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
             this.pnlCardHome = new System.Windows.Forms.Panel();
+            this.pnlCardDefend = new System.Windows.Forms.Panel();
+            this.pnlCardAttack = new System.Windows.Forms.Panel();
             this.pbDeck = new CardBox1.CardBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbMyPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,20 +47,6 @@ namespace DurakClient
             this.pbMyPictureBox.Size = new System.Drawing.Size(68, 101);
             this.pbMyPictureBox.TabIndex = 0;
             this.pbMyPictureBox.TabStop = false;
-            // 
-            // pnlPlay
-            // 
-            this.pnlPlay.Location = new System.Drawing.Point(130, 39);
-            this.pnlPlay.Name = "pnlPlay";
-            this.pnlPlay.Size = new System.Drawing.Size(542, 100);
-            this.pnlPlay.TabIndex = 2;
-            // 
-            // flowLayoutPanel3
-            // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(130, 176);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(542, 100);
-            this.flowLayoutPanel3.TabIndex = 3;
             // 
             // button1
             // 
@@ -74,19 +61,40 @@ namespace DurakClient
             // pnlCardHome
             // 
             this.pnlCardHome.AllowDrop = true;
-            this.pnlCardHome.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnlCardHome.BackColor = System.Drawing.Color.Green;
             this.pnlCardHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCardHome.Location = new System.Drawing.Point(130, 304);
+            this.pnlCardHome.Location = new System.Drawing.Point(130, 319);
             this.pnlCardHome.Name = "pnlCardHome";
             this.pnlCardHome.Size = new System.Drawing.Size(542, 119);
             this.pnlCardHome.TabIndex = 11;
             // 
+            // pnlCardDefend
+            // 
+            this.pnlCardDefend.AllowDrop = true;
+            this.pnlCardDefend.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnlCardDefend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCardDefend.Location = new System.Drawing.Point(130, 176);
+            this.pnlCardDefend.Name = "pnlCardDefend";
+            this.pnlCardDefend.Size = new System.Drawing.Size(542, 119);
+            this.pnlCardDefend.TabIndex = 12;
+            this.pnlCardDefend.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pnlCardAttack
+            // 
+            this.pnlCardAttack.AllowDrop = true;
+            this.pnlCardAttack.BackColor = System.Drawing.Color.Gold;
+            this.pnlCardAttack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCardAttack.Location = new System.Drawing.Point(130, 39);
+            this.pnlCardAttack.Name = "pnlCardAttack";
+            this.pnlCardAttack.Size = new System.Drawing.Size(542, 119);
+            this.pnlCardAttack.TabIndex = 12;
+            // 
             // pbDeck
             // 
-            card1.FaceUp = false;
-            card1.rank = Derak_Project.Rank.Eight;
-            card1.suit = Derak_Project.Suit.Diamond;
-            this.pbDeck.Card = card1;
+            card2.FaceUp = false;
+            card2.rank = Derak_Project.Rank.Eight;
+            card2.suit = Derak_Project.Suit.Diamond;
+            this.pbDeck.Card = card2;
             this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.pbDeck.FaceUp = false;
             this.pbDeck.Location = new System.Drawing.Point(22, 39);
@@ -96,16 +104,27 @@ namespace DurakClient
             this.pbDeck.Suit = Derak_Project.Suit.Diamond;
             this.pbDeck.TabIndex = 12;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(701, 356);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "End Turn";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // GamingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.pnlCardAttack);
+            this.Controls.Add(this.pnlCardDefend);
             this.Controls.Add(this.pbDeck);
             this.Controls.Add(this.pnlCardHome);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.flowLayoutPanel3);
-            this.Controls.Add(this.pnlPlay);
             this.Controls.Add(this.pbMyPictureBox);
             this.Name = "GamingForm";
             this.Text = "Form1";
@@ -117,11 +136,12 @@ namespace DurakClient
         #endregion
 
         private System.Windows.Forms.PictureBox pbMyPictureBox;
-        private System.Windows.Forms.FlowLayoutPanel pnlPlay;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel pnlCardHome;
         private CardBox1.CardBox pbDeck;
+        private System.Windows.Forms.Panel pnlCardDefend;
+        private System.Windows.Forms.Panel pnlCardAttack;
+        private System.Windows.Forms.Button button2;
     }
 }
 
