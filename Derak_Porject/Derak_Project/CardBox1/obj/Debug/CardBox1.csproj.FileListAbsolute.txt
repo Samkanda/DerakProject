@@ -10,3 +10,9 @@ C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.exe
 C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.pdb
 C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.exe.config
 C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.csproj.CopyComplete
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csprojAssemblyReference.cache
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.CardBox.resources
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.GenerateResource.cache
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.CoreCompileInputs.cache
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.dll
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.pdb
