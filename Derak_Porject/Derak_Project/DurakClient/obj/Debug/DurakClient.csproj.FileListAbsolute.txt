@@ -1,0 +1,5 @@
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.csprojAssemblyReference.cache
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.GamingForm.resources
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.Properties.Resources.resources
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.csproj.GenerateResource.cache
+C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.csproj.CoreCompileInputs.cache

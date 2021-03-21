@@ -1,0 +1,12 @@
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\CardBox1.dll
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\CardBox1.pdb
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.csprojAssemblyReference.cache
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.csproj.CoreCompileInputs.cache
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.dll
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.pdb
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.CardBox.resources
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.csproj.GenerateResource.cache
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.exe
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.pdb
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\bin\Debug\Tutorial_8.exe.config
+C:\Users\navpr\OneDrive\Desktop\Tutorial8\CardBox1\obj\Debug\CardBox1.csproj.CopyComplete
