@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakGameController : List<DurakHand>
+    public class DurakGameController : List<DurakHand>
     {
         private int caret = 0;
         public static int ultra = 0;

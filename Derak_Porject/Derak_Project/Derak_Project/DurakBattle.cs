@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakBattle
+    public class DurakBattle
     {
         private Card myAttack;
         public Card Attack

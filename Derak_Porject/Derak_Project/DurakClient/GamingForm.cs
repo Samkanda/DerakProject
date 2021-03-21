@@ -15,12 +15,20 @@ namespace DurakClient
 {
     public partial class GamingForm : Form
     {
+        DurakGameController players = new DurakGameController();
         /// <summary>
         /// Constructor for frmMainForm
         /// </summary>
+
         public GamingForm()
         {
             InitializeComponent();
+
+            players.Add(new DurakComputer());
+            players.Add(new DurakComputer());
+            players.Add(new DurakComputer());
+            players.Add(new DurakHuman());
+            players.StartGame();
         }
 
         #region FIELDS AND PROPERTIES
@@ -58,7 +66,7 @@ namespace DurakClient
         private void frmMainForm_Load(object sender, EventArgs e)
         {
             // Set the deck image to a card back image
-            pbDeck.Image = (new PlayingCard()).GetCardImage();
+            //pbDeck.Image = (new PlayingCard()).GetCardImage();
           
         }
 
@@ -95,7 +103,7 @@ namespace DurakClient
         /// </summary>
         private void pbDeck_Click(object sender, EventArgs e)
         {
-
+            /*
             // If the deck is empty (no image)
             if (pbDeck.Image == null)
             {
@@ -107,9 +115,9 @@ namespace DurakClient
                 // Otherwise
 
                 // Create a new card
-                PlayingCard card = new PlayingCard();
+                Card card = new Card();
                 // Draw a card from the card dealer. If it worked...
-                if ()
+                if (true)
                 {
                     // Create a new CardBox control based on the card drawn
                     CardBox aCardBox = new CardBox(card);
@@ -130,7 +138,7 @@ namespace DurakClient
                 }
 
                 // Display the number of cards remaining in the deck. 
-            }
+            }//*/
             //lblCardCount.Text = myDealer.CardsRemaining.ToString();
         }
 
@@ -139,7 +147,7 @@ namespace DurakClient
         /// </summary>
         private void myDealer_OutOfCards(object sender, EventArgs e)
         {
-            pbDeck.Image = null;
+            //pbDeck.Image = null;
         }
 
         /// <summary>
@@ -326,13 +334,14 @@ namespace DurakClient
             
 
             // Set the image to a card back
-            pbDeck.Image = (new PlayingCard()).GetCardImage();
+            //pbDeck.Image = (new PlayingCard()).GetCardImage();
 
         }
         #endregion
 
         private void pbDeck_Click_1(object sender, EventArgs e)
         {
+            dsdf(players[3]);
 
         }
 
@@ -340,9 +349,18 @@ namespace DurakClient
         {
             foreach(Card ss in sada)
             {
-                CardBox aCardBox = new CardBox();
+                CardBox aCardBox = new CardBox(ss);
                 pnlCardHome.Controls.Add(aCardBox);
+                pbDeck = new CardBox(ss);
             }
+            //pnlCardHome.Controls.Add(new CardBox());
+            Console.WriteLine("test");
+            RealignCards(pnlCardHome);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dsdf(players[3]);
         }
     }
 }

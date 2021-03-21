@@ -25,8 +25,8 @@ namespace CardBox1
         /// <summary>
         /// Card Property: Sets/Gets the underlying Card object
         /// </summary>
-        private PlayingCard myCard;
-        public PlayingCard Card
+        private Card myCard;
+        public Card Card
         {
             set
             {
@@ -44,10 +44,10 @@ namespace CardBox1
         {
             set
             {
-                Card.Suit = value;
+                Card.suit = value;
                 UpdateCardImage();
             }
-            get { return Card.Suit; }
+            get { return Card.suit; }
         }
 
         /// <summary>
@@ -57,10 +57,10 @@ namespace CardBox1
         {
             set
             {
-                Card.Rank = value;
+                Card.rank = value;
                 UpdateCardImage();
             }
-            get { return Card.Rank; }
+            get { return Card.rank; }
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace CardBox1
         {
             InitializeComponent();
             myOrientation = Orientation.Vertical;
-            myCard = new PlayingCard();
+            myCard = new Card();
         }
 
         /// <summary>
@@ -129,7 +129,7 @@ namespace CardBox1
         /// </summary>
         /// <param name="card"></param>
         /// <param name="orientation"></param>
-        public CardBox(PlayingCard card, Orientation orientation = Orientation.Vertical)
+        public CardBox(Card card, Orientation orientation = Orientation.Vertical)
         {
             InitializeComponent();
             myOrientation = orientation;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    abstract class DurakHand : Hand
+    public abstract class DurakHand : Hand
     {
         public const int MinimumHandSize = 6;
 

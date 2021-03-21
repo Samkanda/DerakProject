@@ -9,7 +9,7 @@ namespace Derak_Project
     //public delegate void TurnEndEvent_Handler();
     //public delegate void CardPlayed_Handler(Card playedCard);
 
-    abstract class Hand : Cards
+    public abstract class Hand : Cards
     {
 
 

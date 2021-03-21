@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakHuman : DurakHand
+    public class DurakHuman : DurakHand
     {
         private bool IsTurn = false;
 

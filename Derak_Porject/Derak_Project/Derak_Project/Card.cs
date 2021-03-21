@@ -3,19 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Derak_Project
 {
     public class Card
     {
-        /// <summary>
+        protected Suit mySuit;
+        public Suit suit
+        {
+            get { return mySuit; } // return the suit
+            set { mySuit = value; }
+        }
+
+        protected Rank myRank;
+        public Rank rank
+        {
+            get { return myRank; } // retrun the suit
+            set { myRank = value; }
+        }
+
+        /*/// <summary>
         /// enum for card's suit
         /// </summary>
         public readonly Suit suit;
         /// <summary>
         ///  enum for card's rank
         /// </summary>
-        public readonly Rank rank;
+        public readonly Rank rank;//*/
+
+        protected bool faceUp = false;
+        public bool FaceUp
+        {
+            get { return faceUp; }
+            set { faceUp = value; }
+        }
 
         /// <summary>
         /// parameterized constructor
@@ -34,7 +56,20 @@ namespace Derak_Project
         public Card()
         {
         }
-
+        public Image GetCardImage()
+        {
+            string imageName;
+            Image cardImage;
+            if (!faceUp)
+            {
+                imageName = "blue_back";
+            } else
+            {
+                imageName = mySuit.ToString() + "" + myRank.ToString();
+            }
+            cardImage = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
+            return cardImage;
+        }
         /// <summary>
         /// to string override
         /// </summary>
