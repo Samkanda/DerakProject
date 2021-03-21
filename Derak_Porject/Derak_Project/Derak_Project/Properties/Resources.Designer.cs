@@ -63,9 +63,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10C {
+        internal static System.Drawing.Bitmap _10_Club {
             get {
-                object obj = ResourceManager.GetObject("_10C", resourceCulture);
+                object obj = ResourceManager.GetObject("_10_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10D {
+        internal static System.Drawing.Bitmap _10_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_10D", resourceCulture);
+                object obj = ResourceManager.GetObject("_10_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10H {
+        internal static System.Drawing.Bitmap _10_Spade {
             get {
-                object obj = ResourceManager.GetObject("_10H", resourceCulture);
+                object obj = ResourceManager.GetObject("_10_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _10S {
+        internal static System.Drawing.Bitmap _10Heart {
             get {
-                object obj = ResourceManager.GetObject("_10S", resourceCulture);
+                object obj = ResourceManager.GetObject("_10Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2C {
+        internal static System.Drawing.Bitmap _2_Club {
             get {
-                object obj = ResourceManager.GetObject("_2C", resourceCulture);
+                object obj = ResourceManager.GetObject("_2_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2D {
+        internal static System.Drawing.Bitmap _2_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_2D", resourceCulture);
+                object obj = ResourceManager.GetObject("_2_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2H {
+        internal static System.Drawing.Bitmap _2_Heart {
             get {
-                object obj = ResourceManager.GetObject("_2H", resourceCulture);
+                object obj = ResourceManager.GetObject("_2_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2S {
+        internal static System.Drawing.Bitmap _2_Spade {
             get {
-                object obj = ResourceManager.GetObject("_2S", resourceCulture);
+                object obj = ResourceManager.GetObject("_2_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +143,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3C {
+        internal static System.Drawing.Bitmap _3_Club {
             get {
-                object obj = ResourceManager.GetObject("_3C", resourceCulture);
+                object obj = ResourceManager.GetObject("_3_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3D {
+        internal static System.Drawing.Bitmap _3_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_3D", resourceCulture);
+                object obj = ResourceManager.GetObject("_3_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +163,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3H {
+        internal static System.Drawing.Bitmap _3_Heart {
             get {
-                object obj = ResourceManager.GetObject("_3H", resourceCulture);
+                object obj = ResourceManager.GetObject("_3_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -173,9 +173,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3S {
+        internal static System.Drawing.Bitmap _3_Spade {
             get {
-                object obj = ResourceManager.GetObject("_3S", resourceCulture);
+                object obj = ResourceManager.GetObject("_3_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -183,9 +183,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4C {
+        internal static System.Drawing.Bitmap _4_Club {
             get {
-                object obj = ResourceManager.GetObject("_4C", resourceCulture);
+                object obj = ResourceManager.GetObject("_4_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +193,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4D {
+        internal static System.Drawing.Bitmap _4_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_4D", resourceCulture);
+                object obj = ResourceManager.GetObject("_4_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +203,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4H {
+        internal static System.Drawing.Bitmap _4_Heart {
             get {
-                object obj = ResourceManager.GetObject("_4H", resourceCulture);
+                object obj = ResourceManager.GetObject("_4_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +213,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _4S {
+        internal static System.Drawing.Bitmap _4_Spade {
             get {
-                object obj = ResourceManager.GetObject("_4S", resourceCulture);
+                object obj = ResourceManager.GetObject("_4_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +223,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5C {
+        internal static System.Drawing.Bitmap _5_Club {
             get {
-                object obj = ResourceManager.GetObject("_5C", resourceCulture);
+                object obj = ResourceManager.GetObject("_5_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,9 +233,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5D {
+        internal static System.Drawing.Bitmap _5_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_5D", resourceCulture);
+                object obj = ResourceManager.GetObject("_5_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +243,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5H {
+        internal static System.Drawing.Bitmap _5_Heart {
             get {
-                object obj = ResourceManager.GetObject("_5H", resourceCulture);
+                object obj = ResourceManager.GetObject("_5_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,9 +253,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _5S {
+        internal static System.Drawing.Bitmap _5_Spade {
             get {
-                object obj = ResourceManager.GetObject("_5S", resourceCulture);
+                object obj = ResourceManager.GetObject("_5_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +263,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6C {
+        internal static System.Drawing.Bitmap _6_Club {
             get {
-                object obj = ResourceManager.GetObject("_6C", resourceCulture);
+                object obj = ResourceManager.GetObject("_6_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6D {
+        internal static System.Drawing.Bitmap _6_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_6D", resourceCulture);
+                object obj = ResourceManager.GetObject("_6_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,9 +283,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6H {
+        internal static System.Drawing.Bitmap _6_Heart {
             get {
-                object obj = ResourceManager.GetObject("_6H", resourceCulture);
+                object obj = ResourceManager.GetObject("_6_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,9 +293,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _6S {
+        internal static System.Drawing.Bitmap _6_Spade {
             get {
-                object obj = ResourceManager.GetObject("_6S", resourceCulture);
+                object obj = ResourceManager.GetObject("_6_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,9 +303,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7C {
+        internal static System.Drawing.Bitmap _7_Club {
             get {
-                object obj = ResourceManager.GetObject("_7C", resourceCulture);
+                object obj = ResourceManager.GetObject("_7_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -313,9 +313,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7D {
+        internal static System.Drawing.Bitmap _7_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_7D", resourceCulture);
+                object obj = ResourceManager.GetObject("_7_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,9 +323,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7H {
+        internal static System.Drawing.Bitmap _7_Heart {
             get {
-                object obj = ResourceManager.GetObject("_7H", resourceCulture);
+                object obj = ResourceManager.GetObject("_7_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -333,9 +333,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _7S {
+        internal static System.Drawing.Bitmap _7_Spade {
             get {
-                object obj = ResourceManager.GetObject("_7S", resourceCulture);
+                object obj = ResourceManager.GetObject("_7_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -343,9 +343,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8C {
+        internal static System.Drawing.Bitmap _8_Club {
             get {
-                object obj = ResourceManager.GetObject("_8C", resourceCulture);
+                object obj = ResourceManager.GetObject("_8_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,9 +353,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8D {
+        internal static System.Drawing.Bitmap _8_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_8D", resourceCulture);
+                object obj = ResourceManager.GetObject("_8_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -363,9 +363,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8H {
+        internal static System.Drawing.Bitmap _8_Heart {
             get {
-                object obj = ResourceManager.GetObject("_8H", resourceCulture);
+                object obj = ResourceManager.GetObject("_8_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -373,9 +373,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _8S {
+        internal static System.Drawing.Bitmap _8_Spade {
             get {
-                object obj = ResourceManager.GetObject("_8S", resourceCulture);
+                object obj = ResourceManager.GetObject("_8_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +383,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9C {
+        internal static System.Drawing.Bitmap _9_Club {
             get {
-                object obj = ResourceManager.GetObject("_9C", resourceCulture);
+                object obj = ResourceManager.GetObject("_9_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,9 +393,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9D {
+        internal static System.Drawing.Bitmap _9_Diamond {
             get {
-                object obj = ResourceManager.GetObject("_9D", resourceCulture);
+                object obj = ResourceManager.GetObject("_9_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -403,9 +403,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9H {
+        internal static System.Drawing.Bitmap _9_Heart {
             get {
-                object obj = ResourceManager.GetObject("_9H", resourceCulture);
+                object obj = ResourceManager.GetObject("_9_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,9 +413,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _9S {
+        internal static System.Drawing.Bitmap _9_Spade {
             get {
-                object obj = ResourceManager.GetObject("_9S", resourceCulture);
+                object obj = ResourceManager.GetObject("_9_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,9 +423,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AC {
+        internal static System.Drawing.Bitmap Ace_Club {
             get {
-                object obj = ResourceManager.GetObject("AC", resourceCulture);
+                object obj = ResourceManager.GetObject("Ace_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +433,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AD {
+        internal static System.Drawing.Bitmap Ace_Diamond {
             get {
-                object obj = ResourceManager.GetObject("AD", resourceCulture);
+                object obj = ResourceManager.GetObject("Ace_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -443,9 +443,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AH {
+        internal static System.Drawing.Bitmap Ace_Heart {
             get {
-                object obj = ResourceManager.GetObject("AH", resourceCulture);
+                object obj = ResourceManager.GetObject("Ace_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -453,9 +453,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AS {
+        internal static System.Drawing.Bitmap Ace_Spade {
             get {
-                object obj = ResourceManager.GetObject("AS", resourceCulture);
+                object obj = ResourceManager.GetObject("Ace_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -475,7 +475,7 @@ namespace Derak_Project.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap Durak_Background {
             get {
-                object obj = ResourceManager.GetObject("Durak Background", resourceCulture);
+                object obj = ResourceManager.GetObject("Durak_Background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,9 +483,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap JC {
+        internal static System.Drawing.Bitmap Jack_Club {
             get {
-                object obj = ResourceManager.GetObject("JC", resourceCulture);
+                object obj = ResourceManager.GetObject("Jack_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,9 +493,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap JD {
+        internal static System.Drawing.Bitmap Jack_Heart {
             get {
-                object obj = ResourceManager.GetObject("JD", resourceCulture);
+                object obj = ResourceManager.GetObject("Jack_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -503,9 +503,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap JH {
+        internal static System.Drawing.Bitmap Jack_Spade {
             get {
-                object obj = ResourceManager.GetObject("JH", resourceCulture);
+                object obj = ResourceManager.GetObject("Jack_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +513,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap JS {
+        internal static System.Drawing.Bitmap Jake_Diamond {
             get {
-                object obj = ResourceManager.GetObject("JS", resourceCulture);
+                object obj = ResourceManager.GetObject("Jake_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -523,9 +523,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KC {
+        internal static System.Drawing.Bitmap King_Club {
             get {
-                object obj = ResourceManager.GetObject("KC", resourceCulture);
+                object obj = ResourceManager.GetObject("King_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -533,9 +533,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KD {
+        internal static System.Drawing.Bitmap King_Diamond {
             get {
-                object obj = ResourceManager.GetObject("KD", resourceCulture);
+                object obj = ResourceManager.GetObject("King_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -543,9 +543,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KH {
+        internal static System.Drawing.Bitmap King_Heart {
             get {
-                object obj = ResourceManager.GetObject("KH", resourceCulture);
+                object obj = ResourceManager.GetObject("King_Heart", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -553,9 +553,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap KS {
+        internal static System.Drawing.Bitmap King_Spade {
             get {
-                object obj = ResourceManager.GetObject("KS", resourceCulture);
+                object obj = ResourceManager.GetObject("King_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -563,9 +563,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QC {
+        internal static System.Drawing.Bitmap PlayingBackground {
             get {
-                object obj = ResourceManager.GetObject("QC", resourceCulture);
+                object obj = ResourceManager.GetObject("PlayingBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,9 +573,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QD {
+        internal static System.Drawing.Bitmap Queen_Club {
             get {
-                object obj = ResourceManager.GetObject("QD", resourceCulture);
+                object obj = ResourceManager.GetObject("Queen_Club", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -583,9 +583,9 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QH {
+        internal static System.Drawing.Bitmap Queen_Diamond {
             get {
-                object obj = ResourceManager.GetObject("QH", resourceCulture);
+                object obj = ResourceManager.GetObject("Queen_Diamond", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -593,9 +593,19 @@ namespace Derak_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap QS {
+        internal static System.Drawing.Bitmap Queen_Heart {
             get {
-                object obj = ResourceManager.GetObject("QS", resourceCulture);
+                object obj = ResourceManager.GetObject("Queen_Heart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Queen_Spade {
+            get {
+                object obj = ResourceManager.GetObject("Queen_Spade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

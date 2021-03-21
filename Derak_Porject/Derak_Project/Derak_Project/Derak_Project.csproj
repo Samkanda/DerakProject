@@ -66,6 +66,11 @@
     <Compile Include="PlayingCard.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Rank.cs" />
     <Compile Include="Suit.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -73,14 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -98,163 +98,166 @@
     <None Include="images\Durak Background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2C.jpg" />
+    <None Include="images\2_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2D.jpg" />
+    <None Include="images\2_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2H.jpg" />
+    <None Include="images\2_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\2S.jpg" />
+    <None Include="images\2_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3C.jpg" />
+    <None Include="images\3_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3D.jpg" />
+    <None Include="images\3_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3H.jpg" />
+    <None Include="images\3_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\3S.jpg" />
+    <None Include="images\3_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4C.jpg" />
+    <None Include="images\4_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4D.jpg" />
+    <None Include="images\4_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4H.jpg" />
+    <None Include="images\4_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\4S.jpg" />
+    <None Include="images\4_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5C.jpg" />
+    <None Include="images\5_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5D.jpg" />
+    <None Include="images\5_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5H.jpg" />
+    <None Include="images\5_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\5S.jpg" />
+    <None Include="images\5_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6C.jpg" />
+    <None Include="images\6_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6D.jpg" />
+    <None Include="images\6_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6H.jpg" />
+    <None Include="images\6_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\6S.jpg" />
+    <None Include="images\6_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7C.jpg" />
+    <None Include="images\7_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7D.jpg" />
+    <None Include="images\7_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7H.jpg" />
+    <None Include="images\7_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\7S.jpg" />
+    <None Include="images\7_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8C.jpg" />
+    <None Include="images\8_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8D.jpg" />
+    <None Include="images\8_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8H.jpg" />
+    <None Include="images\8_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\8S.jpg" />
+    <None Include="images\8_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9C.jpg" />
+    <None Include="images\9_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9D.jpg" />
+    <None Include="images\9_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9H.jpg" />
+    <None Include="images\9_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\9S.jpg" />
+    <None Include="images\9_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\AS.jpg" />
+    <None Include="images\Ace_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10C.jpg" />
+    <None Include="images\10_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10D.jpg" />
+    <None Include="images\10_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10H.jpg" />
+    <None Include="images\10Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\10S.jpg" />
+    <None Include="images\10_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\AC.jpg" />
+    <None Include="images\Ace_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\AD.jpg" />
+    <None Include="images\Ace_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\AH.jpg" />
+    <None Include="images\Ace_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\JC.jpg" />
+    <None Include="images\Jack_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\JD.jpg" />
+    <None Include="images\Jake_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\JH.jpg" />
+    <None Include="images\Jack_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\JS.jpg" />
+    <None Include="images\Jack_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\KC.jpg" />
+    <None Include="images\King_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\KD.jpg" />
+    <None Include="images\King_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\KH.jpg" />
+    <None Include="images\King_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\KS.jpg" />
+    <None Include="images\King_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\QC.jpg" />
+    <None Include="images\Queen_Club.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\QD.jpg" />
+    <None Include="images\Queen_Diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\QH.jpg" />
+    <None Include="images\Queen_Heart.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\QS.jpg" />
+    <None Include="images\Queen_Spade.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="images\blue_back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\PlayingBackground.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
