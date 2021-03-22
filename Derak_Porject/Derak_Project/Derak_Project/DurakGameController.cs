@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//TODO REMOVE
+using System.Windows.Forms;
 
 namespace Derak_Project
 {
     public class DurakGameController
     {
-        private int caret = 0;
+        private int caret = -1;
         //TODO: switch to private? possibly take out of controller
         public DurakDeck deck;
 
@@ -55,13 +57,12 @@ namespace Derak_Project
 
         private void playCard(Card cardPlayed)
         {
-            int pseudoCaret = caret - 1;
-            if(pseudoCaret < 0)
-            {
-                pseudoCaret = players.Count - 1;
-            }
+            //if(caret < 0)
+            //{
+            //    caret = players.Count - 1;
+            //}
 
-            if(players[pseudoCaret].Role == DurakRole.Attacker)
+            if(players[caret].Role == DurakRole.Attacker)
             {
                 bool used = false;
                 if (playingField.Count < 6 && defender.Count > 0)
@@ -97,7 +98,7 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-            else if (players[pseudoCaret].Role == DurakRole.Defender)
+            else if (players[caret].Role == DurakRole.Defender)
             {
                 int currentIndex;
                 for(currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
@@ -130,7 +131,7 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-            //else if (players[pseudoCaret].Role == DurakRole.Extra)
+            //else if (players[caret].Role == DurakRole.Extra)
             //{
             //    Console.WriteLine(cardPlayed.ToString());
             //    playingField.Add(new DurakBattle(cardPlayed));
@@ -141,30 +142,67 @@ namespace Derak_Project
             }
 
             //this is currently implemented elsewhere
-            //players[pseudoCaret].Extract(cardPlayed);
+            //players[caret].Extract(cardPlayed);
 
 
         }
 
         private void EndOfTurn()
         {
-
-
-
-
-
+            bool loser = false;
+            if(players[caret] == defender)
+            {
+                foreach(DurakBattle bout in playingField)
+                {
+                    if(bout.Defense == null)
+                    {
+                        loser = true;
+                    }
+                }
+                if (loser)
+                {
+                    foreach (DurakBattle bout in playingField)
+                    {
+                        players[caret].AddRange(bout.Retrieve());
+                    }
+                    playingField.Clear();
+                    MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                }
+            }
+            else if (players[caret] == attacker)
+            {
+                loser = true;
+                foreach (DurakBattle bout in playingField)
+                {
+                    if (bout.Defense == null)
+                    {
+                        loser = false;
+                    }
+                }
+                if (loser)
+                {
+                    foreach (DurakBattle bout in playingField)
+                    {
+                        DiscardPile.AddRange(bout.Retrieve());
+                    }
+                    playingField.Clear();
+                    MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                }
+            }
+            Deal();
             NewTurn();
         }
 
         private void NewTurn()
         {
+            caret++;
             if (caret >= players.Count)
             {
                 caret = 0;
             }
             //players[caret].DrawToMinimum(deck);
             players[caret].UpdateInfo(playingField);
-            players[caret++].TakeTurn();
+            players[caret].TakeTurn();
         }
 
         public void Deal()

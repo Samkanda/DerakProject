@@ -23,22 +23,28 @@ namespace Derak_Project
             }
         }
 
-        private bool DefenderVictory;
-
-
+        public Cards Retrieve()
+        {
+            Cards temp = new Cards { myAttack };
+            if(myDefense != null)
+            {
+                temp.Add(myDefense);
+            }
+            return temp;
+        }
 
         public DurakBattle(Card attack)
         {
             myAttack = attack;
         }
 
-        public static void resolve(DurakBattle[] DurakRound)
-        {
-            foreach (DurakBattle bout in DurakRound)
-            {
-                Console.WriteLine("hello");
-            }
-        }
+        //public static void resolve(DurakBattle[] DurakRound)
+        //{
+        //    foreach (DurakBattle bout in DurakRound)
+        //    {
+        //        Console.WriteLine("hello");
+        //    }
+        //}
 
         public override string ToString()
         {
