@@ -16,6 +16,7 @@ namespace DurakClient
     public partial class GamingForm : Form
     {
         DurakGameController players = new DurakGameController();
+        DurakHuman currentHumanPlayer;
         /// <summary>
         /// Constructor for frmMainForm
         /// </summary>
@@ -63,7 +64,7 @@ namespace DurakClient
                 {
                     try
                     {
-                        //TODO make dynamic
+                        //TODO make dynamic sexy af though
                         (players[3] as DurakHuman).PlayerPlayCard(aCardBox.Card);
                         // Remove the card from the home panel
                         // Add the control to the play panel
@@ -239,9 +240,10 @@ namespace DurakClient
         private void Turn_Begin(object sender, EventArgs e)
         {
             //cool way to check if the current player is a human
-            if(sender as DurakHuman != null)
+            currentHumanPlayer = sender as DurakHuman;
+            if (currentHumanPlayer != null)
             {
-                UpdateUI(players[3]);
+                UpdateUI(currentHumanPlayer);
             }
         }
 
