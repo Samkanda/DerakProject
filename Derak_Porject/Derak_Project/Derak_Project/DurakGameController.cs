@@ -43,7 +43,7 @@ namespace Derak_Project
             DiscardPile = new Cards();
             deck = new DurakDeck();
             deck.Shuffle();
-            talon = deck[deck.Count - 1];
+            talon = deck[0];
             playingField = new List<DurakBattle>();
             players = new List<DurakHand>();
         }
@@ -168,6 +168,7 @@ namespace Derak_Project
                     playingField.Clear();
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
                     CalculateRoles();
+                    Deal();
                 }
             }
             else if (players[caret] == attacker)
@@ -189,10 +190,9 @@ namespace Derak_Project
                     playingField.Clear();
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
                     CalculateRoles();
+                    Deal();
                 }
             }
-            
-            Deal();
             NewTurn();
         }
 
@@ -258,10 +258,7 @@ namespace Derak_Project
             {
                 throw new Exception("Not Enough Players");
             }
-            attacker = players[0];
-            attacker.Role = DurakRole.Attacker;
-            defender = players[1];
-            defender.Role = DurakRole.Defender;
+            CalculateRoles();
 
 
             NewTurn();

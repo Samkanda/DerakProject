@@ -42,9 +42,10 @@ namespace Derak_Project
 
         public void DrawTo(Cards drawPile, int handSize)
         {
-            if(drawPile.Count < handSize)
+            if(drawPile.Count < handSize-this.Count)
             {
-
+                this.AddRange(drawPile);
+                drawPile.Clear();
             } 
             else
             {
