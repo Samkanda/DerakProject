@@ -25,8 +25,8 @@ namespace DurakClient
         {
             InitializeComponent();
             players.AddNewPlayer(new DurakComputer());
-            players.AddNewPlayer(new DurakComputer());
-            players.AddNewPlayer(new DurakComputer());
+            //players.AddNewPlayer(new DurakComputer());
+            //players.AddNewPlayer(new DurakComputer());
             players.AddNewPlayer(new DurakHuman());
 
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
@@ -68,13 +68,22 @@ namespace DurakClient
                         // Remove the card from the home panel
                         // Add the control to the play panel
                         pnlCardHome.Controls.Remove(aCardBox);
-                        pnlCardDefend.Controls.Add(aCardBox);
                         RealignCards(pnlCardHome);
-                        RealignCards(pnlCardDefend);
+                        if(currentHumanPlayer == players.Attacker)
+                        {
+                            pnlCardAttack.Controls.Add(aCardBox);
+                            RealignCards(pnlCardAttack);
+                        }
+                        else if (currentHumanPlayer == players.Defender)
+                        {
+                            pnlCardDefend.Controls.Add(aCardBox);
+                            RealignCards(pnlCardDefend);
+                        }
+                            
                     } 
-                    catch
+                    catch(Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message);
                     }
                     
                 }
@@ -106,7 +115,7 @@ namespace DurakClient
         {
             // Convert sender to a CardBox
             CardBox aCardBox = sender as CardBox;
-
+            MessageBox.Show(".");
             // If the conversion worked
             if (aCardBox != null)
             {
@@ -203,12 +212,12 @@ namespace DurakClient
 
         }
 
-        void UpdateUI(Cards sada)
+        void UpdateUI(Cards info)
         {
             pnlCardDefend.Controls.Clear();
             pnlCardAttack.Controls.Clear();
             pnlCardHome.Controls.Clear();
-            foreach (Card ss in sada)
+            foreach (Card ss in info)
             {
                 CardBox aCardBox = new CardBox(ss);
                 pnlCardHome.Controls.Add(aCardBox);

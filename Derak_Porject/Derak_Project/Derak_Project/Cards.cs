@@ -8,42 +8,56 @@ namespace Derak_Project
 {
     public class Cards : List<Card>
     {
-        //retrieve all cards in container
-        public Cards ExtractAll()
+        public Card First()
         {
-            int length = this.Count;
-            Cards temp = new Cards();
-            for (int i = 0; i < length; i++)
+            return this[Count - 1];
+        }
+
+        public Card Extract(Card target)
+        {
+            Card temp = this[GetTargetIndex(target)];
+            this.RemoveAt(GetTargetIndex(target));
+            return temp;
+        }
+
+        public int GetTargetIndex(Card target)
+        {
+            for (int i = 0; i < this.Count; i++)
             {
-                temp.Add(this.Extract());
+                if (target == this[i])
+                {
+                    return i;
+                }
             }
-            return new Cards();
+            throw new Exception("target not located");
         }
 
-        //grab first card in list that matches given card
-        public Cards ExtractAll(Card matching)
-        {
-            return new Cards();
-        }
 
-        //grab top card
-        public Card Extract()
-        {
-            Card temp = this[this.Count - 1];
-            this.RemoveAt(this.Count - 1);
-            return temp;
-        }
-        //grab card at position
-        public Card Extract(int position)
-        {
-            Card temp = this[position];
-            this.RemoveAt(position);
-            return temp;
-        }
-        //grab first card in list that matches given card
-        public Card Extract(Card matching)
-        {
-            return new Card();
-        }
+        ////retrieve all cards in container
+        //public Cards ExtractAll()
+        //{
+        //    int length = this.Count;
+        //    Cards temp = new Cards();
+        //    for (int i = 0; i < length; i++)
+        //    {
+        //        temp.Add(this.Extract());
+        //    }
+        //    return new Cards();
+        //}
+
+        ////grab top card
+        //public Card Extract()
+        //{
+        //    Card temp = this[this.Count - 1];
+        //    this.RemoveAt(this.Count - 1);
+        //    return temp;
+        //}
+        ////grab card at position
+        //public Card Extract(int position)
+        //{
+        //    Card temp = this[position];
+        //    this.RemoveAt(position);
+        //    return temp;
+        //}
     }
 }

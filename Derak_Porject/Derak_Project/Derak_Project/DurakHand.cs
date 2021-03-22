@@ -38,7 +38,16 @@ namespace Derak_Project
 
         protected void PlayCard(int index)
         {
-            SendCardPlayed(this.Extract(index));
+            try
+            {
+                SendCardPlayed(this[index]);
+                Extract(this[index]);
+            } 
+            catch(Exception e)
+            {
+                throw e;
+            }
+            
         }
 
     }

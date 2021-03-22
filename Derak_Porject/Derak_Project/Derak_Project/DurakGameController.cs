@@ -18,6 +18,12 @@ namespace Derak_Project
         public List<DurakHand> players;
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
 
+        private DurakHand attacker;
+        public DurakHand Attacker { get { return attacker; } }
+
+        private DurakHand defender;
+        public DurakHand Defender { get { return defender; } }
+
         private Card talon;
 
         public Card Talon
@@ -73,6 +79,10 @@ namespace Derak_Project
                         used = true;
                     }
                 }
+                if (!used)
+                {
+                    throw new InvalidPlayException("You cannot do that");
+                }
             }
         }
 
@@ -105,6 +115,16 @@ namespace Derak_Project
             {
                 Console.WriteLine(player.ToString());
             }
+            if(players.Count < 2)
+            {
+                throw new Exception("Not Enough Players");
+            }
+            attacker = players[0];
+            attacker.Role = DurakRole.Attacker;
+            defender = players[1];
+            defender.Role = DurakRole.Defender;
+
+
             NewTurn();
         }
     }

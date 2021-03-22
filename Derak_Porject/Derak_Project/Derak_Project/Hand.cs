@@ -36,10 +36,18 @@ namespace Derak_Project
 
         public void DrawTo(Cards drawPile, int handSize)
         {
-            for (int i = this.Count; i < handSize; i++)
+            if(drawPile.Count < handSize)
             {
-                this.Add(drawPile.Extract());// unhandled exception if drawpile empty 
+
+            } 
+            else
+            {
+                for (int i = this.Count; i < handSize; i++)
+                {
+                    this.Add(drawPile.Extract(drawPile.First()));// unhandled exception if drawpile empty 
+                }
             }
+            
             
         }
 

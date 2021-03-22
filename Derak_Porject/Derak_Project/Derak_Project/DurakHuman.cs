@@ -34,13 +34,7 @@ namespace Derak_Project
 
         public void PlayerPlayCard(Card target)
         {
-            for(int i = 0; i < this.Count; i++)
-            {
-                if(target == this[i])
-                {
-                    PlayCard(i);
-                }
-            }
+            PlayCard(GetTargetIndex(target));
         }
 
 

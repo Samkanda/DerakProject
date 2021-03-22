@@ -120,6 +120,8 @@ namespace DurakClient
             this.cbTalon.Size = new System.Drawing.Size(75, 107);
             this.cbTalon.Suit = Derak_Project.Suit.Diamond;
             this.cbTalon.TabIndex = 14;
+            this.cbTalon.MouseEnter += new System.EventHandler(this.CardBox_MouseEnter);
+            this.cbTalon.MouseLeave += new System.EventHandler(this.CardBox_MouseLeave);
             // 
             // GamingForm
             // 
