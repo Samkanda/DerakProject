@@ -132,6 +132,11 @@ namespace Derak_Project
             {
                 throw new NotImplementedException("role not implemented");
             }
+
+            //this is currently implemented elsewhere
+            //players[pseudoCaret].Extract(cardPlayed);
+
+
         }
 
 
