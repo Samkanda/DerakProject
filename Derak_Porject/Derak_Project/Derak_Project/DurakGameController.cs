@@ -167,6 +167,7 @@ namespace Derak_Project
                     }
                     playingField.Clear();
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                    CalculateRoles();
                 }
             }
             else if (players[caret] == attacker)
@@ -187,11 +188,42 @@ namespace Derak_Project
                     }
                     playingField.Clear();
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                    CalculateRoles();
                 }
             }
+            
             Deal();
             NewTurn();
         }
+
+        //TODO make work for 4 players?
+        private void CalculateRoles()
+        {
+            if(caret +1 >= players.Count)
+            {
+                attacker = players[0];
+                attacker.Role = DurakRole.Attacker;
+                defender = players[1];
+                defender.Role = DurakRole.Defender;
+            } 
+            else
+            {
+                attacker = players[caret+1];
+                attacker.Role = DurakRole.Attacker;
+                if (caret + 2 >= players.Count)
+                {
+                    defender = players[0];
+                    defender.Role = DurakRole.Defender;
+                } else
+                {
+                    defender = players[caret + 2];
+                    defender.Role = DurakRole.Defender;
+                }
+            }
+
+
+        }
+
 
         private void NewTurn()
         {
