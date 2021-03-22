@@ -33,7 +33,7 @@ namespace Derak_Project
 
         public DurakGameController()
         {
-            Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.NewTurn(); };
+            Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
@@ -101,7 +101,7 @@ namespace Derak_Project
                 {
                     if(playingField[currentIndex].Defense == null)
                     {
-                        if (cardPlayed.suit == playingField[currentIndex].Attack.suit || cardPlayed.suit == talon.suit)
+                        if (cardPlayed.suit == playingField[currentIndex].Attack.suit)
                         {
                             if((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
                             {
@@ -110,7 +110,11 @@ namespace Derak_Project
                             {
                                 throw new InvalidPlayException("You cannot do that, not higher");
                             }
-                        } 
+                        }
+                        else if (cardPlayed.suit == talon.suit)
+                        {
+                            playingField[currentIndex].Defense = cardPlayed;
+                        }
                         else
                         {
                             throw new InvalidPlayException("You cannot do that, wrong suit");
@@ -139,6 +143,15 @@ namespace Derak_Project
 
         }
 
+        private void EndOfTurn()
+        {
+
+
+
+
+
+            NewTurn();
+        }
 
         private void NewTurn()
         {
