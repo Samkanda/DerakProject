@@ -19,12 +19,7 @@ namespace Derak_Project
         public Form1()
         {
             InitializeComponent();
-            pictures = new PictureBox[32];
 
-            players.Add(new DurakComputer());
-            players.Add(new DurakComputer());
-            players.Add(new DurakComputer());
-            players.Add(new DurakHuman());
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
@@ -80,11 +75,7 @@ namespace Derak_Project
 
         private void btnEndTurn_Click(object sender, EventArgs e)
         {
-            foreach (DurakBattle set in players.PlayingField)
-            {
-                Console.WriteLine(set.ToString());
-            }
-            (players[3] as DurakHuman).EndTurn();
+
         }
 
         private void btnFirstCardTest_Click(object sender, EventArgs e)

@@ -24,11 +24,10 @@ namespace DurakClient
         public GamingForm()
         {
             InitializeComponent();
-
-            players.Add(new DurakComputer());
-            players.Add(new DurakComputer());
-            players.Add(new DurakComputer());
-            players.Add(new DurakHuman());
+            players.AddNewPlayer(new DurakComputer());
+            players.AddNewPlayer(new DurakComputer());
+            players.AddNewPlayer(new DurakComputer());
+            players.AddNewPlayer(new DurakHuman());
 
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
 
@@ -64,8 +63,8 @@ namespace DurakClient
                 {
                     try
                     {
-                        //TODO make dynamic sexy af though
-                        (players[3] as DurakHuman).PlayerPlayCard(aCardBox.Card);
+                        //sexy af
+                        currentHumanPlayer.PlayerPlayCard(aCardBox.Card);
                         // Remove the card from the home panel
                         // Add the control to the play panel
                         pnlCardHome.Controls.Remove(aCardBox);
@@ -263,7 +262,7 @@ namespace DurakClient
             {
                 Console.WriteLine(set.ToString());
             }
-            (players[3] as DurakHuman).EndTurn();
+            currentHumanPlayer.EndTurn();
         }
     }
 }

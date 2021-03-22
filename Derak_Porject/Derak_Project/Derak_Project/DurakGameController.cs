@@ -6,23 +6,32 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    public class DurakGameController : List<DurakHand>
+    public class DurakGameController
     {
         private int caret = 0;
-        public static int ultra = 0;
         //TODO: switch to private? possibly take out of controller
         private DurakDeck deck;
-        public List<DurakBattle> PlayingField;
 
-        public DurakGameController() : base()
+        private List<DurakBattle> playingField;
+        public IList<DurakBattle> PlayingField { get { return playingField.AsReadOnly(); } }
+
+        public List<DurakHand> players;
+        public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
+
+        public DurakGameController()
         {
-            //TODO might be a better way to write this
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.NewTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
-            PlayingField = new List<DurakBattle>();
+            playingField = new List<DurakBattle>();
+            players = new List<DurakHand>();
+        }
 
+        public void AddNewPlayer(DurakHand playerNew)
+        {
+            playerNew.UpdateInfo(playingField);
+            players.Add(playerNew);
         }
 
         private void playCard(Card cardPlayed)
@@ -30,22 +39,22 @@ namespace Derak_Project
             int pseudoCaret = caret - 1;
             if(pseudoCaret < 0)
             {
-                pseudoCaret = this.Count - 1;
+                pseudoCaret = players.Count - 1;
             }
 
-            if(this[pseudoCaret].Role == DurakRole.Attacker)
+            if(players[pseudoCaret].Role == DurakRole.Attacker)
             {
-                PlayingField.Add(new DurakBattle(cardPlayed));
+                playingField.Add(new DurakBattle(cardPlayed));
             }
-            else if(this[pseudoCaret].Role == DurakRole.Extra)
+            else if(players[pseudoCaret].Role == DurakRole.Extra)
             {
                 Console.WriteLine(cardPlayed.ToString());
-                PlayingField.Add(new DurakBattle(cardPlayed));
+                playingField.Add(new DurakBattle(cardPlayed));
             } 
-            else if (this[pseudoCaret].Role == DurakRole.Defender)
+            else if (players[pseudoCaret].Role == DurakRole.Defender)
             {
                 bool used = false;
-                foreach (DurakBattle set in PlayingField)
+                foreach (DurakBattle set in playingField)
                 {
                     if(set.Defense == null && !used)
                     {
@@ -54,29 +63,22 @@ namespace Derak_Project
                     }
                 }
             }
-
-
-
         }
-
 
 
         private void NewTurn()
         {
-            ultra++;
-            if (caret >= this.Count)
+            if (caret >= players.Count)
             {
                 caret = 0;
             }
-            Console.WriteLine(ultra + " / " + caret);
-
-            this[caret].UpdateInfo(PlayingField);
-            this[caret++].TakeTurn();
+            players[caret].UpdateInfo(playingField);
+            players[caret++].TakeTurn();
         }
 
         public void Deal()
         {
-            foreach (DurakHand player in this)
+            foreach (DurakHand player in players)
             {
                 player.DrawToMinimum(deck);
                 //Console.WriteLine(player.ToString());
@@ -87,38 +89,11 @@ namespace Derak_Project
         {
             deck.Shuffle();
             Deal();
-            foreach (DurakHand player in this)
+            foreach (DurakHand player in players)
             {
                 Console.WriteLine(player.ToString());
             }
             NewTurn();
         }
-
-        //TODO get rid of this garbage. store ints that refer to positions in the list obv
-        // OR make an enum and store roles in the hand objects. THIS REQUIRES THINKING. need to figure how how the roles progress and implement that
-        // a dangerous but simple strategy objects when assigned are add checks to the setter to help ensure no one tries to pass bad info 
-        /*
-        private static Hand defender;
-        public static Hand Defender
-        {
-            get { return defender; }
-            set
-            {
-                defender = value;
-            }
-        }
-        private static Hand attacker;
-        public static Hand Attacker
-        {
-            get { return attacker; }
-            set
-            {
-                attacker = value;
-            }
-        }//*/
-
-
-
-
     }
 }
