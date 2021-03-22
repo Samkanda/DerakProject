@@ -18,7 +18,22 @@ namespace Derak_Project
         public override void TakeTurn()
         {
             SendTurnbeginEvent();
-            PlayCard(0);
+
+            for(int i = this.Count-1; i >= 0 ; i--)
+            {
+                try
+                {
+                    PlayCard(i);
+                    //break;
+                } 
+                catch (Exception e)
+                {
+
+                }
+            }
+
+
+            
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }

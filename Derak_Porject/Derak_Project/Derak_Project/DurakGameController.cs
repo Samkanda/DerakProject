@@ -60,29 +60,77 @@ namespace Derak_Project
 
             if(players[pseudoCaret].Role == DurakRole.Attacker)
             {
-                playingField.Add(new DurakBattle(cardPlayed));
-            }
-            else if(players[pseudoCaret].Role == DurakRole.Extra)
-            {
-                Console.WriteLine(cardPlayed.ToString());
-                playingField.Add(new DurakBattle(cardPlayed));
-            } 
-            else if (players[pseudoCaret].Role == DurakRole.Defender)
-            {
                 bool used = false;
-                foreach (DurakBattle set in playingField)
+                if (playingField.Count < 6 && defender.Count > 0)
                 {
-                    if(set.Defense == null && !used)
+                    if(playingField.Count == 0)
                     {
-
-                        set.Defense = cardPlayed;
+                        playingField.Add(new DurakBattle(cardPlayed));
                         used = true;
+                    } 
+                    else
+                    {
+                        bool rankAvailable = false;
+                        foreach(DurakBattle front in playingField)
+                        {
+                            if(front.Attack.rank == cardPlayed.rank)
+                            {
+                                rankAvailable = true;
+                            }
+                            if(front.Defense != null && front.Defense.rank == cardPlayed.rank)
+                            {
+                                rankAvailable = true;
+                            }
+                        }
+                        if (rankAvailable)
+                        {
+                            playingField.Add(new DurakBattle(cardPlayed));
+                            used = true;
+                        }
                     }
                 }
                 if (!used)
                 {
                     throw new InvalidPlayException("You cannot do that");
                 }
+            }
+            else if (players[pseudoCaret].Role == DurakRole.Defender)
+            {
+                int currentIndex;
+                for(currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
+                {
+                    if(playingField[currentIndex].Defense == null)
+                    {
+                        if (cardPlayed.suit == playingField[currentIndex].Attack.suit || cardPlayed.suit == talon.suit)
+                        {
+                            if((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
+                            {
+                                playingField[currentIndex].Defense = cardPlayed;
+                            } else
+                            {
+                                throw new InvalidPlayException("You cannot do that, not higher");
+                            }
+                        } 
+                        else
+                        {
+                            throw new InvalidPlayException("You cannot do that, wrong suit");
+                        }
+                        break;
+                    }
+                }
+                if(currentIndex >= playingField.Count)
+                {
+                    throw new InvalidPlayException("You cannot do that");
+                }
+            }
+            //else if (players[pseudoCaret].Role == DurakRole.Extra)
+            //{
+            //    Console.WriteLine(cardPlayed.ToString());
+            //    playingField.Add(new DurakBattle(cardPlayed));
+            //}
+            else
+            {
+                throw new NotImplementedException("role not implemented");
             }
         }
 
