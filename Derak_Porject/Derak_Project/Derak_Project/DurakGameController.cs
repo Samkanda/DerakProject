@@ -18,12 +18,21 @@ namespace Derak_Project
         public List<DurakHand> players;
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
 
+        private Card talon;
+
+        public Card Talon
+        {
+            get { return talon; }
+        }
+
         public DurakGameController()
         {
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.NewTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
             deck = new DurakDeck();
+            deck.Shuffle();
+            talon = deck[deck.Count - 1];
             playingField = new List<DurakBattle>();
             players = new List<DurakHand>();
         }
@@ -31,6 +40,7 @@ namespace Derak_Project
         public void AddNewPlayer(DurakHand playerNew)
         {
             playerNew.UpdateInfo(playingField);
+            playerNew.DrawToMinimum(deck);
             players.Add(playerNew);
         }
 
@@ -58,6 +68,7 @@ namespace Derak_Project
                 {
                     if(set.Defense == null && !used)
                     {
+
                         set.Defense = cardPlayed;
                         used = true;
                     }
@@ -72,6 +83,7 @@ namespace Derak_Project
             {
                 caret = 0;
             }
+            //players[caret].DrawToMinimum(deck);
             players[caret].UpdateInfo(playingField);
             players[caret++].TakeTurn();
         }
@@ -87,8 +99,8 @@ namespace Derak_Project
 
         public void StartGame()
         {
-            deck.Shuffle();
-            Deal();
+            //deck.Shuffle();
+            //Deal();
             foreach (DurakHand player in players)
             {
                 Console.WriteLine(player.ToString());

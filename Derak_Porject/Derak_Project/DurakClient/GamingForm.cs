@@ -30,7 +30,7 @@ namespace DurakClient
             players.AddNewPlayer(new DurakHuman());
 
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
-
+            cbTalon.Card = players.Talon;
             //pbDeck = new CardBox(new Card());
             players.StartGame();
         }
