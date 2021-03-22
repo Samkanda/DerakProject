@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
-    class DurakDeck : Deck
+    public class DurakDeck : Deck
     {
         public DurakDeck()
         {

@@ -10,13 +10,15 @@ namespace Derak_Project
     {
         private int caret = 0;
         //TODO: switch to private? possibly take out of controller
-        private DurakDeck deck;
+        public DurakDeck deck;
 
         private List<DurakBattle> playingField;
         public IList<DurakBattle> PlayingField { get { return playingField.AsReadOnly(); } }
 
         public List<DurakHand> players;
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
+
+        public Cards DiscardPile;
 
         private DurakHand attacker;
         public DurakHand Attacker { get { return attacker; } }
@@ -36,6 +38,7 @@ namespace Derak_Project
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
 
+            DiscardPile = new Cards();
             deck = new DurakDeck();
             deck.Shuffle();
             talon = deck[deck.Count - 1];

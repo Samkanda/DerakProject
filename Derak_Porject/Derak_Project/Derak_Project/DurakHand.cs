@@ -10,6 +10,11 @@ namespace Derak_Project
     {
         public const int MinimumHandSize = 6;
 
+        public DurakHand() : base()
+        {
+
+        }
+
         private DurakRole myRole;
         public DurakRole Role
         {

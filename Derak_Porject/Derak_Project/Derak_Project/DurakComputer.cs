@@ -9,9 +9,10 @@ namespace Derak_Project
     public class DurakComputer : DurakHand
     {
 
-        public DurakComputer()
+        public DurakComputer() : base()
         {
             Role = DurakRole.Extra;
+           
         }
 
         

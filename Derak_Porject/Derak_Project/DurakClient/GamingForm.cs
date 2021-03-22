@@ -30,7 +30,7 @@ namespace DurakClient
             players.AddNewPlayer(new DurakHuman());
 
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
-            cbTalon.Card = players.Talon;
+            pbDeck.Card = players.Talon;
             //pbDeck = new CardBox(new Card());
             players.StartGame();
         }
@@ -243,6 +243,20 @@ namespace DurakClient
             RealignCards(pnlCardHome);
             RealignCards(pnlCardAttack);
             RealignCards(pnlCardDefend);
+
+            foreach(DurakHand player in players.Players)
+            {
+                if(player != currentHumanPlayer)
+                {
+                    txtOpponent.Text = "["+player.Name + "] : " + player.Count + " cards";
+                }
+            }
+
+
+            //TODO CHANGE
+            txtDeck.Text = "Deck : " + players.deck.Count;
+            txtDiscard.Text = "Discard : " + players.DiscardPile.Count;
+
         }
 
         private void Turn_Begin(object sender, EventArgs e)
@@ -272,6 +286,11 @@ namespace DurakClient
                 Console.WriteLine(set.ToString());
             }
             currentHumanPlayer.EndTurn();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

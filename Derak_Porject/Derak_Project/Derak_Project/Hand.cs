@@ -12,10 +12,16 @@ namespace Derak_Project
     public abstract class Hand : Cards
     {
 
-
+        protected string name;
+        public string Name { get { return name; } set { name = value; } }
         public static event EventHandler TurnEndEvent;
         public static event EventHandler TurnBeginEvent;
         public static event EventHandler<Card> CardPlayed;
+
+        public Hand()
+        {
+            name = this.GetHashCode().ToString();
+        }
 
         public abstract void TakeTurn();
 
