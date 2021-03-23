@@ -29,8 +29,9 @@ namespace DurakClient
         /// </summary>
         private void InitializeComponent()
         {
-            Derak_Project.Card card7 = new Derak_Project.Card();
-            Derak_Project.Card card8 = new Derak_Project.Card();
+            this.components = new System.ComponentModel.Container();
+            Derak_Project.Card card3 = new Derak_Project.Card();
+            Derak_Project.Card card4 = new Derak_Project.Card();
             this.btnDebug = new System.Windows.Forms.Button();
             this.pnlCardHome = new System.Windows.Forms.Panel();
             this.pnlCardDefend = new System.Windows.Forms.Panel();
@@ -40,6 +41,8 @@ namespace DurakClient
             this.txtOpponent = new System.Windows.Forms.TextBox();
             this.txtDiscard = new System.Windows.Forms.TextBox();
             this.txtDeck = new System.Windows.Forms.TextBox();
+            this.txtLog = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cardBox1 = new CardBox1.CardBox();
             this.pbDeck = new CardBox1.CardBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -128,12 +131,27 @@ namespace DurakClient
             this.txtDeck.Size = new System.Drawing.Size(100, 20);
             this.txtDeck.TabIndex = 19;
             // 
+            // txtLog
+            // 
+            this.txtLog.Location = new System.Drawing.Point(803, 12);
+            this.txtLog.Multiline = true;
+            this.txtLog.Name = "txtLog";
+            this.txtLog.ReadOnly = true;
+            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtLog.Size = new System.Drawing.Size(289, 426);
+            this.txtLog.TabIndex = 20;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // cardBox1
             // 
-            card7.FaceUp = false;
-            card7.rank = Derak_Project.Rank.Eight;
-            card7.suit = Derak_Project.Suit.Diamond;
-            this.cardBox1.Card = card7;
+            card3.FaceUp = false;
+            card3.rank = Derak_Project.Rank.Eight;
+            card3.suit = Derak_Project.Suit.Diamond;
+            this.cardBox1.Card = card3;
             this.cardBox1.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.cardBox1.FaceUp = false;
             this.cardBox1.Location = new System.Drawing.Point(22, 248);
@@ -145,10 +163,10 @@ namespace DurakClient
             // 
             // pbDeck
             // 
-            card8.FaceUp = false;
-            card8.rank = Derak_Project.Rank.Eight;
-            card8.suit = Derak_Project.Suit.Diamond;
-            this.pbDeck.Card = card8;
+            card4.FaceUp = false;
+            card4.rank = Derak_Project.Rank.Eight;
+            card4.suit = Derak_Project.Suit.Diamond;
+            this.pbDeck.Card = card4;
             this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.pbDeck.FaceUp = false;
             this.pbDeck.Location = new System.Drawing.Point(22, 75);
@@ -162,7 +180,8 @@ namespace DurakClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1104, 450);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.txtDeck);
             this.Controls.Add(this.txtDiscard);
             this.Controls.Add(this.txtOpponent);
@@ -194,6 +213,8 @@ namespace DurakClient
         private System.Windows.Forms.TextBox txtOpponent;
         private System.Windows.Forms.TextBox txtDiscard;
         private System.Windows.Forms.TextBox txtDeck;
+        private System.Windows.Forms.TextBox txtLog;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

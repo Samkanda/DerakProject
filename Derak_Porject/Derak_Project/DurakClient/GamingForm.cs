@@ -26,13 +26,13 @@ namespace DurakClient
             InitializeComponent();
             players.AddNewPlayer(new DurakComputer());
             players.AddNewPlayer(new DurakHuman());
-            //players.AddNewPlayer(new DurakComputer());
-            //players.AddNewPlayer(new DurakComputer());
+            players.AddNewPlayer(new DurakComputer());
+            players.AddNewPlayer(new DurakComputer());
 
             players.Players[0].Name = "Computer 1";
             players.Players[1].Name = "You";
-            //players.Players[2].Name = "Computer 2";
-            //players.Players[3].Name = "Computer 3";
+            players.Players[2].Name = "Computer 2";
+            players.Players[3].Name = "Computer 3";
 
 
 
@@ -77,7 +77,7 @@ namespace DurakClient
                         // Add the control to the play panel
                         pnlCardHome.Controls.Remove(aCardBox);
                         RealignCards(pnlCardHome);
-                        if(currentHumanPlayer == players.Attacker)
+                        if(currentHumanPlayer == players.Attacker || currentHumanPlayer.Role == DurakRole.Extra)
                         {
                             pnlCardAttack.Controls.Add(aCardBox);
                             RealignCards(pnlCardAttack);
@@ -264,6 +264,7 @@ namespace DurakClient
             //TODO CHANGE
             txtDeck.Text = "Deck : " + players.deck.Count;
             txtDiscard.Text = "Discard : " + players.DiscardPile.Count;
+            txtLog.Text = players.Log;
 
         }
 

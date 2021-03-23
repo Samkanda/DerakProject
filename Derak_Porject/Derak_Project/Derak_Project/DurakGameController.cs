@@ -30,6 +30,10 @@ namespace Derak_Project
 
         private Card talon;
 
+        private string log = "";
+        public string Log { get { return log; } }
+
+
         public Card Talon
         {
             get { return talon; }
@@ -66,6 +70,7 @@ namespace Derak_Project
                     if(playingField.Count == 0)
                     {
                         playingField.Add(new DurakBattle(cardPlayed));
+                        log += Environment.NewLine +" attacked with " + cardPlayed.ToString();
                         used = true;
                     } 
                     else
@@ -85,6 +90,7 @@ namespace Derak_Project
                         if (rankAvailable)
                         {
                             playingField.Add(new DurakBattle(cardPlayed));
+                            log += Environment.NewLine +" attacked with " + cardPlayed.ToString();
                             used = true;
                         }
                     }
@@ -106,6 +112,7 @@ namespace Derak_Project
                             if((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
                             {
                                 playingField[currentIndex].Defense = cardPlayed;
+                                log += Environment.NewLine +" defended with " + cardPlayed.ToString();
                             } else
                             {
                                 throw new InvalidPlayException("You cannot do that, not higher");
@@ -114,6 +121,7 @@ namespace Derak_Project
                         else if (cardPlayed.suit == talon.suit)
                         {
                             playingField[currentIndex].Defense = cardPlayed;
+                            log += Environment.NewLine +" defended with " + cardPlayed.ToString();
                         }
                         else
                         {
@@ -129,12 +137,41 @@ namespace Derak_Project
             }
             else if (players[caret].Role == DurakRole.Extra)
             {
-                Console.WriteLine(cardPlayed.ToString());
-                throw new NotImplementedException("role not implemented");
-            }
-            else
-            {
-                throw new NotImplementedException("role not implemented");
+                //TODO same as attack function move to its own thing?
+                bool used = false;
+                if (playingField.Count < 6 && defender.Count > 0)
+                {
+                    if (playingField.Count == 0)
+                    {
+                        playingField.Add(new DurakBattle(cardPlayed));
+                        log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
+                        used = true;
+                    } else
+                    {
+                        bool rankAvailable = false;
+                        foreach (DurakBattle front in playingField)
+                        {
+                            if (front.Attack.rank == cardPlayed.rank)
+                            {
+                                rankAvailable = true;
+                            }
+                            if (front.Defense != null && front.Defense.rank == cardPlayed.rank)
+                            {
+                                rankAvailable = true;
+                            }
+                        }
+                        if (rankAvailable)
+                        {
+                            playingField.Add(new DurakBattle(cardPlayed));
+                            log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
+                            used = true;
+                        }
+                    }
+                }
+                if (!used)
+                {
+                    throw new InvalidPlayException("You cannot do that");
+                }
             }
 
             //this is currently implemented elsewhere
@@ -262,6 +299,8 @@ namespace Derak_Project
                 caret = 0;
             }
             //players[caret].DrawToMinimum(deck);
+            log += Environment.NewLine + Environment.NewLine + players[caret].Role + " | " + players[caret].Name + Environment.NewLine +
+                "=============================";
             players[caret].UpdateInfo(playingField);
             players[caret].TakeTurn();
         }
