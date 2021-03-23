@@ -30,8 +30,9 @@ namespace DurakClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Derak_Project.Card card3 = new Derak_Project.Card();
-            Derak_Project.Card card4 = new Derak_Project.Card();
+            Derak_Project.Card card7 = new Derak_Project.Card();
+            Derak_Project.Card card8 = new Derak_Project.Card();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamingForm));
             this.btnDebug = new System.Windows.Forms.Button();
             this.pnlCardHome = new System.Windows.Forms.Panel();
             this.pnlCardDefend = new System.Windows.Forms.Panel();
@@ -56,6 +57,7 @@ namespace DurakClient
             this.btnDebug.TabIndex = 5;
             this.btnDebug.Text = "Debug";
             this.btnDebug.UseVisualStyleBackColor = true;
+            this.btnDebug.Visible = false;
             this.btnDebug.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlCardHome
@@ -148,10 +150,10 @@ namespace DurakClient
             // 
             // cardBox1
             // 
-            card3.FaceUp = false;
-            card3.rank = Derak_Project.Rank.Eight;
-            card3.suit = Derak_Project.Suit.Diamond;
-            this.cardBox1.Card = card3;
+            card7.FaceUp = false;
+            card7.rank = Derak_Project.Rank.Eight;
+            card7.suit = Derak_Project.Suit.Diamond;
+            this.cardBox1.Card = card7;
             this.cardBox1.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.cardBox1.FaceUp = false;
             this.cardBox1.Location = new System.Drawing.Point(22, 248);
@@ -163,10 +165,10 @@ namespace DurakClient
             // 
             // pbDeck
             // 
-            card4.FaceUp = false;
-            card4.rank = Derak_Project.Rank.Eight;
-            card4.suit = Derak_Project.Suit.Diamond;
-            this.pbDeck.Card = card4;
+            card8.FaceUp = false;
+            card8.rank = Derak_Project.Rank.Eight;
+            card8.suit = Derak_Project.Suit.Diamond;
+            this.pbDeck.Card = card8;
             this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.pbDeck.FaceUp = false;
             this.pbDeck.Location = new System.Drawing.Point(22, 75);
@@ -180,6 +182,7 @@ namespace DurakClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1104, 450);
             this.Controls.Add(this.txtLog);
             this.Controls.Add(this.txtDeck);
