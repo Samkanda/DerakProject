@@ -199,7 +199,7 @@ namespace Derak_Project
                         players[caret].AddRange(bout.Retrieve());
                     }
                     playingField.Clear();
-                    MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                    log += Environment.NewLine + Environment.NewLine + players[caret].Name + " has ended their turn and has lost the round";
                     CalculateRoles();
                     Deal();
                     DropPlayers();
@@ -222,7 +222,7 @@ namespace Derak_Project
                         DiscardPile.AddRange(bout.Retrieve());
                     }
                     playingField.Clear();
-                    MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
+                    log += Environment.NewLine + Environment.NewLine + players[caret].Name + " has ended their turn and has lost the round";
                     CalculateRoles();
                     Deal();
                     DropPlayers();
@@ -286,7 +286,7 @@ namespace Derak_Project
                     defender.Role = DurakRole.Defender;
                 }
             }
-
+            log += Environment.NewLine + Environment.NewLine + Attacker.Name + " is the attacker and " + defender.Name + " is the defender";
 
         }
 
