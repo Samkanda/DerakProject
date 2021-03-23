@@ -265,6 +265,10 @@ namespace DurakClient
             txtDeck.Text = "Deck : " + players.deck.Count;
             txtDiscard.Text = "Discard : " + players.DiscardPile.Count;
             txtLog.Text = players.Log;
+            txtLog.Focus();
+            txtLog.ScrollToCaret();
+            pnlCardHome.Focus();
+            //txtLog.AppendText("");
 
         }
 
