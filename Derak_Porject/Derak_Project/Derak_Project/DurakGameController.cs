@@ -17,7 +17,7 @@ namespace Derak_Project
         private List<DurakBattle> playingField;
         public IList<DurakBattle> PlayingField { get { return playingField.AsReadOnly(); } }
 
-        public List<DurakHand> players;
+        private List<DurakHand> players;
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
 
         public Cards DiscardPile;
@@ -57,10 +57,6 @@ namespace Derak_Project
 
         private void playCard(Card cardPlayed)
         {
-            //if(caret < 0)
-            //{
-            //    caret = players.Count - 1;
-            //}
 
             if(players[caret].Role == DurakRole.Attacker)
             {
@@ -131,11 +127,11 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-            //else if (players[caret].Role == DurakRole.Extra)
-            //{
-            //    Console.WriteLine(cardPlayed.ToString());
-            //    playingField.Add(new DurakBattle(cardPlayed));
-            //}
+            else if (players[caret].Role == DurakRole.Extra)
+            {
+                Console.WriteLine(cardPlayed.ToString());
+                throw new NotImplementedException("role not implemented");
+            }
             else
             {
                 throw new NotImplementedException("role not implemented");
@@ -157,7 +153,7 @@ namespace Derak_Project
                     if(bout.Defense == null)
                     {
                         loser = true;
-                    }
+                    } 
                 }
                 if (loser)
                 {
@@ -169,6 +165,7 @@ namespace Derak_Project
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
                     CalculateRoles();
                     Deal();
+                    DropPlayers();
                 }
             }
             else if (players[caret] == attacker)
@@ -191,14 +188,46 @@ namespace Derak_Project
                     MessageBox.Show(players[caret].Role + " " + players[caret].Name + " has lost");
                     CalculateRoles();
                     Deal();
+                    DropPlayers();
                 }
             }
-            NewTurn();
+
+            if(players.Count > 1)
+            {
+                NewTurn();
+            } 
+            else
+            {
+                if(players.Count == 0)
+                {
+                    MessageBox.Show("TIE");
+                } 
+                else
+                {
+                    MessageBox.Show(players[0].Name+" is the durak");
+                }
+            }
         }
 
-        //TODO make work for 4 players?
+        private void DropPlayers()
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                if(players[i].Count == 0)
+                {
+                    players.RemoveAt(i);
+                }
+            }
+        }
+
+
+        //TODO make work for 4 players? I think it works
         private void CalculateRoles()
         {
+            foreach(DurakHand player in players)
+            {
+                player.Role = DurakRole.Extra;
+            }
             if(caret +1 >= players.Count)
             {
                 attacker = players[0];

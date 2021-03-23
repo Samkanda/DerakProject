@@ -28,13 +28,17 @@ namespace Derak_Project
         {
             if (IsTurn)
             {
+                IsTurn = false;
                 SendTurnEndEvent();
             }
         }
 
         public void PlayerPlayCard(Card target)
         {
-            PlayCard(GetTargetIndex(target));
+            if (IsTurn)
+            {
+                PlayCard(GetTargetIndex(target));
+            }
         }
 
 
