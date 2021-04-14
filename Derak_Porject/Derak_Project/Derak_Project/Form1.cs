@@ -1,4 +1,12 @@
-﻿using System;
+﻿///---------------------------------------------------------------------------------
+///   Namespace:        Derak_Project
+///   Class:            Card
+///   Description:      Handles different card states
+///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
+///   Date:             April 14, 2021
+///---------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,10 +17,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
-
-// NOTE: dont write any game logic in here, its bad, write it in the classes.
 namespace Derak_Project
 {
+    /// <summary>
+    /// Form class, handles UI elements
+    /// </summary>
     public partial class Form1 : Form
     {
         DurakGameController players = new DurakGameController();

@@ -1,159 +1,136 @@
-﻿//PlayingCard Class
-//By Navpreet Kanda
-//Date 2021-03-13
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System;
-using System.Drawing;
-namespace Derak_Project
-{
-    /// <summary>
-    /// 
-    /// </summary>
-    public class PlayingCard : ICloneable, IComparable
-    {
-        #region Fields and Properties
+﻿/////---------------------------------------------------------------------------------
+/////   Namespace:        Derak_Project
+/////   Class:            Card
+/////   Description:      Handles different card states
+/////   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
+/////   Date:             April 14, 2021
+/////---------------------------------------------------------------------------------
 
-        protected Suit mySuit;
-        public Suit Suit
-        {
-            get { return mySuit; } // return the suit
-            set { mySuit = value; }
-        }
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+//using System;
+//using System.Drawing;
+//namespace Derak_Project
+//{
+//    /// <summary>
+//    /// 
+//    /// </summary>
+//    public class PlayingCard : ICloneable, IComparable
+//    {
+//        #region Fields and Properties
 
-        protected Rank myRank;
-        public Rank Rank
-        {
-            get { return myRank; } // retrun the suit
-            set { myRank = value; }
-        }
+//        protected Suit mySuit;
+//        public Suit Suit
+//        {
+//            get { return mySuit; } // return the suit
+//            set { mySuit = value; }
+//        }
 
-        protected int myValue;
-        public int CardValue
-        {
-            get { return myValue; }
-            set { myValue = value; }
-        }
+//        protected Rank myRank;
+//        public Rank Rank
+//        {
+//            get { return myRank; } // retrun the suit
+//            set { myRank = value; }
+//        }
 
-        protected int? altValue = null;
-        public int? AlternateValue
-        {
-            get { return altValue; }
-            set { altValue = value; }
-        }
+//        protected int myValue;
+//        public int CardValue
+//        {
+//            get { return myValue; }
+//            set { myValue = value; }
+//        }
 
-        protected bool faceUp = false;
-        public bool FaceUp
-        {
-            get { return faceUp; }
-            set { faceUp = value; }
-        }
-        #endregion
+//        protected int? altValue = null;
+//        public int? AlternateValue
+//        {
+//            get { return altValue; }
+//            set { altValue = value; }
+//        }
 
-        #region Constructor
-        public PlayingCard(Rank rank = Rank.Ace, Suit suit = Suit.Heart)
-        {
-            this.myRank = rank;
-            this.mySuit = suit;
-            this.myValue = (int)rank;
-        }
-        #endregion
+//        protected bool faceUp = false;
+//        public bool FaceUp
+//        {
+//            get { return faceUp; }
+//            set { faceUp = value; }
+//        }
+//        #endregion
 
-        #region Public Methods
+//        #region Constructor
+//        public PlayingCard(Rank rank = Rank.Ace, Suit suit = Suit.Heart)
+//        {
+//            this.myRank = rank;
+//            this.mySuit = suit;
+//            this.myValue = (int)rank;
+//        }
+//        #endregion
 
-        public virtual int CompareTo(object obj)
-        {
-            if (obj == null)
-            {
-                throw new ArgumentNullException("Unable to compare a Card to a null object");
-            }
-            PlayingCard compareCard = obj as PlayingCard;
-            if (compareCard != null)
-            {
-                int thisSort = this.myValue * 10 + (int)this.mySuit;
-                int compareCardSort = compareCard.myValue * 10 + (int)compareCard.mySuit;
-                return (thisSort.CompareTo(compareCardSort));
-            }
-            else
-            {
-                throw new ArgumentException("Object being compared cannot be converted to a Card");
-            }
-        }
+//        #region Public Methods
 
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
+//        public virtual int CompareTo(object obj)
+//        {
+//            if (obj == null)
+//            {
+//                throw new ArgumentNullException("Unable to compare a Card to a null object");
+//            }
+//            PlayingCard compareCard = obj as PlayingCard;
+//            if (compareCard != null)
+//            {
+//                int thisSort = this.myValue * 10 + (int)this.mySuit;
+//                int compareCardSort = compareCard.myValue * 10 + (int)compareCard.mySuit;
+//                return (thisSort.CompareTo(compareCardSort));
+//            }
+//            else
+//            {
+//                throw new ArgumentException("Object being compared cannot be converted to a Card");
+//            }
+//        }
 
-        public override bool Equals(object obj)
-        {
-            return (this.CardValue == ((PlayingCard)obj).CardValue);
-        }
+//        public object Clone()
+//        {
+//            return this.MemberwiseClone();
+//        }
 
-        public override int GetHashCode()
-        {
-            return this.myValue * 100 + (int)this.mySuit * 10 + ((this.faceUp) ? 1 : 0);
-        }
+//        public override bool Equals(object obj)
+//        {
+//            return (this.CardValue == ((PlayingCard)obj).CardValue);
+//        }
 
-        public Image GetCardImage()
-        {
-            string imageName;
-            Image cardImage;
-            if (!faceUp)
-            {
-                imageName = "Back";
-            }
-            else
-            {
-                imageName = mySuit.ToString() + "_" + myRank.ToString();
-            }
-            cardImage = Derak_Project.Properties.Resources.ResourceManager.GetObject(imageName) as Image;
-            return cardImage;
-        }
+//        public override int GetHashCode()
+//        {
+//            return this.myValue * 100 + (int)this.mySuit * 10 + ((this.faceUp) ? 1 : 0);
+//        }
 
-        public string DebugString()
-        {
-            string cardState = (string)(myRank.ToString() + " of " + mySuit.ToString()).PadLeft(20);
-            cardState += (string)((FaceUp) ? "(Face Up)" : "(Face Down)").PadLeft(12);
-            cardState += " Value: " + myValue.ToString().PadLeft(2);
-            cardState += ((altValue != null) ? "/" + altValue.ToString() : "");
-            return cardState;
-        }
-        #endregion
+//        public Image GetCardImage()
+//        {
+//            string imageName;
+//            Image cardImage;
+//            if (!faceUp)
+//            {
+//                imageName = "Back";
+//            }
+//            else
+//            {
+//                imageName = mySuit.ToString() + "_" + myRank.ToString();
+//            }
+//            cardImage = Derak_Project.Properties.Resources.ResourceManager.GetObject(imageName) as Image;
+//            return cardImage;
+//        }
 
-        #region Relational Operator
-        public static bool operator ==(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue == right.CardValue);
-        }
+//        public string DebugString()
+//        {
+//            string cardState = (string)(myRank.ToString() + " of " + mySuit.ToString()).PadLeft(20);
+//            cardState += (string)((FaceUp) ? "(Face Up)" : "(Face Down)").PadLeft(12);
+//            cardState += " Value: " + myValue.ToString().PadLeft(2);
+//            cardState += ((altValue != null) ? "/" + altValue.ToString() : "");
+//            return cardState;
+//        }
+//        #endregion
 
-        public static bool operator !=(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue != right.CardValue);
-        }
-
-        public static bool operator <(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue < right.CardValue);
-        }
-
-        public static bool operator >(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue > right.CardValue);
-        }
-
-        public static bool operator <=(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue <= right.CardValue);
-        }
-
-        public static bool operator >=(PlayingCard left, PlayingCard right)
-        {
-            return (left.CardValue >= right.CardValue);
-        }
-        #endregion
-    }
-}
+//        #region Relational Operator
+        
+//        #endregion
+//    }
+//}
