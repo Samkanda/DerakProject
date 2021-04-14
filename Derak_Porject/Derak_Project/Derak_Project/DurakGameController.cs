@@ -21,6 +21,10 @@ namespace Derak_Project
 
         public Cards DiscardPile;
 
+        private const bool perevodnoy = true;
+
+        private bool cardFreeze = false;
+
         private DurakHand attacker;
         public DurakHand Attacker { get { return attacker; } }
 
@@ -63,7 +67,10 @@ namespace Derak_Project
 
         private void playCard(Card cardPlayed)
         {
-
+            if (cardFreeze)
+            {
+                throw new InvalidPlayException("You cannot play anymore cards this turn");
+            }
             if(activePlayer.Role == DurakRole.Attacker)
             {
                 bool used = false;
@@ -104,37 +111,64 @@ namespace Derak_Project
             }
             else if (activePlayer.Role == DurakRole.Defender)
             {
-                int currentIndex;
-                for(currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
+                bool perevodnoySuccess = perevodnoy;
+                if (perevodnoy)
                 {
-                    if(playingField[currentIndex].Defense == null)
+                    for (int i = 0; i < playingField.Count; i++)
                     {
-                        if (cardPlayed.suit == playingField[currentIndex].Attack.suit)
+                        if (playingField[i].Defense != null || cardPlayed.rank != playingField[i].Attack.rank)
                         {
-                            if((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
-                            {
-                                playingField[currentIndex].Defense = cardPlayed;
-                                log += Environment.NewLine +" defended with " + cardPlayed.ToString();
-                            } else
-                            {
-                                throw new InvalidPlayException("You cannot do that, not higher");
-                            }
+                            perevodnoySuccess = false;
                         }
-                        else if (cardPlayed.suit == talon.suit)
-                        {
-                            playingField[currentIndex].Defense = cardPlayed;
-                            log += Environment.NewLine +" defended with " + cardPlayed.ToString();
-                        }
-                        else
-                        {
-                            throw new InvalidPlayException("You cannot do that, wrong suit");
-                        }
-                        break;
+                    }
+                    if(perevodnoySuccess)
+                    {
+                        perevodnoySuccess = Next(ActivePlayer).Count >= playingField.Count + 1;
                     }
                 }
-                if(currentIndex >= playingField.Count)
+                if (perevodnoySuccess)
                 {
-                    throw new InvalidPlayException("You cannot do that");
+                    //throw new InvalidPlayException("THIS WOULD PASS << PH");
+                    playingField.Add(new DurakBattle(cardPlayed));
+                    log += Environment.NewLine + " passed the attack with " + cardPlayed.ToString();
+                    activePlayer = Previous(ActivePlayer);
+                    SwitchRoles();
+                    activePlayer = Next(ActivePlayer);
+                    cardFreeze = true;
+                    
+                } 
+                else
+                {
+                    int currentIndex;
+                    for (currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
+                    {
+                        if (playingField[currentIndex].Defense == null)
+                        {
+                            if (cardPlayed.suit == playingField[currentIndex].Attack.suit)
+                            {
+                                if ((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
+                                {
+                                    playingField[currentIndex].Defense = cardPlayed;
+                                    log += Environment.NewLine + " defended with " + cardPlayed.ToString();
+                                } else
+                                {
+                                    throw new InvalidPlayException("You cannot do that, not higher");
+                                }
+                            } else if (cardPlayed.suit == talon.suit)
+                            {
+                                playingField[currentIndex].Defense = cardPlayed;
+                                log += Environment.NewLine + " defended with " + cardPlayed.ToString();
+                            } else
+                            {
+                                throw new InvalidPlayException("You cannot do that, wrong suit");
+                            }
+                            break;
+                        }
+                    }
+                    if (currentIndex >= playingField.Count)
+                    {
+                        throw new InvalidPlayException("You cannot do that");
+                    }
                 }
             }
             else if (activePlayer.Role == DurakRole.Extra)
@@ -179,6 +213,8 @@ namespace Derak_Project
 
         private void EndOfTurn()
         {
+            cardFreeze = false;
+
             bool loser = false;
             if(activePlayer == defender)
             {
@@ -317,6 +353,11 @@ namespace Derak_Project
             {
                 player.Role = DurakRole.Extra;
             }
+            SwitchRoles();
+        }
+
+        private void SwitchRoles()
+        {
             attacker = Next(activePlayer);
             attacker.Role = DurakRole.Attacker;
             defender = Next(Next(activePlayer));
