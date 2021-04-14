@@ -1,7 +1,7 @@
 ﻿///---------------------------------------------------------------------------------
 ///   Namespace:        Derak_Project
-///   Class:            Card
-///   Description:      Handles different card states
+///   Class:            Deck
+///   Description:      Essentially handles deck shuffling
 ///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
 ///   Date:             April 14, 2021
 ///---------------------------------------------------------------------------------
@@ -14,8 +14,12 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
+    /// <summary>
+    /// Deck class inherits Cards class
+    /// </summary>
     public class Deck : Cards
     {
+        // 0 References, contructor not used anywhere...?
         public Deck()
         {
             /* I want this back
@@ -28,10 +32,12 @@ namespace Derak_Project
             }*/
         }
 
-
         /// <summary>
-        /// randomizes order of deck
+        /// Shuffle function randomizes positions of cards in deck
         /// </summary>
+        /// <returns>
+        /// New shuffled deck (list of card objects)
+        /// </returns>
         public void Shuffle()
         {
             Cards newDeck = new Cards();

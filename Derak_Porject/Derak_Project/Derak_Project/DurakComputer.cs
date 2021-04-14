@@ -1,7 +1,7 @@
 ﻿///---------------------------------------------------------------------------------
 ///   Namespace:        Derak_Project
-///   Class:            Card
-///   Description:      Handles different card states
+///   Class:            DurakComputer
+///   Description:      Handles basic computer ai by iterating all playable moves
 ///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
 ///   Date:             April 14, 2021
 ///---------------------------------------------------------------------------------
@@ -14,16 +14,23 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
+    /// <summary>
+    /// DurakComputer class inherits DurakHand class
+    /// </summary>
     public class DurakComputer : DurakHand
     {
-
+        /// <summary>
+        /// DurakComputer constructor
+        /// </summary>
         public DurakComputer() : base()
         {
             Role = DurakRole.Extra;
            
         }
 
-        
+        /// <summary>
+        /// TakeTurn() function handles computer moves (iterates all playable - basic ai)
+        /// </summary>
         public override void TakeTurn()
         {
             SendTurnbeginEvent();
@@ -33,7 +40,6 @@ namespace Derak_Project
                 try
                 {
                     PlayCard(i);
-                    //break;
                 } 
                 catch (Exception e)
                 {
@@ -41,8 +47,6 @@ namespace Derak_Project
                 }
             }
 
-
-            
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }

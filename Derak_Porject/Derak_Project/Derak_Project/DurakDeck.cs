@@ -14,6 +14,9 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class DurakDeck : Deck
     {
         public DurakDeck()
