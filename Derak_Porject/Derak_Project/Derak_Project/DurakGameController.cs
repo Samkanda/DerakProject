@@ -10,7 +10,6 @@ namespace Derak_Project
 {
     public class DurakGameController
     {
-        private int caret = -1;
         //TODO: switch to private? possibly take out of controller
         public DurakDeck deck;
 
@@ -27,6 +26,9 @@ namespace Derak_Project
 
         private DurakHand defender;
         public DurakHand Defender { get { return defender; } }
+
+        private DurakHand activePlayer;
+        public DurakHand ActivePlayer { get { return activePlayer; } }
 
         private Card talon;
 
@@ -62,7 +64,7 @@ namespace Derak_Project
         private void playCard(Card cardPlayed)
         {
 
-            if(players[caret].Role == DurakRole.Attacker)
+            if(activePlayer.Role == DurakRole.Attacker)
             {
                 bool used = false;
                 if (playingField.Count < 6 && defender.Count > 0)
@@ -100,7 +102,7 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-            else if (players[caret].Role == DurakRole.Defender)
+            else if (activePlayer.Role == DurakRole.Defender)
             {
                 int currentIndex;
                 for(currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
@@ -135,7 +137,7 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-            else if (players[caret].Role == DurakRole.Extra)
+            else if (activePlayer.Role == DurakRole.Extra)
             {
                 //TODO same as attack function move to its own thing?
                 bool used = false;
@@ -173,17 +175,12 @@ namespace Derak_Project
                     throw new InvalidPlayException("You cannot do that");
                 }
             }
-
-            //this is currently implemented elsewhere
-            //players[caret].Extract(cardPlayed);
-
-
         }
 
         private void EndOfTurn()
         {
             bool loser = false;
-            if(players[caret] == defender)
+            if(activePlayer == defender)
             {
                 foreach(DurakBattle bout in playingField)
                 {
@@ -196,16 +193,15 @@ namespace Derak_Project
                 {
                     foreach (DurakBattle bout in playingField)
                     {
-                        players[caret].AddRange(bout.Retrieve());
+                        activePlayer.AddRange(bout.Retrieve());
                     }
                     playingField.Clear();
-                    log += Environment.NewLine + Environment.NewLine + players[caret].Name + " has ended their turn and has lost the round";
+                    log += Environment.NewLine + Environment.NewLine + activePlayer.Name + " has ended their turn and has lost the round";
+                    Deal(); 
                     CalculateRoles();
-                    Deal();
-                    DropPlayers();
                 }
             }
-            else if (players[caret] == attacker)
+            else if (activePlayer == attacker)
             {
                 loser = true;
                 foreach (DurakBattle bout in playingField)
@@ -222,10 +218,9 @@ namespace Derak_Project
                         DiscardPile.AddRange(bout.Retrieve());
                     }
                     playingField.Clear();
-                    log += Environment.NewLine + Environment.NewLine + players[caret].Name + " has ended their turn and has lost the round";
-                    CalculateRoles();
+                    log += Environment.NewLine + Environment.NewLine + activePlayer.Name + " has ended their turn and has lost the round";
                     Deal();
-                    DropPlayers();
+                    CalculateRoles();
                 }
             }
 
@@ -246,63 +241,99 @@ namespace Derak_Project
             }
         }
 
-        private void DropPlayers()
+        public DurakHand Next(DurakHand startPlayer)
         {
+            if(players.Count > 0)
+            {
+                for (int i = 0; i < players.Count; i++)
+                {
+                    if (startPlayer == players[i])
+                    {
+                        if (i + 1 == players.Count)
+                        {
+                            return players[0];
+                        } else
+                        {
+                            return players[i + 1];
+                        }
+                    }
+                }
+                throw new ArgumentOutOfRangeException("", "hand is not in game");
+            }
+            return null;
+        }
+        public DurakHand Previous(DurakHand startPlayer)
+        {
+            if (players.Count > 0)
+            {
+                for (int i = 0; i < players.Count; i++)
+                {
+                    if (startPlayer == players[i])
+                    {
+                        if (i - 1 < 0)
+                        {
+                            return players[players.Count - 1];
+                        } else
+                        {
+                            return players[i - 1];
+                        }
+                    }
+                }
+                throw new ArgumentOutOfRangeException("", "hand is not in game");
+            }
+            return null;
+        }
+
+
+        private void CalculateRoles()
+        {
+            Deal();
+
             for (int i = 0; i < players.Count; i++)
             {
-                if(players[i].Count == 0)
+                if (players[i].Count == 0 && players[i].Role == DurakRole.Extra)
                 {
                     players.RemoveAt(i);
                 }
             }
-        }
+            if(attacker != null && defender != null)
+            {
+                if (attacker.Count < 1 || defender.Count < 1)
+                {
+                    activePlayer = Previous(activePlayer);
+                }
+            }
+            
 
+            for (int i = 0; i < players.Count; i++)
+            {
+                if (players[i].Count == 0 && players[i].Role != DurakRole.Extra)
+                {
+                    players.RemoveAt(i);
+                }
+            }
 
-        //TODO make work for 4 players? I think it works
-        private void CalculateRoles()
-        {
-            foreach(DurakHand player in players)
+            foreach (DurakHand player in players)
             {
                 player.Role = DurakRole.Extra;
             }
-            if(caret +1 >= players.Count)
-            {
-                attacker = players[0];
-                attacker.Role = DurakRole.Attacker;
-                defender = players[1];
-                defender.Role = DurakRole.Defender;
-            } 
-            else
-            {
-                attacker = players[caret+1];
-                attacker.Role = DurakRole.Attacker;
-                if (caret + 2 >= players.Count)
-                {
-                    defender = players[0];
-                    defender.Role = DurakRole.Defender;
-                } else
-                {
-                    defender = players[caret + 2];
-                    defender.Role = DurakRole.Defender;
-                }
-            }
+            attacker = Next(activePlayer);
+            attacker.Role = DurakRole.Attacker;
+            defender = Next(Next(activePlayer));
+            defender.Role = DurakRole.Defender;
             log += Environment.NewLine + Environment.NewLine + Attacker.Name + " is the attacker and " + defender.Name + " is the defender";
-
         }
 
 
         private void NewTurn()
         {
-            caret++;
-            if (caret >= players.Count)
-            {
-                caret = 0;
-            }
-            //players[caret].DrawToMinimum(deck);
-            log += Environment.NewLine + Environment.NewLine + players[caret].Role + " | " + players[caret].Name + Environment.NewLine +
+            activePlayer = Next(activePlayer);
+            log += Environment.NewLine + Environment.NewLine + activePlayer.Role + " | " + activePlayer.Name + Environment.NewLine +
                 "=============================";
-            players[caret].UpdateInfo(playingField);
-            players[caret].TakeTurn();
+
+            
+            activePlayer.UpdateInfo(playingField);
+            activePlayer.TakeTurn();
         }
 
         public void Deal()
@@ -326,6 +357,8 @@ namespace Derak_Project
             {
                 throw new Exception("Not Enough Players");
             }
+            activePlayer = players[players.Count-1];
+
             CalculateRoles();
 
 

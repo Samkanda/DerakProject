@@ -26,13 +26,13 @@ namespace DurakClient
             InitializeComponent();
             players.AddNewPlayer(new DurakComputer());
             players.AddNewPlayer(new DurakHuman());
-            players.AddNewPlayer(new DurakComputer());
-            players.AddNewPlayer(new DurakComputer());
+            //players.AddNewPlayer(new DurakComputer());
+            //players.AddNewPlayer(new DurakComputer());
 
             players.Players[0].Name = "Computer 1";
             players.Players[1].Name = "You";
-            players.Players[2].Name = "Computer 2";
-            players.Players[3].Name = "Computer 3";
+            //players.Players[2].Name = "Computer 2";
+            //players.Players[3].Name = "Computer 3";
 
 
 
