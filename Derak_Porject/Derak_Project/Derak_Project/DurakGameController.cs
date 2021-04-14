@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//TODO REMOVE
-using System.Windows.Forms;
 
 namespace Derak_Project
 {
@@ -35,6 +33,8 @@ namespace Derak_Project
         public DurakHand ActivePlayer { get { return activePlayer; } }
 
         private Card talon;
+
+        public static event EventHandler GameEndEvent;
 
         private string log = "";
         public string Log { get { return log; } }
@@ -266,14 +266,15 @@ namespace Derak_Project
             } 
             else
             {
-                if(players.Count == 0)
+                GameEndEvent(this, new EventArgs());
+                /*if (players.Count == 0)
                 {
                     MessageBox.Show("TIE");
                 } 
                 else
                 {
                     MessageBox.Show(players[0].Name+" is the durak");
-                }
+                }//*/
             }
         }
 
