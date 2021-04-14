@@ -35,17 +35,91 @@ namespace Derak_Project
         {
             SendTurnbeginEvent();
 
-            for(int i = this.Count-1; i >= 0 ; i--)
-            {
-                try
-                {
-                    PlayCard(i);
-                } 
-                catch (Exception e)
-                {
+            
 
+            if (Role == DurakRole.Defender)
+            {
+                bool passable = true;
+                foreach(DurakBattle front in PlayingField)
+                {
+                    if(front.Defense != null)
+                    {
+                        passable = false;
+                    }
+                }
+                if (passable)
+                {
+                    for (int i = 0; i < Count; i++)
+                    {
+                        if (this[i].rank == PlayingField[0].Attack.rank)
+                        {
+                            try
+                            {
+                                PlayCard(i);
+                            } catch (Exception e) { }
+                        }
+                    }
+                } 
+                else
+                {
+                    foreach (DurakBattle front in PlayingField)
+                    {
+                        if (front.Defense == null)
+                        {
+                            int target = 0;
+                            for (int i = 0; i < Count; i++)
+                            {
+                                if (front.Attack.suit == this[i].suit && front.Attack.rank < this[i].rank)
+                                {
+                                    if (this[target].suit != this[i].suit || this[i].rank < this[target].rank)
+                                    {
+                                        target = i;
+                                    }
+                                }
+                            }
+                            try
+                            {
+                                PlayCard(target);
+                            } catch (Exception e) { }
+                        }
+                        if (front.Defense == null && front.Attack.suit != Trump)
+                        {
+                            int target = 0;
+                            for (int i = 0; i < Count; i++)
+                            {
+                                if (Trump == this[i].suit)
+                                {
+                                    if (this[target].suit != Trump || this[i].rank < this[target].rank)
+                                    {
+                                        target = i;
+                                    }
+                                }
+                            }
+                            try
+                            {
+                                PlayCard(target);
+                            } catch (Exception e) { }
+                        }
+                    }
+                }
+            } 
+            else
+            {
+                for (int i = this.Count - 1; i >= 0; i--)
+                {
+                    try
+                    {
+                        PlayCard(i);
+                    } catch (Exception e)
+                    {
+
+                    }
                 }
             }
+
+
+            
+
 
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT

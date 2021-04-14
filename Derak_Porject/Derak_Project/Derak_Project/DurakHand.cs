@@ -39,9 +39,16 @@ namespace Derak_Project
             get { return myPlayingField; }
         }
 
-        public void UpdateInfo(List<DurakBattle> Field)
+        private Suit myTrump;
+        protected Suit Trump
+        {
+            get { return myTrump; }
+        }
+
+        public void UpdateInfo(List<DurakBattle> Field, Suit trump)
         {
             myPlayingField = Field;
+            myTrump = trump;
         }
 
         public void DrawToMinimum(Cards drawPile)

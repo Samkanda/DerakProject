@@ -60,7 +60,7 @@ namespace Derak_Project
 
         public void AddNewPlayer(DurakHand playerNew)
         {
-            playerNew.UpdateInfo(playingField);
+            playerNew.UpdateInfo(playingField, talon.suit);
             playerNew.DrawToMinimum(deck);
             players.Add(playerNew);
         }
@@ -374,7 +374,7 @@ namespace Derak_Project
                 "=============================";
 
             
-            activePlayer.UpdateInfo(playingField);
+            activePlayer.UpdateInfo(playingField, talon.suit);
             activePlayer.TakeTurn();
         }
 
