@@ -19,6 +19,7 @@ namespace Derak_Project
     /// </summary>
     public enum Suit
     {
+        // All suits according to num
         Club = 1,
         Diamond = 2,
         Heart = 3,

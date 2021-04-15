@@ -19,7 +19,7 @@ namespace Derak_Project
     /// </summary>
     public enum Rank
     {
-        
+        // All ranks according to num
         Two = 2,
         Three = 3,
         Four = 4,

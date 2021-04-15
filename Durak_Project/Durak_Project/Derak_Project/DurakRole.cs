@@ -19,6 +19,7 @@ namespace Derak_Project
     /// </summary>
     public enum DurakRole
     {
+        // 3 different nums for each role type
         Attacker = 1,
         Defender = 2,
         Extra = 3,
