@@ -57,19 +57,36 @@ namespace Derak_Project
             get { return myPlayingField; }
         }
 
+        /// <summary>
+        /// Auto-property field for suit trump
+        /// </summary>
+        /// <returns>
+        /// The trump suit to be used
+        /// </returns>
         private Suit myTrump;
         protected Suit Trump
         {
             get { return myTrump; }
         }
 
+        /// <summary>
+        /// Auto-property field for remaining draws count
+        /// </summary>
+        /// <returns>
+        /// An integer representing the remaining draws
+        /// </returns>
         private int remainingDraws;
         protected int RemainingDraws
         {
             get { return remainingDraws; }
         }
 
-
+        /// <summary>
+        /// Update info function to update game state information
+        /// </summary>
+        /// <param name="Field">Cards on field</param>
+        /// <param name="trump">The trump card suit</param>
+        /// <param name="remaining">The remaining draws</param>
         public void UpdateInfo(List<DurakBattle> Field, Suit trump, int remaining)
         {
             myPlayingField = Field;
@@ -92,11 +109,14 @@ namespace Derak_Project
         /// <param name="index">Index of card play</param>
         protected void PlayCard(int index)
         {
+            // Try playing a card at given index
             try
             {
                 SendCardPlayed(this[index]);
                 Extract(this[index]);
-            } 
+            }
+
+            // If it isn't a valid play, exception is handled accordingly
             catch(Exception e)
             {
                 throw e;

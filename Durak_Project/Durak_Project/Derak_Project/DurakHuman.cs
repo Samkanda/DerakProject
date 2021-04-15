@@ -34,6 +34,7 @@ namespace Derak_Project
         /// </summary>
         public override void TakeTurn()
         {
+            // Take turn event sets specific users turn to true so they can play (starts turn begin event)
             IsTurn = true;
             SendTurnbeginEvent();
         }
@@ -43,6 +44,7 @@ namespace Derak_Project
         /// </summary>
         public void EndTurn()
         {
+            // If it's currently their turn, set isTurn to false and send the event
             if (IsTurn)
             {
                 IsTurn = false;
@@ -56,6 +58,7 @@ namespace Derak_Project
         /// <param name="target">Index of card for human to play</param>
         public void PlayerPlayCard(Card target)
         {
+            // If it's a players turn, then they can play a card
             if (IsTurn)
             {
                 PlayCard(GetTargetIndex(target));

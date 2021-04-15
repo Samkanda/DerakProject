@@ -74,16 +74,20 @@ namespace Derak_Project
         /// <param name="handSize">Integer hand-size</param>
         public void DrawTo(Cards drawPile, int handSize)
         {
+            // If the draw pile is less than the hand size..
             if(drawPile.Count < handSize-this.Count)
             {
+                // Send to drawpile
                 this.AddRange(drawPile);
                 drawPile.Clear();
-            } 
+            }
+
+            // Otherwise, draw to hand
             else
             {
                 for (int i = this.Count; i < handSize; i++)
                 {
-                    this.Add(drawPile.Extract(drawPile.First()));// unhandled exception if drawpile empty 
+                    this.Add(drawPile.Extract(drawPile.First()));
                 }
             }
         }
@@ -97,10 +101,14 @@ namespace Derak_Project
         public override string ToString()
         {
             string output = "\n =====Hand=====";
+
+            // Iterate through, for all the cards in hand
             for (int i = 0; i < this.Count; i++)
             {
                 output += "\n[" + (i + 1) + "] " + this[i].ToString();
             }
+
+            // Return the string
             return output;
         }
     }
