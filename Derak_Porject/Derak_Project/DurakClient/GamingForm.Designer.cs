@@ -112,9 +112,10 @@ namespace DurakClient
             // txtOpponent
             // 
             this.txtOpponent.Location = new System.Drawing.Point(678, 213);
+            this.txtOpponent.Multiline = true;
             this.txtOpponent.Name = "txtOpponent";
             this.txtOpponent.ReadOnly = true;
-            this.txtOpponent.Size = new System.Drawing.Size(119, 20);
+            this.txtOpponent.Size = new System.Drawing.Size(119, 29);
             this.txtOpponent.TabIndex = 17;
             // 
             // txtDiscard

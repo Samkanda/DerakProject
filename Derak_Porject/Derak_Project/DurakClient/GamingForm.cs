@@ -259,10 +259,10 @@ namespace DurakClient
             {
                 if(player != currentHumanPlayer)
                 {
-                    txtOpponent.Text = "["+player.Name + "] : " + player.Count + " cards";
+                    txtOpponent.Text += "["+player.Name + "] : " + player.Count + " cards"+ Environment.NewLine;
                 }
             }
-
+            txtOpponent.Height = TextRenderer.MeasureText(txtOpponent.Text, txtOpponent.Font).Height;
 
             //TODO CHANGE
             txtDeck.Text = "Deck : " + players.deck.Count;
