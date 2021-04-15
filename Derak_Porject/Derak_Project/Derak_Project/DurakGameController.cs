@@ -448,6 +448,12 @@ namespace Derak_Project
                 }
             }
 
+            log += Environment.NewLine + Environment.NewLine;
+            foreach (DurakHand nonFool in lastOut)
+            {
+                log += Environment.NewLine + nonFool.Name + " has left the game due to not having any cards";
+            }
+
             foreach (DurakHand player in players)
             {
                 player.Role = DurakRole.Extra;
