@@ -27,7 +27,7 @@ namespace DurakClient
             {
                 if (numHumans.Value + numComputers.Value < 7 && numHumans.Value + numComputers.Value >= 2)
                 {
-                    game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, perevodnoyBool);
+                    game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, (bool)perevodnoyBool);
                     game.ShowDialog();
                     this.Close();
                 } 
