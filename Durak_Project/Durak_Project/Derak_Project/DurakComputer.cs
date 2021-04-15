@@ -46,19 +46,30 @@ namespace Derak_Project
                 bool surrender = true;
                 bool test;
 
+                // Iterate through cards that are on the playing field
+                // Iterate through cards that are able to be drawn
                 foreach(DurakBattle front in PlayingField)
                 {
+                    // If your defence isnt null, you arent able to pass turn
                     if(front.Defense != null){passable = false;}
                     test = false;
+
+                    // Checking if rank in hand is the same as rank on attack
                     foreach(Card cardInHand in this)
                     {
                         if(cardInHand.rank == front.Attack.rank) { test = true; }
                     }
+
+                    // Result test yields no surrender 
                     if (!test) { surrender = false; }
                 }
-                if(RemainingDraws > 0)
+
+                // If remaining draws are greater than 0..
+                if (RemainingDraws > 0)
                 {
                     test = true;
+
+                    // Iterate through cards that are on the playing field
                     foreach (DurakBattle front in PlayingField)
                     {
                         if(front.Attack.suit != Trump) { test = false; }
@@ -78,7 +89,8 @@ namespace Derak_Project
                             try
                             {
                                 PlayCard(i);
-                            } catch (InvalidPlayException e) { }
+                            } 
+                            catch (InvalidPlayException e) { }
                         }
                     }
                 }
