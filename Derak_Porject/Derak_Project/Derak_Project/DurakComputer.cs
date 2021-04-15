@@ -79,7 +79,7 @@ namespace Derak_Project
                             try
                             {
                                 PlayCard(i);
-                            } catch (Exception e) { }
+                            } catch (InvalidPlayException e) { }
                         }
                     }
                 }
@@ -103,7 +103,7 @@ namespace Derak_Project
                             try
                             {
                                 PlayCard(target);
-                            } catch (Exception e) { }
+                            } catch (InvalidPlayException e) { }
                         }
                         if (front.Defense == null && front.Attack.suit != Trump)
                         {
@@ -121,7 +121,7 @@ namespace Derak_Project
                             try
                             {
                                 PlayCard(target);
-                            } catch (Exception e) { }
+                            } catch (InvalidPlayException e) { }
                         }
                     }
                 }
@@ -153,7 +153,7 @@ namespace Derak_Project
                                 PlayCard(i);
                                 i--;
                             }
-                        } catch (Exception e) { }
+                        } catch (InvalidPlayException e) { }
                     }
                 }
                 else if (Role==DurakRole.Extra || escalation)
@@ -164,7 +164,7 @@ namespace Derak_Project
                         {
                             PlayCard(i);
                             i--;
-                        } catch (Exception e) { }
+                        } catch (InvalidPlayException e) { }
                     }
                 }
                 else
@@ -175,7 +175,7 @@ namespace Derak_Project
                         {
                             PlayCard(i);
                             i--;
-                        } catch (Exception e) { }
+                        } catch (InvalidPlayException e) { }
                     }
                 }
             }
@@ -187,7 +187,7 @@ namespace Derak_Project
                     {
                         PlayCard(i);
                         break;
-                    } catch (Exception e) { }
+                    } catch (InvalidPlayException e) { }
                 }
             }
             SendTurnEndEvent();
