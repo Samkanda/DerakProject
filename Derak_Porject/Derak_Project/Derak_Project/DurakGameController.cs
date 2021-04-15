@@ -1,4 +1,12 @@
-﻿using System;
+﻿///---------------------------------------------------------------------------------
+///   Namespace:        Derak_Project
+///   Class:            DurakGameController
+///   Description:      Handles gameplay elements
+///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
+///   Date:             April 14, 2021
+///---------------------------------------------------------------------------------
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +14,32 @@ using System.Threading.Tasks;
 
 namespace Derak_Project
 {
+    /// <summary>
+    /// DurakGameController class, handles gameplay elements
+    /// </summary>
     public class DurakGameController
     {
         //TODO: switch to private? possibly take out of controller
         public DurakDeck deck;
 
         private List<DurakBattle> playingField;
+
+        /// <summary>
+        /// Auto-property for DurakBattle PlayingField
+        /// </summary>
+        /// <returns>
+        /// Returns list of DurakBattle instance (playingfield)
+        /// </returns>
         public IList<DurakBattle> PlayingField { get { return playingField.AsReadOnly(); } }
 
         private List<DurakHand> players;
+
+        /// <summary>
+        /// Auto-property for DurakHand Players
+        /// </summary>
+        /// <returns>
+        /// Returns list object of DurakHand instances (players)
+        /// </returns>
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
 
         public Cards DiscardPile;
@@ -24,12 +49,33 @@ namespace Derak_Project
         private bool cardFreeze = false;
 
         private DurakHand attacker;
+
+        /// <summary>
+        /// Auto-property for DurakHand Attacker
+        /// </summary>
+        /// <returns>
+        /// Returns the attacker instance of DurakHand
+        /// </returns> 
         public DurakHand Attacker { get { return attacker; } }
 
         private DurakHand defender;
+
+        /// <summary>
+        /// Auto-property for DurakHand Defender
+        /// </summary>
+        /// <returns>
+        /// Returns the defender instance of DurakHand
+        /// </returns>
         public DurakHand Defender { get { return defender; } }
 
         private DurakHand activePlayer;
+
+        /// <summary>
+        /// Auto-property for DurakHand Active player
+        /// </summary>
+        /// <returns>
+        /// Returns the active player instance of DurakHand
+        /// </returns>
         public DurakHand ActivePlayer { get { return activePlayer; } }
 
         private Card talon;
@@ -37,14 +83,29 @@ namespace Derak_Project
         public static event EventHandler GameEndEvent;
 
         private string log = "";
+
+        /// <summary>
+        /// Auto-property for logs
+        /// </summary>
+        /// <returns>
+        /// Returns a log as string
+        /// </returns>
         public string Log { get { return log; } }
 
-
+        /// <summary>
+        /// Auto-property to retrieve a talon
+        /// </summary>
+        /// <returns>
+        /// Returns the talon
+        /// </returns>
         public Card Talon
         {
             get { return talon; }
         }
 
+        /// <summary>
+        /// Default constructor of DurakGameConstroller()
+        /// </summary>
         public DurakGameController()
         {
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
@@ -58,6 +119,10 @@ namespace Derak_Project
             players = new List<DurakHand>();
         }
 
+        /// <summary>
+        /// Function to add a new player, and assign a DurakHand
+        /// </summary>
+        /// <param name="playerNew">Assign hand to new player</param>
         public void AddNewPlayer(DurakHand playerNew)
         {
             playerNew.UpdateInfo(playingField);
@@ -65,6 +130,10 @@ namespace Derak_Project
             players.Add(playerNew);
         }
 
+        /// <summary>
+        /// Function to play a card based on card object instance
+        /// </summary>
+        /// <param name="cardPlayed">Card object instance</param>
         private void playCard(Card cardPlayed)
         {
             if (cardFreeze)
@@ -79,7 +148,7 @@ namespace Derak_Project
                     if(playingField.Count == 0)
                     {
                         playingField.Add(new DurakBattle(cardPlayed));
-                        log += Environment.NewLine +" attacked with " + cardPlayed.ToString();
+                        log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
                         used = true;
                     } 
                     else
@@ -99,7 +168,7 @@ namespace Derak_Project
                         if (rankAvailable)
                         {
                             playingField.Add(new DurakBattle(cardPlayed));
-                            log += Environment.NewLine +" attacked with " + cardPlayed.ToString();
+                            log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
                             used = true;
                         }
                     }
@@ -211,6 +280,9 @@ namespace Derak_Project
             }
         }
 
+        /// <summary>
+        /// Function to end the active turn event
+        /// </summary>
         private void EndOfTurn()
         {
             cardFreeze = false;
@@ -267,17 +339,14 @@ namespace Derak_Project
             else
             {
                 GameEndEvent(this, new EventArgs());
-                /*if (players.Count == 0)
-                {
-                    MessageBox.Show("TIE");
-                } 
-                else
-                {
-                    MessageBox.Show(players[0].Name+" is the durak");
-                }//*/
             }
         }
 
+        /// <summary>
+        /// Denote the next player (For if player is removed from game)
+        /// </summary>
+        /// <param name="startPlayer">DurakHand card object list</param>
+        /// <returns>The player based on location in array</returns>
         public DurakHand Next(DurakHand startPlayer)
         {
             if(players.Count > 0)
@@ -299,6 +368,12 @@ namespace Derak_Project
             }
             return null;
         }
+
+        /// <summary>
+        /// Denote the previous player (For if player is removed from game)
+        /// </summary>
+        /// <param name="startPlayer">DurakHand card object list</param>
+        /// <returns>The player based on index in array</returns>
         public DurakHand Previous(DurakHand startPlayer)
         {
             if (players.Count > 0)
@@ -321,7 +396,9 @@ namespace Derak_Project
             return null;
         }
 
-
+        /// <summary>
+        /// Function to check the role of active player based on players in array and if they are/arent the 'Extra' role
+        /// </summary>
         private void CalculateRoles()
         {
             Deal();
@@ -357,6 +434,9 @@ namespace Derak_Project
             SwitchRoles();
         }
 
+        /// <summary>
+        /// Function to switch the active players role (attacker or defender)
+        /// </summary>
         private void SwitchRoles()
         {
             attacker = Next(activePlayer);
@@ -366,31 +446,35 @@ namespace Derak_Project
             log += Environment.NewLine + Environment.NewLine + Attacker.Name + " is the attacker and " + defender.Name + " is the defender";
         }
 
-
+        /// <summary>
+        /// Function to denote new turn event (log to program as well)
+        /// </summary>
         private void NewTurn()
         {
             activePlayer = Next(activePlayer);
             log += Environment.NewLine + Environment.NewLine + activePlayer.Role + " | " + activePlayer.Name + Environment.NewLine +
                 "=============================";
 
-            
             activePlayer.UpdateInfo(playingField);
             activePlayer.TakeTurn();
         }
 
+        /// <summary>
+        /// Function to deal cards to players in array
+        /// </summary>
         public void Deal()
         {
             foreach (DurakHand player in players)
             {
                 player.DrawToMinimum(deck);
-                //Console.WriteLine(player.ToString());
             }
         }
 
+        /// <summary>
+        /// Function to start the game (accounts for multiple players, and not enough players as well)
+        /// </summary>
         public void StartGame()
         {
-            //deck.Shuffle();
-            //Deal();
             foreach (DurakHand player in players)
             {
                 Console.WriteLine(player.ToString());
@@ -402,8 +486,6 @@ namespace Derak_Project
             activePlayer = players[players.Count-1];
 
             CalculateRoles();
-
-
             NewTurn();
         }
     }
