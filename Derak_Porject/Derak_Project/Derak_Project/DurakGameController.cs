@@ -44,7 +44,7 @@ namespace Derak_Project
 
         public Cards DiscardPile;
 
-        public bool perevodnoy = true;
+        private bool perevodnoy = true;
 
         private bool cardFreeze = false;
 
@@ -106,11 +106,11 @@ namespace Derak_Project
         /// <summary>
         /// Default constructor of DurakGameConstroller()
         /// </summary>
-        public DurakGameController()
+        public DurakGameController(bool passing = true)
         {
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
-
+            perevodnoy = passing;
             DiscardPile = new Cards();
             deck = new DurakDeck();
             deck.Shuffle();

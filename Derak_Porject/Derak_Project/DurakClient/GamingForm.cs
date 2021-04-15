@@ -15,7 +15,7 @@ namespace DurakClient
 {
     public partial class GamingForm : Form
     {
-        DurakGameController players = new DurakGameController();
+        DurakGameController players ;
         DurakHuman currentHumanPlayer;
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace DurakClient
         {
             InitializeComponent();
             DurakHand player;
-            players.perevodnoy = perevodnoy;
+            players = new DurakGameController(perevodnoy);
 
             for (int i = 0; i < humans; i++)
             {
