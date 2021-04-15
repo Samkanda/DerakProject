@@ -72,24 +72,36 @@ namespace Derak_Project
                     // Iterate through cards that are on the playing field
                     foreach (DurakBattle front in PlayingField)
                     {
+                        // If attack suit isnt the trump
                         if(front.Attack.suit != Trump) { test = false; }
                     }
+
+                    // If test returns true, surrender play
                     if (test) { surrender = true; }
-                } 
+                }
+
+                // Otherwise, make the surrender play false
                 else
                 {
                     surrender = false;
                 }
+
+                // If the play is passable (if the player can pass turn)
                 if (passable)
                 {
+                    // Iterate through count
                     for (int i = 0; i < Count; i++)
                     {
+                        // If the currently selected rank is the same as the attack rank on field
                         if (this[i].rank == PlayingField[0].Attack.rank)
                         {
+                            // Try playing the card
                             try
                             {
                                 PlayCard(i);
                             } 
+
+                            // Otherwise, catch the InvalidPlayException
                             catch (InvalidPlayException e) { }
                         }
                     }

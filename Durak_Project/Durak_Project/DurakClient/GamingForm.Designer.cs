@@ -201,7 +201,7 @@ namespace DurakClient
             this.Controls.Add(this.btnDebug);
             this.Name = "GamingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Form1";
+            this.Text = "Durak Game";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
