@@ -30,3 +30,4 @@ C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Durak
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.pdb
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.dll
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.dll.config
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.Launcher.resources

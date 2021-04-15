@@ -30,8 +30,8 @@ namespace DurakClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Derak_Project.Card card7 = new Derak_Project.Card();
-            Derak_Project.Card card8 = new Derak_Project.Card();
+            Derak_Project.Card card1 = new Derak_Project.Card();
+            Derak_Project.Card card2 = new Derak_Project.Card();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamingForm));
             this.btnDebug = new System.Windows.Forms.Button();
             this.pnlCardHome = new System.Windows.Forms.Panel();
@@ -58,7 +58,6 @@ namespace DurakClient
             this.btnDebug.Text = "Debug";
             this.btnDebug.UseVisualStyleBackColor = true;
             this.btnDebug.Visible = false;
-            this.btnDebug.Click += new System.EventHandler(this.button1_Click);
             // 
             // pnlCardHome
             // 
@@ -79,7 +78,6 @@ namespace DurakClient
             this.pnlCardDefend.Name = "pnlCardDefend";
             this.pnlCardDefend.Size = new System.Drawing.Size(542, 119);
             this.pnlCardDefend.TabIndex = 12;
-            this.pnlCardDefend.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pnlCardAttack
             // 
@@ -115,14 +113,15 @@ namespace DurakClient
             // 
             this.txtOpponent.Location = new System.Drawing.Point(678, 213);
             this.txtOpponent.Name = "txtOpponent";
+            this.txtOpponent.ReadOnly = true;
             this.txtOpponent.Size = new System.Drawing.Size(119, 20);
             this.txtOpponent.TabIndex = 17;
-            this.txtOpponent.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtDiscard
             // 
             this.txtDiscard.Location = new System.Drawing.Point(12, 213);
             this.txtDiscard.Name = "txtDiscard";
+            this.txtDiscard.ReadOnly = true;
             this.txtDiscard.Size = new System.Drawing.Size(100, 20);
             this.txtDiscard.TabIndex = 18;
             // 
@@ -130,6 +129,7 @@ namespace DurakClient
             // 
             this.txtDeck.Location = new System.Drawing.Point(12, 39);
             this.txtDeck.Name = "txtDeck";
+            this.txtDeck.ReadOnly = true;
             this.txtDeck.Size = new System.Drawing.Size(100, 20);
             this.txtDeck.TabIndex = 19;
             // 
@@ -150,10 +150,10 @@ namespace DurakClient
             // 
             // cardBox1
             // 
-            card7.FaceUp = false;
-            card7.rank = Derak_Project.Rank.Eight;
-            card7.suit = Derak_Project.Suit.Diamond;
-            this.cardBox1.Card = card7;
+            card1.FaceUp = false;
+            card1.rank = Derak_Project.Rank.Eight;
+            card1.suit = Derak_Project.Suit.Diamond;
+            this.cardBox1.Card = card1;
             this.cardBox1.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.cardBox1.FaceUp = false;
             this.cardBox1.Location = new System.Drawing.Point(22, 248);
@@ -165,10 +165,10 @@ namespace DurakClient
             // 
             // pbDeck
             // 
-            card8.FaceUp = false;
-            card8.rank = Derak_Project.Rank.Eight;
-            card8.suit = Derak_Project.Suit.Diamond;
-            this.pbDeck.Card = card8;
+            card2.FaceUp = false;
+            card2.rank = Derak_Project.Rank.Eight;
+            card2.suit = Derak_Project.Suit.Diamond;
+            this.pbDeck.Card = card2;
             this.pbDeck.CardOrientation = System.Windows.Forms.Orientation.Vertical;
             this.pbDeck.FaceUp = false;
             this.pbDeck.Location = new System.Drawing.Point(22, 75);

@@ -16,7 +16,8 @@ namespace DurakClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GamingForm());
+            //Application.Run(new GamingForm());
+            Application.Run(new Launcher());
         }
     }
 }

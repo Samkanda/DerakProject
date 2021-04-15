@@ -21,25 +21,26 @@ namespace DurakClient
         /// Constructor for frmMainForm
         /// </summary>
 
-        public GamingForm()
+        public GamingForm(int humans = 1, int computers = 1)
         {
             InitializeComponent();
-            players.AddNewPlayer(new DurakComputer());
-            players.AddNewPlayer(new DurakHuman());
-            //players.AddNewPlayer(new DurakComputer());
-            //players.AddNewPlayer(new DurakComputer());
+            DurakHand player;
+            for(int i = 0; i < humans; i++)
+            {
+                player = new DurakHuman();
+                players.AddNewPlayer(player);
+                player.Name = "Player "+(i+1);
+            }
+            for (int i = 0; i < computers; i++)
+            {
+                player = new DurakComputer();
+                players.AddNewPlayer(player);
+                player.Name = "Computer "+(i+1);
+            }
 
-            players.Players[0].Name = "Computer 1";
-            players.Players[1].Name = "You";
-            //players.Players[2].Name = "Computer 2";
-            //players.Players[3].Name = "Computer 3";
-
-
-
-
+            players.GameEndEvent += delegate (object obj, EventArgs e) { GameEnd(obj as DurakGameController); };
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
             pbDeck.Card = players.Talon;
-            //pbDeck = new CardBox(new Card());
             players.StartGame();
         }
 
@@ -213,11 +214,11 @@ namespace DurakClient
             }
         }
         #endregion
-
-        private void pbDeck_Click_1(object sender, EventArgs e)
+        
+        void GameEnd(DurakGameController game)
         {
-            
-
+            MessageBox.Show("game has ended");
+            this.Close();
         }
 
         void UpdateUI(Cards info)
@@ -282,15 +283,6 @@ namespace DurakClient
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -301,10 +293,6 @@ namespace DurakClient
             currentHumanPlayer.EndTurn();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
     

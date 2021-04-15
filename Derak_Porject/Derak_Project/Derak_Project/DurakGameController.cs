@@ -80,7 +80,7 @@ namespace Derak_Project
 
         private Card talon;
 
-        public static event EventHandler GameEndEvent;
+        public event EventHandler GameEndEvent;
 
         private string log = "";
 
