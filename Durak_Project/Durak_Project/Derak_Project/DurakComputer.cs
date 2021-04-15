@@ -172,27 +172,40 @@ namespace Derak_Project
                         }
                     }
                 }
-                
-            }
 
-            // If role isn't defender...
+            }// If role isn't defender...
             else
             {
+                //for checking whether its the first attack
                 bool escalation = false;
+                //point at which it doesnt want to draw
                 int noDrawThreshold = 0;
 
+                //if there is a defending card its not the first attack
                 foreach(DurakBattle front in PlayingField)
                 {
                     if(front.Defense != null) { escalation = true; }
                 }
+                //raise threshold if you are a supporting attacker
                 if (Role == DurakRole.Extra)
                 {
                     noDrawThreshold = PlayingField.Count;
                 }
-
-
-                if (RemainingDraws > noDrawThreshold)
+                //if its an escalation or extra which is defacto an escalatuion
+                if (escalation || RemainingDraws < noDrawThreshold)
                 {
+                    for (int i = 0; i < this.Count; i++)
+                    {
+                        try
+                        {
+                            PlayCard(i);
+                            i--;
+                        } catch (InvalidPlayException e) { }
+                    }
+                }// if it assumes its not end game
+                else
+                {
+                    //for each card if its a bad card play it
                     for (int i = 0; i < this.Count; i++)
                     {
                         try
@@ -205,30 +218,9 @@ namespace Derak_Project
                         } catch (InvalidPlayException e) { }
                     }
                 }
-                else if (Role==DurakRole.Extra || escalation)
-                {
-                    for (int i = 0; i < this.Count; i++)
-                    {
-                        try
-                        {
-                            PlayCard(i);
-                            i--;
-                        } catch (InvalidPlayException e) { }
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < this.Count; i++)
-                    {
-                        try
-                        {
-                            PlayCard(i);
-                            i--;
-                        } catch (InvalidPlayException e) { }
-                    }
-                }
             }
-            if(this.Count >= startingHandSize)
+            //if the ai didnt play a card at this point try everything to play atleast one
+            if (this.Count >= startingHandSize)
             {
                 for (int i = 0; i < this.Count; i++)
                 {

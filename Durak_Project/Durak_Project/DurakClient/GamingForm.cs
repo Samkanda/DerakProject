@@ -27,7 +27,7 @@ namespace DurakClient
             DurakHand player;
             players = new DurakGameController(perevodnoy, minimumCardValue);
 
-            // For human players, iterate and display accordingly
+            // For human players add them to game controller
             for (int i = 0; i < humans; i++)
             {
                 player = new DurakHuman();
@@ -35,17 +35,19 @@ namespace DurakClient
                 player.Name = "Player "+(i+1);
             }
 
-            // For computer players, iterate and display accordingly
+            // For computer players add them to game controller
             for (int i = 0; i < computers; i++)
             {
                 player = new DurakComputer();
                 players.AddNewPlayer(player);
                 player.Name = "Computer "+(i+1);
             }
-
+            // set up event handlers
             players.GameEndEvent += delegate (object obj, EventArgs e) { GameEnd(obj as DurakGameController); };
             Hand.TurnBeginEvent += delegate (object obj, EventArgs e) { Turn_Begin(obj, e); };
+            //set value
             pbDeck.Card = players.Talon;
+            //start game
             players.StartGame();
         }
 
@@ -85,14 +87,14 @@ namespace DurakClient
                         if(currentHumanPlayer == players.Attacker || currentHumanPlayer.Role == DurakRole.Extra)
                         {
                             pnlCardAttack.Controls.Add(aCardBox);
-                            RealignBattles(pnlCardAttack, pnlCardDefend);
                         }
                         else if (currentHumanPlayer == players.Defender)
                         {
                             pnlCardDefend.Controls.Add(aCardBox);
-                            RealignBattles(pnlCardAttack, pnlCardDefend);
-                        }
                             
+                        }
+                        // realign cards
+                        RealignBattles(pnlCardAttack, pnlCardDefend);
                     } 
                     catch(Exception ex)
                     {
@@ -121,45 +123,43 @@ namespace DurakClient
         {
             this.Close();
         }
-        /// <summary>
-        ///  CardBox controls grow in size when the mouse is over it.
-        /// </summary>
-        void CardBox_MouseEnter(object sender, EventArgs e)
-        {
-            // Convert sender to a CardBox
-            CardBox aCardBox = sender as CardBox;
-            MessageBox.Show(".");
-            // If the conversion worked
-            if (aCardBox != null)
-            {
-                // Enlarge the card for visual effect
-                aCardBox.Size = new Size(regularSize.Width + POP, regularSize.Height + POP);
-                // move the card to the top edge of the panel.
-                aCardBox.Top = 0;
-            }
+        ///// <summary>
+        /////  CardBox controls grow in size when the mouse is over it.
+        ///// </summary>
+        //void CardBox_MouseEnter(object sender, EventArgs e)
+        //{
+        //    // Convert sender to a CardBox
+        //    CardBox aCardBox = sender as CardBox;
+        //    MessageBox.Show(".");
+        //    // If the conversion worked
+        //    if (aCardBox != null)
+        //    {
+        //        // Enlarge the card for visual effect
+        //        aCardBox.Size = new Size(regularSize.Width + POP, regularSize.Height + POP);
+        //        // move the card to the top edge of the panel.
+        //        aCardBox.Top = 0;
+        //    }
+        //}
+
+        ///// <summary>
+        ///// CardBox control shrinks to regular size when the mouse leaves.
+        ///// </summary>
+        //void CardBox_MouseLeave(object sender, EventArgs e)
+        //{
+        //    // Convert sender to a CardBox
+        //    CardBox aCardBox = sender as CardBox;
+
+        //    // If the conversion worked
+        //    if (aCardBox != null)
+        //    {
+        //        // resize the card back to regular size
+        //        aCardBox.Size = new Size(regularSize.Width, regularSize.Height);
+        //        // move the card to the top edge of the panel.
+        //        aCardBox.Top = POP;
+        //    }
 
 
-        }
-
-        /// <summary>
-        /// CardBox control shrinks to regular size when the mouse leaves.
-        /// </summary>
-        void CardBox_MouseLeave(object sender, EventArgs e)
-        {
-            // Convert sender to a CardBox
-            CardBox aCardBox = sender as CardBox;
-
-            // If the conversion worked
-            if (aCardBox != null)
-            {
-                // resize the card back to regular size
-                aCardBox.Size = new Size(regularSize.Width, regularSize.Height);
-                // move the card to the top edge of the panel.
-                aCardBox.Top = POP;
-            }
-
-
-        }
+        //}
 
         /// <summary>
         /// Repositions the cards in a panel so that they are evenly distributed in the area available.
@@ -301,10 +301,10 @@ namespace DurakClient
                 CardBox aCardBox = new CardBox(ss);
                 pnlCardHome.Controls.Add(aCardBox);
                 aCardBox.Click += CardBox_Click;
-                // wire CardBox_MouseEnter for the "POP" visual effect
-                aCardBox.MouseEnter += CardBox_MouseEnter;
-                // wire CardBox_MouseLeave for the regular visual effect
-                aCardBox.MouseLeave += CardBox_MouseLeave;
+                //// wire CardBox_MouseEnter for the "POP" visual effect
+                //aCardBox.MouseEnter += CardBox_MouseEnter;
+                //// wire CardBox_MouseLeave for the regular visual effect
+                //aCardBox.MouseLeave += CardBox_MouseLeave;
             }
             foreach(DurakBattle front in players.PlayingField)
             {
