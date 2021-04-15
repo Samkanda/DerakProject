@@ -30,9 +30,9 @@ namespace DurakClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamingForm));
             Derak_Project.Card card1 = new Derak_Project.Card();
             Derak_Project.Card card2 = new Derak_Project.Card();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GamingForm));
             this.btnDebug = new System.Windows.Forms.Button();
             this.pnlCardHome = new System.Windows.Forms.Panel();
             this.pnlCardDefend = new System.Windows.Forms.Panel();
@@ -62,7 +62,7 @@ namespace DurakClient
             // pnlCardHome
             // 
             this.pnlCardHome.AllowDrop = true;
-            this.pnlCardHome.BackColor = System.Drawing.Color.Green;
+            this.pnlCardHome.BackColor = System.Drawing.Color.Aqua;
             this.pnlCardHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCardHome.Location = new System.Drawing.Point(130, 319);
             this.pnlCardHome.Name = "pnlCardHome";
@@ -72,7 +72,8 @@ namespace DurakClient
             // pnlCardDefend
             // 
             this.pnlCardDefend.AllowDrop = true;
-            this.pnlCardDefend.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.pnlCardDefend.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlCardDefend.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCardDefend.BackgroundImage")));
             this.pnlCardDefend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCardDefend.Location = new System.Drawing.Point(130, 176);
             this.pnlCardDefend.Name = "pnlCardDefend";
@@ -82,7 +83,8 @@ namespace DurakClient
             // pnlCardAttack
             // 
             this.pnlCardAttack.AllowDrop = true;
-            this.pnlCardAttack.BackColor = System.Drawing.Color.Gold;
+            this.pnlCardAttack.BackColor = System.Drawing.Color.OrangeRed;
+            this.pnlCardAttack.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlCardAttack.BackgroundImage")));
             this.pnlCardAttack.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCardAttack.Location = new System.Drawing.Point(130, 39);
             this.pnlCardAttack.Name = "pnlCardAttack";
