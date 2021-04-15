@@ -27,7 +27,7 @@ namespace DurakClient
             {
                 if (numHumans.Value + numComputers.Value < 7 && numHumans.Value + numComputers.Value >= 2)
                 {
-                    game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, (bool)perevodnoyBool);
+                    game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, cbPerevodnoyRule.Checked);
                     game.ShowDialog();
                     this.Close();
                 } 
@@ -40,18 +40,6 @@ namespace DurakClient
                 MessageBox.Show("invalid game players setup");
             }
             
-        }
-
-        private void cbPerevodnoyRule_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbPerevodnoyRule.Checked == true)
-            {
-                perevodnoyBool = true;
-            }
-            else
-            {
-                perevodnoyBool = false;
-            }
         }
     }
 }

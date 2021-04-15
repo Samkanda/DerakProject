@@ -42,7 +42,7 @@ namespace DurakClient
             // 
             // btnStart
             // 
-            this.btnStart.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.Location = new System.Drawing.Point(33, 203);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(457, 43);
@@ -53,7 +53,7 @@ namespace DurakClient
             // 
             // numComputers
             // 
-            this.numComputers.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numComputers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numComputers.Location = new System.Drawing.Point(344, 140);
             this.numComputers.Maximum = new decimal(new int[] {
             5,
@@ -61,7 +61,7 @@ namespace DurakClient
             0,
             0});
             this.numComputers.Name = "numComputers";
-            this.numComputers.Size = new System.Drawing.Size(146, 27);
+            this.numComputers.Size = new System.Drawing.Size(146, 26);
             this.numComputers.TabIndex = 1;
             this.numComputers.Value = new decimal(new int[] {
             1,
@@ -71,7 +71,7 @@ namespace DurakClient
             // 
             // numHumans
             // 
-            this.numHumans.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numHumans.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numHumans.Location = new System.Drawing.Point(344, 100);
             this.numHumans.Maximum = new decimal(new int[] {
             6,
@@ -84,7 +84,7 @@ namespace DurakClient
             0,
             0});
             this.numHumans.Name = "numHumans";
-            this.numHumans.Size = new System.Drawing.Size(146, 27);
+            this.numHumans.Size = new System.Drawing.Size(146, 26);
             this.numHumans.TabIndex = 2;
             this.numHumans.Value = new decimal(new int[] {
             1,
@@ -95,10 +95,10 @@ namespace DurakClient
             // lblGameTitle
             // 
             this.lblGameTitle.AutoSize = true;
-            this.lblGameTitle.Font = new System.Drawing.Font("Neo Sans", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameTitle.Location = new System.Drawing.Point(23, 23);
             this.lblGameTitle.Name = "lblGameTitle";
-            this.lblGameTitle.Size = new System.Drawing.Size(485, 59);
+            this.lblGameTitle.Size = new System.Drawing.Size(512, 55);
             this.lblGameTitle.TabIndex = 3;
             this.lblGameTitle.Text = "Durak Game Launcher";
             this.lblGameTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -106,35 +106,36 @@ namespace DurakClient
             // lblHumanPlayers
             // 
             this.lblHumanPlayers.AutoSize = true;
-            this.lblHumanPlayers.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHumanPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHumanPlayers.Location = new System.Drawing.Point(29, 102);
             this.lblHumanPlayers.Name = "lblHumanPlayers";
-            this.lblHumanPlayers.Size = new System.Drawing.Size(255, 20);
+            this.lblHumanPlayers.Size = new System.Drawing.Size(254, 20);
             this.lblHumanPlayers.TabIndex = 4;
             this.lblHumanPlayers.Text = "Number of human players desired: ";
             // 
             // lblComputerPlayers
             // 
             this.lblComputerPlayers.AutoSize = true;
-            this.lblComputerPlayers.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComputerPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComputerPlayers.Location = new System.Drawing.Point(29, 142);
             this.lblComputerPlayers.Name = "lblComputerPlayers";
-            this.lblComputerPlayers.Size = new System.Drawing.Size(274, 20);
+            this.lblComputerPlayers.Size = new System.Drawing.Size(272, 20);
             this.lblComputerPlayers.TabIndex = 5;
             this.lblComputerPlayers.Text = "Number of computer players desired: ";
             // 
             // cbPerevodnoyRule
             // 
             this.cbPerevodnoyRule.AutoSize = true;
-            this.cbPerevodnoyRule.Font = new System.Drawing.Font("Neo Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPerevodnoyRule.Checked = true;
+            this.cbPerevodnoyRule.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbPerevodnoyRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPerevodnoyRule.Location = new System.Drawing.Point(373, 173);
             this.cbPerevodnoyRule.Name = "cbPerevodnoyRule";
             this.cbPerevodnoyRule.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.cbPerevodnoyRule.Size = new System.Drawing.Size(117, 24);
+            this.cbPerevodnoyRule.Size = new System.Drawing.Size(115, 24);
             this.cbPerevodnoyRule.TabIndex = 6;
             this.cbPerevodnoyRule.Text = "Perevodnoy ";
             this.cbPerevodnoyRule.UseVisualStyleBackColor = true;
-            this.cbPerevodnoyRule.CheckedChanged += new System.EventHandler(this.cbPerevodnoyRule_CheckedChanged);
             // 
             // Launcher
             // 
