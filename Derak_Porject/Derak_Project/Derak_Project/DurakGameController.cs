@@ -413,9 +413,22 @@ namespace Derak_Project
             }
             if(attacker != null && defender != null)
             {
-                if (attacker.Count < 1 || defender.Count < 1)
+                if(activePlayer == attacker)
                 {
-                    activePlayer = Previous(activePlayer);
+                    if (attacker.Count < 1 || defender.Count < 1)
+                    {
+                        activePlayer = Previous(activePlayer);
+                    }
+                } else
+                {
+                    if ( defender.Count < 1)
+                    {
+                        activePlayer = Previous(activePlayer);
+                        if (attacker.Count < 1)
+                        {
+                            activePlayer = Previous(activePlayer);
+                        }
+                    }
                 }
             }
             
