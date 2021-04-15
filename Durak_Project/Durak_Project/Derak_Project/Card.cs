@@ -87,10 +87,15 @@ namespace Derak_Project
         {
             string imageName;
             Image cardImage;
+
+            // If that card isn't face up, show the blue back card face
             if (!faceUp)
             {
                 imageName = "blue_back";
-            } else
+            } 
+            
+            // Otherwise, build the card image string and pass to resource manager to retrieve card image
+            else
             {
                 imageName = myRank.ToString() + "_" + mySuit.ToString();
             }
@@ -98,53 +103,36 @@ namespace Derak_Project
             return cardImage;
         }
 
+        /// <summary>
+        /// Function to compare two different card objects
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public virtual int CompareTo(object obj)
         {
+            // If passed object is null, show an ArgumentNullException with an appropriate message
             if (obj == null)
             {
                 throw new ArgumentNullException("Unable to compare a Card to a null object");
             }
+
+            // Type cast obj as a Card obj
             Card compareCard = obj as Card;
+
+            // If cast was successful, obj is converted to a card correctly
             if (compareCard != null)
             {
                 int thisSort = (int)this.rank * 10 + (int)this.mySuit;
                 int compareCardSort = (int)compareCard.rank * 10 + (int)compareCard.mySuit;
                 return (thisSort.CompareTo(compareCardSort));
-            } else
+            } 
+            
+            // Otherwise, throw an ArgumentException with an appropriate mes
+            else
             {
                 throw new ArgumentException("Object being compared cannot be converted to a Card");
             }
         }
-
-        //public static bool operator ==(PlayingCard left, PlayingCard right)
-        //{
-        //    return left.CardValue == right.CardValue;
-        //}
-
-        //public static bool operator !=(PlayingCard left, PlayingCard right)
-        //{
-        //    return (left.CardValue != right.CardValue);
-        //}
-
-        //public static bool operator <(PlayingCard left, PlayingCard right)
-        //{
-        //    return (left.CardValue < right.CardValue);
-        //}
-
-        //public static bool operator >(PlayingCard left, PlayingCard right)
-        //{
-        //    return (left.CardValue > right.CardValue);
-        //}
-
-        //public static bool operator <=(PlayingCard left, PlayingCard right)
-        //{
-        //    return (left.CardValue <= right.CardValue);
-        //}
-
-        //public static bool operator >=(PlayingCard left, PlayingCard right)
-        //{
-        //    return (left.CardValue >= right.CardValue);
-        //}
 
         /// <summary>
         /// ToString() Function Override

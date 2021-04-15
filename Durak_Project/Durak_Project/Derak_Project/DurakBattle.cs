@@ -80,7 +80,7 @@ namespace Derak_Project
         /// </returns>
         public override string ToString()
         {
-            // If defence status is not null, return attack -> defence as string
+            // If defence status is not null, return attack -> defence
             if(Defense != null)
             {
                 return Attack.ToString() + " >>>> " + Defense.ToString();
