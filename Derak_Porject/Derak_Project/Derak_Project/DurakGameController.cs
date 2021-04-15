@@ -44,7 +44,7 @@ namespace Derak_Project
 
         public Cards DiscardPile;
 
-        private const bool perevodnoy = true;
+        public bool perevodnoy = true;
 
         private bool cardFreeze = false;
 
@@ -411,7 +411,7 @@ namespace Derak_Project
                     players.RemoveAt(i);
                 }
             }
-            if(attacker != null && defender != null)
+            if (attacker != null && defender != null)
             {
                 if(activePlayer == attacker)
                 {

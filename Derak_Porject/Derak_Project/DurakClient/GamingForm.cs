@@ -17,15 +17,17 @@ namespace DurakClient
     {
         DurakGameController players = new DurakGameController();
         DurakHuman currentHumanPlayer;
+
         /// <summary>
         /// Constructor for frmMainForm
         /// </summary>
-
-        public GamingForm(int humans = 1, int computers = 1)
+        public GamingForm(int humans = 1, int computers = 1, bool perevodnoy = true)
         {
             InitializeComponent();
             DurakHand player;
-            for(int i = 0; i < humans; i++)
+            players.perevodnoy = perevodnoy;
+
+            for (int i = 0; i < humans; i++)
             {
                 player = new DurakHuman();
                 players.AddNewPlayer(player);
