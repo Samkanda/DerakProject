@@ -513,7 +513,13 @@ namespace Derak_Project
             {
                 throw new Exception("Not Enough Players");
             }
-            activePlayer = players[players.Count-1];
+            activePlayer = players[0];
+            Random rnd = new Random();
+            
+            for(int i = rnd.Next(players.Count);i > 0; i--)
+            {
+                activePlayer = Next(activePlayer);
+            }
 
             CalculateRoles();
             NewTurn();
