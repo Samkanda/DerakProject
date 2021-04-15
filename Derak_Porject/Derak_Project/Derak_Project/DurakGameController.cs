@@ -34,6 +34,7 @@ namespace Derak_Project
 
         private List<DurakHand> players;
 
+
         /// <summary>
         /// Auto-property for DurakHand Players
         /// </summary>
@@ -41,6 +42,10 @@ namespace Derak_Project
         /// Returns list object of DurakHand instances (players)
         /// </returns>
         public IList<DurakHand> Players { get { return players.AsReadOnly(); } }
+
+
+        private List<DurakHand> lastOut;
+        public IList<DurakHand> LastOut { get { return lastOut.AsReadOnly(); } }
 
         public Cards DiscardPile;
 
@@ -403,11 +408,12 @@ namespace Derak_Project
         private void CalculateRoles()
         {
             Deal();
-
+            lastOut = new List<DurakHand>();
             for (int i = 0; i < players.Count; i++)
             {
                 if (players[i].Count == 0 && players[i].Role == DurakRole.Extra)
                 {
+                    lastOut.Add(players[i]);
                     players.RemoveAt(i);
                 }
             }
@@ -437,6 +443,7 @@ namespace Derak_Project
             {
                 if (players[i].Count == 0 && players[i].Role != DurakRole.Extra)
                 {
+                    lastOut.Add(players[i]);
                     players.RemoveAt(i);
                 }
             }

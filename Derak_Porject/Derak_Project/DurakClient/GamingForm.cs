@@ -57,7 +57,7 @@ namespace DurakClient
         /// The regular size of a CardBox control
         /// </summary>
         static private Size regularSize = new Size(65, 107);
-
+        #endregion
         /// <summary>
         /// When a CardBox is clicked, move to the opposite panel.
         /// </summary>
@@ -74,7 +74,6 @@ namespace DurakClient
                 {
                     try
                     {
-                        //sexy af
                         currentHumanPlayer.PlayerPlayCard(aCardBox.Card);
                         // Remove the card from the home panel
                         // Add the control to the play panel
@@ -215,11 +214,23 @@ namespace DurakClient
 
             }
         }
-        #endregion
+
         
         void GameEnd(DurakGameController game)
         {
-            MessageBox.Show("game has ended");
+            if(game.Players.Count < 1)
+            {
+                string outMessage = game.Players[0].Name;
+                for (int i = 1; i < game.Players.Count; i++)
+                {
+                    outMessage += "and" + game.Players[i].Name;
+                }
+                MessageBox.Show(outMessage + " have tied for losing and are the fools");
+            } 
+            else
+            {
+                MessageBox.Show( game.Players[0].Name + " has lost the game and is the fool");
+            }
             this.Close();
         }
 
@@ -255,6 +266,7 @@ namespace DurakClient
             RealignCards(pnlCardAttack);
             RealignCards(pnlCardDefend);
 
+            txtOpponent.Text = "";
             foreach(DurakHand player in players.Players)
             {
                 if(player != currentHumanPlayer)
