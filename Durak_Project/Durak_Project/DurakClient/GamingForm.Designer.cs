@@ -200,6 +200,7 @@ namespace DurakClient
             this.Controls.Add(this.pnlCardHome);
             this.Controls.Add(this.btnDebug);
             this.Name = "GamingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
