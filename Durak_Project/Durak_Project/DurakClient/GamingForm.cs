@@ -333,8 +333,8 @@ namespace DurakClient
             txtOpponent.Height = TextRenderer.MeasureText(txtOpponent.Text, txtOpponent.Font).Height;
 
             //TODO CHANGE
-            txtDeck.Text = "Deck : " + players.deck.Count;
-            txtDiscard.Text = "Discard : " + players.DiscardPile.Count;
+            txtDeck.Text = "Deck : " + players.CardsRemaining;
+            txtDiscard.Text = "Discard : " + players.CardsDiscarded;
             txtLog.Text = players.Log;
             txtLog.Focus();
             txtLog.ScrollToCaret();

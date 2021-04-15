@@ -3,7 +3,7 @@
 ///   Class:            DurakGameController
 ///   Description:      Handles gameplay elements
 ///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
-///   Date:             April 14, 2021
+///   Date:             April 15, 2021
 ///---------------------------------------------------------------------------------
 
 using System;
@@ -19,8 +19,21 @@ namespace Derak_Project
     /// </summary>
     public class DurakGameController
     {
-        //TODO: switch to private? possibly take out of controller
-        public DurakDeck deck;
+        #region Properties and fields
+
+        private DurakDeck deck;
+
+        /// <summary>
+        /// auto property for getting number of cards
+        /// </summary>
+        public int CardsRemaining { get { return deck.Count; } }
+
+        private Cards DiscardPile;
+
+        /// <summary>
+        /// auto property for getting number of cards
+        /// </summary>
+        public int CardsDiscarded { get { return DiscardPile.Count; } }
 
         private List<DurakBattle> playingField;
 
@@ -45,9 +58,16 @@ namespace Derak_Project
 
 
         private List<DurakHand> lastOut;
+
+        /// <summary>
+        /// Auto-property for DurakHand Players
+        /// </summary>
+        /// <returns>
+        /// Returns list object of DurakHand instances (players)
+        /// </returns>
         public IList<DurakHand> LastOut { get { return lastOut.AsReadOnly(); } }
 
-        public Cards DiscardPile;
+        
 
         private bool perevodnoy = true;
 
@@ -107,14 +127,19 @@ namespace Derak_Project
         {
             get { return talon; }
         }
+        #endregion
 
+        #region Constructor
         /// <summary>
         /// Default constructor of DurakGameConstroller()
         /// </summary>
         public DurakGameController(bool passing = true, int minimumCardValue =6)
         {
+            //attach event handlers
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
+
+            //set intial values
             perevodnoy = passing;
             DiscardPile = new Cards();
             deck = new DurakDeck(minimumCardValue);
@@ -123,16 +148,22 @@ namespace Derak_Project
             playingField = new List<DurakBattle>();
             players = new List<DurakHand>();
         }
+        #endregion
 
+        #region methods
         /// <summary>
         /// Function to add a new player, and assign a DurakHand
         /// </summary>
         /// <param name="playerNew">Assign hand to new player</param>
         public void AddNewPlayer(DurakHand playerNew)
         {
+            //send info about game to player
             playerNew.UpdateInfo(playingField, talon.suit, deck.Count);
+            //deal them cards
             playerNew.DrawToMinimum(deck);
+            //sort their cards
             playerNew.Sort();
+            //add them to the list
             players.Add(playerNew);
         }
 
@@ -142,24 +173,33 @@ namespace Derak_Project
         /// <param name="cardPlayed">Card object instance</param>
         private void playCard(Card cardPlayed)
         {
+            //if further card plays are forbidden this turn
             if (cardFreeze)
             {
                 throw new InvalidPlayException("You cannot play anymore cards this turn");
             }
+            //if the player is attacker
             if(activePlayer.Role == DurakRole.Attacker)
             {
+                // used is only there to remember whether the card did pass a check
                 bool used = false;
+                
+                //check whether its possible for another attack to be played at all
                 if (playingField.Count < 6 && defender.Count > 0)
                 {
+                    //if theres no prior attacks the attacker can play whatever card they want
                     if(playingField.Count == 0)
                     {
+                        //add, log , remember that it worked
                         playingField.Add(new DurakBattle(cardPlayed));
                         log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
                         used = true;
                     } 
                     else
-                    {
+                    {//if there are prior attacks the attack must match one fo the cards in the field
+                        //bool representing whether that rank is in the field already
                         bool rankAvailable = false;
+                        //loop through every card checking for a matching rank
                         foreach(DurakBattle front in playingField)
                         {
                             if(front.Attack.rank == cardPlayed.rank)
@@ -171,14 +211,17 @@ namespace Derak_Project
                                 rankAvailable = true;
                             }
                         }
+                        //if there was a matching rank then play the card
                         if (rankAvailable)
                         {
+                            //add, log , remember that it worked
                             playingField.Add(new DurakBattle(cardPlayed));
                             log += Environment.NewLine + " attacked with " + cardPlayed.ToString();
                             used = true;
                         }
                     }
                 }
+                //if it wasnt used throw custom exception, should always be handled
                 if (!used)
                 {
                     throw new InvalidPlayException("You cannot do that");
@@ -186,7 +229,10 @@ namespace Derak_Project
             }
             else if (activePlayer.Role == DurakRole.Defender)
             {
+                //for remembering if the card passes the attack, if perevodnoy is false check will always fail, disabling it
                 bool perevodnoySuccess = perevodnoy;
+
+                // if not disabled check to see if it will pass
                 if (perevodnoy)
                 {
                     for (int i = 0; i < playingField.Count; i++)
@@ -201,55 +247,74 @@ namespace Derak_Project
                         perevodnoySuccess = Next(ActivePlayer).Count >= playingField.Count + 1;
                     }
                 }
+                //if it passes
                 if (perevodnoySuccess)
                 {
-                    //throw new InvalidPlayException("THIS WOULD PASS << PH");
+                    //add it to field as attacker
                     playingField.Add(new DurakBattle(cardPlayed));
                     log += Environment.NewLine + " passed the attack with " + cardPlayed.ToString();
+
+                    //switch players
                     activePlayer = Previous(ActivePlayer);
                     SwitchRoles();
                     activePlayer = Next(ActivePlayer);
+                    //disallow further plays this turn
                     cardFreeze = true;
                     
                 } 
                 else
-                {
+                {// if it didnt pass
+                    //current index
                     int currentIndex;
+
+                    //loop through all playingfield
                     for (currentIndex = 0; currentIndex < playingField.Count; currentIndex++)
                     {
+                        //find the first one with no defense, see break
                         if (playingField[currentIndex].Defense == null)
                         {
+                            //if card matches suit of attacker
                             if (cardPlayed.suit == playingField[currentIndex].Attack.suit)
                             {
+                                //if its stronger than the attacker
                                 if ((int)cardPlayed.rank > (int)playingField[currentIndex].Attack.rank)
                                 {
+                                    //add card
                                     playingField[currentIndex].Defense = cardPlayed;
                                     log += Environment.NewLine + " defended with " + cardPlayed.ToString();
                                 } else
                                 {
+                                    // throw error as response
                                     throw new InvalidPlayException("You cannot do that, not higher");
                                 }
-                            } else if (cardPlayed.suit == talon.suit)
+                            }// then if its trump but not the same suit as attacker it wins
+                            else if (cardPlayed.suit == talon.suit)
                             {
+                                //play the card
                                 playingField[currentIndex].Defense = cardPlayed;
                                 log += Environment.NewLine + " defended with " + cardPlayed.ToString();
                             } else
                             {
+                                //other wise wrong suit
                                 throw new InvalidPlayException("You cannot do that, wrong suit");
                             }
+                            //break because the battle we wanted was found
                             break;
                         }
-                    }
+                    }// if tried to play a defense when there is no attack
                     if (currentIndex >= playingField.Count)
                     {
                         throw new InvalidPlayException("You cannot do that");
                     }
                 }
-            }
+            }// if the players role is that of a supporting attacker
             else if (activePlayer.Role == DurakRole.Extra)
             {
-                //TODO same as attack function move to its own thing?
+                // nearly identical to attack function
+
+                //remembers whether a card passed a check
                 bool used = false;
+                //if its possible to at all play an attack
                 if (playingField.Count < 6 && defender.Count > 0)
                 {
                     if (playingField.Count == 0)
@@ -524,5 +589,6 @@ namespace Derak_Project
             CalculateRoles();
             NewTurn();
         }
+        #endregion
     }
 }
