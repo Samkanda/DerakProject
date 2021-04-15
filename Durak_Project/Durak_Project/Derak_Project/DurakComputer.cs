@@ -21,8 +21,6 @@ namespace Derak_Project
     {
         private const int goodCardThreshold = 11;
 
-
-
         /// <summary>
         /// DurakComputer constructor
         /// </summary>
@@ -41,6 +39,7 @@ namespace Derak_Project
             this.Sort();
             int startingHandSize = this.Count;
 
+            // Handle if computer role is defending
             if (Role == DurakRole.Defender)
             {
                 bool passable = true;

@@ -24,8 +24,10 @@ namespace Derak_Project
         /// </summary>
         public DurakDeck(int minimumRank = 6)
         {
+            // Iterate per suits
             for (int suitVal = 1; suitVal < 5; suitVal++)
             {
+                // Iterate per rank, and then instantiate new card object
                 for (int rankVal = minimumRank; rankVal < 15; rankVal++)
                 {
                     this.Add(new Card((Suit)suitVal, (Rank)rankVal));

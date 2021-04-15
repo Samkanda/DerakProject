@@ -29,14 +29,13 @@ namespace Derak_Project
 
         }
 
-        private DurakRole myRole;
-
         /// <summary>
         /// DurakRole function (getter/setter) for role
         /// </summary>
         /// <returns>
         /// The Durak player role
         /// </returns>
+        private DurakRole myRole;
         public DurakRole Role
         {
             get { return myRole; }
@@ -45,8 +44,6 @@ namespace Derak_Project
                 myRole = value;
             }
         }
-        //USE THIS FOR VALIDATION AND AI
-        private List<DurakBattle> myPlayingField;
 
         /// <summary>
         /// Auto-property for PlayingField 
@@ -54,6 +51,7 @@ namespace Derak_Project
         /// <returns>
         /// Returns battle array
         /// </returns>
+        private List<DurakBattle> myPlayingField;
         protected List<DurakBattle> PlayingField
         {
             get { return myPlayingField; }
