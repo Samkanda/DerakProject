@@ -18,7 +18,7 @@ namespace Derak_Project
     /// <summary>
     /// The card class, handles different card states
     /// </summary>
-    public class Card
+    public class Card : IComparable
     {
         /// <summary>
         /// Function to change cards suit
@@ -97,7 +97,23 @@ namespace Derak_Project
             cardImage = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
             return cardImage;
         }
-
+        public virtual int CompareTo(object obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException("Unable to compare a Card to a null object");
+            }
+            Card compareCard = obj as Card;
+            if (compareCard != null)
+            {
+                int thisSort = (int)this.rank * 10 + (int)this.mySuit;
+                int compareCardSort = (int)compareCard.rank * 10 + (int)compareCard.mySuit;
+                return (thisSort.CompareTo(compareCardSort));
+            } else
+            {
+                throw new ArgumentException("Object being compared cannot be converted to a Card");
+            }
+        }
         //public static bool operator ==(PlayingCard left, PlayingCard right)
         //{
         //    return left.CardValue == right.CardValue;

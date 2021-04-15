@@ -19,6 +19,10 @@ namespace Derak_Project
     /// </summary>
     public class DurakComputer : DurakHand
     {
+        private const int goodCardThreshold = 11;
+
+
+
         /// <summary>
         /// DurakComputer constructor
         /// </summary>
@@ -34,8 +38,8 @@ namespace Derak_Project
         public override void TakeTurn()
         {
             SendTurnbeginEvent();
-
-            
+            this.Sort();
+            int startingHandSize = this.Count;
 
             if (Role == DurakRole.Defender)
             {
@@ -125,22 +129,67 @@ namespace Derak_Project
             } 
             else
             {
-                for (int i = this.Count - 1; i >= 0; i--)
+                bool escalation = false;
+                int noDrawThreshold = 0;
+
+                foreach(DurakBattle front in PlayingField)
+                {
+                    if(front.Defense != null) { escalation = true; }
+                }
+                if (Role == DurakRole.Extra)
+                {
+                    noDrawThreshold = PlayingField.Count;
+                }
+
+
+                if (RemainingDraws > noDrawThreshold)
+                {
+                    for (int i = 0; i < this.Count; i++)
+                    {
+                        try
+                        {
+                            if (this[i].suit != Trump && (int)this[i].rank < goodCardThreshold)
+                            {
+                                PlayCard(i);
+                                i--;
+                            }
+                        } catch (Exception e) { }
+                    }
+                }
+                else if (Role==DurakRole.Extra || escalation)
+                {
+                    for (int i = 0; i < this.Count; i++)
+                    {
+                        try
+                        {
+                            PlayCard(i);
+                            i--;
+                        } catch (Exception e) { }
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < this.Count; i++)
+                    {
+                        try
+                        {
+                            PlayCard(i);
+                            i--;
+                        } catch (Exception e) { }
+                    }
+                }
+            }
+            if(this.Count >= startingHandSize)
+            {
+                for (int i = 0; i < this.Count; i++)
                 {
                     try
                     {
                         PlayCard(i);
-                    } catch (Exception e)
-                    {
-
-                    }
+                        break;
+                    } catch (Exception e) { }
                 }
             }
-
-
-            
-
-
             SendTurnEndEvent();
             // RUNS RECURSIVELY NOTHING BELOW THIS POINT
         }

@@ -127,6 +127,7 @@ namespace Derak_Project
         {
             playerNew.UpdateInfo(playingField, talon.suit, deck.Count);
             playerNew.DrawToMinimum(deck);
+            playerNew.Sort();
             players.Add(playerNew);
         }
 
@@ -455,7 +456,7 @@ namespace Derak_Project
             log += Environment.NewLine + Environment.NewLine + activePlayer.Role + " | " + activePlayer.Name + Environment.NewLine +
                 "=============================";
 
-            
+            activePlayer.Sort();
             activePlayer.UpdateInfo(playingField, talon.suit, deck.Count);
             activePlayer.TakeTurn();
         }
@@ -465,9 +466,11 @@ namespace Derak_Project
         /// </summary>
         public void Deal()
         {
-            foreach (DurakHand player in players)
+            DurakHand target = activePlayer;
+            for (int i = 0; i < players.Count; i++)
             {
-                player.DrawToMinimum(deck);
+                target.DrawToMinimum(deck);
+                target = Next(target);
             }
         }
 
