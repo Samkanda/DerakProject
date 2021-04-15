@@ -85,9 +85,9 @@
       <Project>{02ac67f6-26a3-4cdb-b0ad-c7cedfb5d81a}</Project>
       <Name>CardBox1</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Derak_Project\Derak_Project.csproj">
+    <ProjectReference Include="..\Derak_Project\Durak_Project.csproj">
       <Project>{e438c7ad-8740-406b-9712-1585717f436f}</Project>
-      <Name>Derak_Project</Name>
+      <Name>Durak_Project</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

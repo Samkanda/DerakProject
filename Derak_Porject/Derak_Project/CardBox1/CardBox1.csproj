@@ -57,9 +57,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Derak_Project\Derak_Project.csproj">
+    <ProjectReference Include="..\Derak_Project\Durak_Project.csproj">
       <Project>{e438c7ad-8740-406b-9712-1585717f436f}</Project>
-      <Name>Derak_Project</Name>
+      <Name>Durak_Project</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tutorial_8\Tutorial_8.csproj">
       <Project>{de4f016f-01f3-44c2-b29f-f9a828b78226}</Project>

@@ -30,7 +30,7 @@ C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardB
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.pdb
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\CardBox1.dll
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\CardBox1.pdb
-C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.exe
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.pdb
-C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.exe.config
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\obj\Debug\CardBox1.csproj.CopyComplete
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.dll
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\CardBox1\bin\Debug\Derak_Project.dll.config

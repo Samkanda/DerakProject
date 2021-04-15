@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Derak_Project", "Derak_Project\Derak_Project.csproj", "{E438C7AD-8740-406B-9712-1585717F436F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Durak_Project", "Derak_Project\Durak_Project.csproj", "{E438C7AD-8740-406B-9712-1585717F436F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DurakClient", "DurakClient\DurakClient.csproj", "{1F2A8427-FD57-404D-B45B-EC3BCC655A3C}"
 EndProject

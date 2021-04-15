@@ -1,0 +1,8 @@
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.dll.config
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.dll
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\bin\Debug\Derak_Project.pdb
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.Properties.Resources.resources
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Durak_Project.csproj.GenerateResource.cache
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Durak_Project.csproj.CoreCompileInputs.cache
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.dll
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\Derak_Project\obj\Debug\Derak_Project.pdb

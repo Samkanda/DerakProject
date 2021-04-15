@@ -12,10 +12,8 @@ C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Dur
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\DurakClient.exe
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\DurakClient.pdb
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\CardBox1.dll
-C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.exe
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\CardBox1.pdb
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.pdb
-C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.exe.config
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.csproj.CopyComplete
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.exe
 C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.pdb
@@ -30,3 +28,5 @@ C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\Durak
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.csproj.CopyComplete
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.exe
 C:\Users\navpr\OneDrive\Documents\DerakProject\Derak_Porject\Derak_Project\DurakClient\obj\Debug\DurakClient.pdb
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.dll
+C:\winter2021\DerakProject\Derak_Porject\Derak_Project\DurakClient\bin\Debug\Derak_Project.dll.config
