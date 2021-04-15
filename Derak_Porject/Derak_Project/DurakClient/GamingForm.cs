@@ -15,7 +15,7 @@ namespace DurakClient
 {
     public partial class GamingForm : Form
     {
-        DurakGameController players ;
+        DurakGameController players;
         DurakHuman currentHumanPlayer;
 
         /// <summary>
@@ -27,12 +27,15 @@ namespace DurakClient
             DurakHand player;
             players = new DurakGameController(perevodnoy, minimumCardValue);
 
+            // For human players, iterate and display accordingly
             for (int i = 0; i < humans; i++)
             {
                 player = new DurakHuman();
                 players.AddNewPlayer(player);
                 player.Name = "Player "+(i+1);
             }
+
+            // For computer players, iterate and display accordingly
             for (int i = 0; i < computers; i++)
             {
                 player = new DurakComputer();
@@ -138,7 +141,6 @@ namespace DurakClient
 
         }
 
-
         /// <summary>
         /// CardBox control shrinks to regular size when the mouse leaves.
         /// </summary>
@@ -214,6 +216,12 @@ namespace DurakClient
 
             }
         }
+
+        /// <summary>
+        /// Function to realign the cards so that the bout displays correctly (whether attacking or defending)
+        /// </summary>
+        /// <param name="panelAttack"></param>
+        /// <param name="panelDefend"></param>
         private void RealignBattles(Panel panelAttack, Panel panelDefend)
         {
             int myCount = panelAttack.Controls.Count;
@@ -309,8 +317,8 @@ namespace DurakClient
                 }
                 
             }
-            //pnlCardHome.Controls.Add(new CardBox());
-            Console.WriteLine("test");
+            // pnlCardHome.Controls.Add(new CardBox());
+            // Console.WriteLine("test");
             RealignCards(pnlCardHome);
             RealignBattles(pnlCardAttack, pnlCardDefend);
 
