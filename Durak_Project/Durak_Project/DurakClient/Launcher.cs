@@ -1,4 +1,13 @@
-﻿using System;
+﻿///---------------------------------------------------------------------------------
+///   Namespace:        Derak_Project
+///   Class:            Launcher
+///   Description:      Launcher GUI to launch game with parameters
+///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
+///   Card Img Source:  http://acbl.mybigcommerce.com/52-playing-cards/  
+///   Date:             April 14, 2021
+///---------------------------------------------------------------------------------
+///
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

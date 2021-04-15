@@ -1,6 +1,12 @@
-﻿//CardBox class
-//By Navpreet Kanda
-//Date 2021-03-13
+﻿///---------------------------------------------------------------------------------
+///   Namespace:        Derak_Project
+///   Class:            CardBox
+///   Description:      Contains user controls for cardboxes to be rendered
+///   Authors:          Shoaib Ali, Luke Richards, Navpreet Kanda, Mubashir Malik
+///   Card Img Source:  http://acbl.mybigcommerce.com/52-playing-cards/  
+///   Date:             April 14, 2021
+///---------------------------------------------------------------------------------
+///
 
 using System;
 using System.Collections.Generic;
