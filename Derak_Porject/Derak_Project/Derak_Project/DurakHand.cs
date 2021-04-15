@@ -65,10 +65,18 @@ namespace Derak_Project
             get { return myTrump; }
         }
 
-        public void UpdateInfo(List<DurakBattle> Field, Suit trump)
+        private int remainingDraws;
+        protected int RemainingDraws
+        {
+            get { return remainingDraws; }
+        }
+
+
+        public void UpdateInfo(List<DurakBattle> Field, Suit trump, int remaining)
         {
             myPlayingField = Field;
             myTrump = trump;
+            remainingDraws = remaining;
         }
 
         /// <summary>

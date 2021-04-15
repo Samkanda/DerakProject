@@ -40,12 +40,31 @@ namespace Derak_Project
             if (Role == DurakRole.Defender)
             {
                 bool passable = true;
+                bool surrender = true;
+                bool test;
+
                 foreach(DurakBattle front in PlayingField)
                 {
-                    if(front.Defense != null)
+                    if(front.Defense != null){passable = false;}
+                    test = false;
+                    foreach(Card cardInHand in this)
                     {
-                        passable = false;
+                        if(cardInHand.rank == front.Attack.rank) { test = true; }
                     }
+                    if (!test) { surrender = false; }
+                }
+                if(RemainingDraws > 0)
+                {
+                    test = true;
+                    foreach (DurakBattle front in PlayingField)
+                    {
+                        if(front.Attack.suit != Trump) { test = false; }
+                    }
+                    if (test) { surrender = true; }
+                } 
+                else
+                {
+                    surrender = false;
                 }
                 if (passable)
                 {
@@ -59,8 +78,8 @@ namespace Derak_Project
                             } catch (Exception e) { }
                         }
                     }
-                } 
-                else
+                }
+                if (!surrender)
                 {
                     foreach (DurakBattle front in PlayingField)
                     {
@@ -102,6 +121,7 @@ namespace Derak_Project
                         }
                     }
                 }
+                
             } 
             else
             {
