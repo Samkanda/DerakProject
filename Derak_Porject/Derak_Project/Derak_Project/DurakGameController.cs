@@ -125,7 +125,7 @@ namespace Derak_Project
         /// <param name="playerNew">Assign hand to new player</param>
         public void AddNewPlayer(DurakHand playerNew)
         {
-            playerNew.UpdateInfo(playingField);
+            playerNew.UpdateInfo(playingField, talon.suit);
             playerNew.DrawToMinimum(deck);
             players.Add(playerNew);
         }
@@ -455,7 +455,8 @@ namespace Derak_Project
             log += Environment.NewLine + Environment.NewLine + activePlayer.Role + " | " + activePlayer.Name + Environment.NewLine +
                 "=============================";
 
-            activePlayer.UpdateInfo(playingField);
+            
+            activePlayer.UpdateInfo(playingField, talon.suit);
             activePlayer.TakeTurn();
         }
 
