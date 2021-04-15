@@ -19,17 +19,12 @@ namespace Derak_Project
     /// </summary>
     public class Deck : Cards
     {
-        // 0 References, contructor not used anywhere...?
+        /// <summary>
+        /// Default constuctor for Deck class
+        /// </summary>
         public Deck()
         {
-            /* I want this back
-            for (int suitVal = 1; suitVal < 5; suitVal++)
-            {
-                for (int rankVal = 1; rankVal < 14; rankVal++)
-                {
-                    this.Add(new Card((Suit)suitVal, (Rank)rankVal));
-                }
-            }*/
+
         }
 
         /// <summary>
@@ -40,19 +35,26 @@ namespace Derak_Project
         /// </returns>
         public void Shuffle()
         {
+            // Instantiate cards object
             Cards newDeck = new Cards();
             bool[] assigned = new bool[this.Count];
             Random sourceGen = new Random();
+
+            // Iterate through
             for (int i = 0; i < this.Count; i++)
             {
                 int sourceCard = 0;
                 bool foundCard = false;
+
+                // Loop through found cards and assign random sourceGen
                 while (foundCard == false)
                 {
                     sourceCard = sourceGen.Next(this.Count);
                     if (assigned[sourceCard] == false)
                         foundCard = true;
                 }
+
+                // Assign per sourceCard to new deck
                 assigned[sourceCard] = true;
                 newDeck.Add(this[sourceCard]);
             }
