@@ -82,12 +82,12 @@ namespace DurakClient
                         if(currentHumanPlayer == players.Attacker || currentHumanPlayer.Role == DurakRole.Extra)
                         {
                             pnlCardAttack.Controls.Add(aCardBox);
-                            RealignCards(pnlCardAttack);
+                            RealignBattles(pnlCardAttack, pnlCardDefend);
                         }
                         else if (currentHumanPlayer == players.Defender)
                         {
                             pnlCardDefend.Controls.Add(aCardBox);
-                            RealignCards(pnlCardDefend);
+                            RealignBattles(pnlCardAttack, pnlCardDefend);
                         }
                             
                     } 
@@ -214,8 +214,57 @@ namespace DurakClient
 
             }
         }
+        private void RealignBattles(Panel panelAttack, Panel panelDefend)
+        {
+            int myCount = panelAttack.Controls.Count;
+            if (myCount > 0)
+            {
+                // Determine how wide one card/control is.
+                int cardWidth = panelAttack.Controls[0].Width;
+                // Determine where the left-hand edge of a card/control placed 
+                // in the middle of the panel should be  
+                int startPoint = 10;
+                // An offset for the remaining cards
+                int offset = 0;
+                if (myCount > 1)
+                {
+                    // Determine what the offset should be for each card based on the 
+                    // space available and the number of card/controls
+                    offset = (panelAttack.Width - cardWidth) / (myCount - 1);
 
-        
+                    // If the offset is bigger than the card/control width, i.e. there is lots of room, 
+                    // set the offset to the card width. The cards/controls will not overlap at all.
+                    if (offset > cardWidth)
+                        offset = cardWidth;
+                    // Determine width of all the cards/controls 
+                    int allCardsWidth = (myCount - 1) * offset + cardWidth;
+                }
+                panelAttack.Controls[0].Top = 0;
+                //System.Diagnostics.Debug.Write(panelAttack.Controls[myCount - 1].Top.ToString() + "\n");
+                panelAttack.Controls[0].Left = startPoint;
+
+                // for each of the remaining controls, in reverse order.
+                for (int index = 1; index < myCount; index++)
+                {
+                    // Align the current card
+                    panelAttack.Controls[index].Top = 0;
+                    panelAttack.Controls[index].Left = panelAttack.Controls[index-1].Left + offset;
+                }
+                if(panelDefend.Controls.Count > 0)
+                {
+                    panelDefend.Controls[0].Top = 0;
+                    panelDefend.Controls[0].Left = startPoint;
+                    for (int index = 1; index < panelDefend.Controls.Count; index++)
+                    {
+                        // Align the current card
+                        panelDefend.Controls[index].Top = 0;
+                        panelDefend.Controls[index].Left = panelDefend.Controls[index - 1].Left + offset;
+                    }
+                }
+            }
+        }
+
+
         void GameEnd(DurakGameController game)
         {
             if(game.Players.Count < 1)
@@ -263,8 +312,7 @@ namespace DurakClient
             //pnlCardHome.Controls.Add(new CardBox());
             Console.WriteLine("test");
             RealignCards(pnlCardHome);
-            RealignCards(pnlCardAttack);
-            RealignCards(pnlCardDefend);
+            RealignBattles(pnlCardAttack, pnlCardDefend);
 
             txtOpponent.Text = "";
             foreach(DurakHand player in players.Players)
