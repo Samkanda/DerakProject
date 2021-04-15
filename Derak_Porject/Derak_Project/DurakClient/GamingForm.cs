@@ -21,11 +21,11 @@ namespace DurakClient
         /// <summary>
         /// Constructor for frmMainForm
         /// </summary>
-        public GamingForm(int humans = 1, int computers = 1, bool perevodnoy = true)
+        public GamingForm(int humans = 1, int computers = 1, bool perevodnoy = true, int minimumCardValue = 6)
         {
             InitializeComponent();
             DurakHand player;
-            players = new DurakGameController(perevodnoy);
+            players = new DurakGameController(perevodnoy, minimumCardValue);
 
             for (int i = 0; i < humans; i++)
             {

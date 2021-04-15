@@ -27,9 +27,31 @@ namespace DurakClient
             {
                 if (numHumans.Value + numComputers.Value < 7 && numHumans.Value + numComputers.Value >= 2)
                 {
-                    game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, cbPerevodnoyRule.Checked);
-                    game.ShowDialog();
-                    this.Close();
+                    if (rad20.Checked)
+                    {
+                        if(numHumans.Value + numComputers.Value < 4)
+                        {
+                            game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, cbPerevodnoyRule.Checked, 10);
+                            game.ShowDialog();
+                            this.Close();
+                        } 
+                        else
+                        {
+                            MessageBox.Show("a 20 card deck is not large enough for this many players");
+                        }
+                    }
+                    else if (rad36.Checked)
+                    {
+                        game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, cbPerevodnoyRule.Checked, 6);
+                        game.ShowDialog();
+                        this.Close();
+                    }
+                    else if (rad52.Checked)
+                    {
+                        game = new GamingForm((int)numHumans.Value, (int)numComputers.Value, cbPerevodnoyRule.Checked, 2);
+                        game.ShowDialog();
+                        this.Close();
+                    }
                 } 
                 else
                 {

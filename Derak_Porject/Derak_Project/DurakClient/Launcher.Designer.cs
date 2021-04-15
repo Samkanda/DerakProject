@@ -36,6 +36,9 @@ namespace DurakClient
             this.lblHumanPlayers = new System.Windows.Forms.Label();
             this.lblComputerPlayers = new System.Windows.Forms.Label();
             this.cbPerevodnoyRule = new System.Windows.Forms.CheckBox();
+            this.rad20 = new System.Windows.Forms.RadioButton();
+            this.rad36 = new System.Windows.Forms.RadioButton();
+            this.rad52 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numComputers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHumans)).BeginInit();
             this.SuspendLayout();
@@ -43,7 +46,7 @@ namespace DurakClient
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(33, 203);
+            this.btnStart.Location = new System.Drawing.Point(33, 218);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(457, 43);
             this.btnStart.TabIndex = 0;
@@ -54,7 +57,7 @@ namespace DurakClient
             // numComputers
             // 
             this.numComputers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numComputers.Location = new System.Drawing.Point(344, 140);
+            this.numComputers.Location = new System.Drawing.Point(344, 119);
             this.numComputers.Maximum = new decimal(new int[] {
             5,
             0,
@@ -72,7 +75,7 @@ namespace DurakClient
             // numHumans
             // 
             this.numHumans.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numHumans.Location = new System.Drawing.Point(344, 100);
+            this.numHumans.Location = new System.Drawing.Point(344, 79);
             this.numHumans.Maximum = new decimal(new int[] {
             6,
             0,
@@ -95,10 +98,10 @@ namespace DurakClient
             // lblGameTitle
             // 
             this.lblGameTitle.AutoSize = true;
-            this.lblGameTitle.Font = new System.Drawing.Font("Neo Sans", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameTitle.Location = new System.Drawing.Point(23, 18);
+            this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameTitle.Location = new System.Drawing.Point(23, 9);
             this.lblGameTitle.Name = "lblGameTitle";
-            this.lblGameTitle.Size = new System.Drawing.Size(485, 59);
+            this.lblGameTitle.Size = new System.Drawing.Size(512, 55);
             this.lblGameTitle.TabIndex = 3;
             this.lblGameTitle.Text = "Durak Game Launcher";
             this.lblGameTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -107,7 +110,7 @@ namespace DurakClient
             // 
             this.lblHumanPlayers.AutoSize = true;
             this.lblHumanPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHumanPlayers.Location = new System.Drawing.Point(29, 102);
+            this.lblHumanPlayers.Location = new System.Drawing.Point(29, 81);
             this.lblHumanPlayers.Name = "lblHumanPlayers";
             this.lblHumanPlayers.Size = new System.Drawing.Size(254, 20);
             this.lblHumanPlayers.TabIndex = 4;
@@ -117,7 +120,7 @@ namespace DurakClient
             // 
             this.lblComputerPlayers.AutoSize = true;
             this.lblComputerPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComputerPlayers.Location = new System.Drawing.Point(29, 142);
+            this.lblComputerPlayers.Location = new System.Drawing.Point(29, 121);
             this.lblComputerPlayers.Name = "lblComputerPlayers";
             this.lblComputerPlayers.Size = new System.Drawing.Size(272, 20);
             this.lblComputerPlayers.TabIndex = 5;
@@ -129,7 +132,7 @@ namespace DurakClient
             this.cbPerevodnoyRule.Checked = true;
             this.cbPerevodnoyRule.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbPerevodnoyRule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPerevodnoyRule.Location = new System.Drawing.Point(373, 173);
+            this.cbPerevodnoyRule.Location = new System.Drawing.Point(373, 152);
             this.cbPerevodnoyRule.Name = "cbPerevodnoyRule";
             this.cbPerevodnoyRule.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cbPerevodnoyRule.Size = new System.Drawing.Size(115, 24);
@@ -137,11 +140,46 @@ namespace DurakClient
             this.cbPerevodnoyRule.Text = "Perevodnoy ";
             this.cbPerevodnoyRule.UseVisualStyleBackColor = true;
             // 
+            // rad20
+            // 
+            this.rad20.AutoSize = true;
+            this.rad20.Location = new System.Drawing.Point(403, 182);
+            this.rad20.Name = "rad20";
+            this.rad20.Size = new System.Drawing.Size(66, 17);
+            this.rad20.TabIndex = 7;
+            this.rad20.Text = "20 cards";
+            this.rad20.UseVisualStyleBackColor = true;
+            // 
+            // rad36
+            // 
+            this.rad36.AutoSize = true;
+            this.rad36.Checked = true;
+            this.rad36.Location = new System.Drawing.Point(312, 182);
+            this.rad36.Name = "rad36";
+            this.rad36.Size = new System.Drawing.Size(66, 17);
+            this.rad36.TabIndex = 8;
+            this.rad36.TabStop = true;
+            this.rad36.Text = "36 cards";
+            this.rad36.UseVisualStyleBackColor = true;
+            // 
+            // rad52
+            // 
+            this.rad52.AutoSize = true;
+            this.rad52.Location = new System.Drawing.Point(221, 182);
+            this.rad52.Name = "rad52";
+            this.rad52.Size = new System.Drawing.Size(66, 17);
+            this.rad52.TabIndex = 9;
+            this.rad52.Text = "52 cards";
+            this.rad52.UseVisualStyleBackColor = true;
+            // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 273);
+            this.Controls.Add(this.rad52);
+            this.Controls.Add(this.rad36);
+            this.Controls.Add(this.rad20);
             this.Controls.Add(this.cbPerevodnoyRule);
             this.Controls.Add(this.lblComputerPlayers);
             this.Controls.Add(this.lblHumanPlayers);
@@ -172,5 +210,8 @@ namespace DurakClient
         private System.Windows.Forms.Label lblHumanPlayers;
         private System.Windows.Forms.Label lblComputerPlayers;
         private System.Windows.Forms.CheckBox cbPerevodnoyRule;
+        private System.Windows.Forms.RadioButton rad20;
+        private System.Windows.Forms.RadioButton rad36;
+        private System.Windows.Forms.RadioButton rad52;
     }
 }

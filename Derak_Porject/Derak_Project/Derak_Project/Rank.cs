@@ -19,7 +19,7 @@ namespace Derak_Project
     /// </summary>
     public enum Rank
     {
-        Ace = 1,
+        
         Two = 2,
         Three = 3,
         Four = 4,
@@ -32,5 +32,6 @@ namespace Derak_Project
         Jack = 11,
         Queen = 12,
         King = 13,
+        Ace = 14,
     }
 }

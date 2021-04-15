@@ -22,11 +22,11 @@ namespace Derak_Project
         /// <summary>
         /// Default constructor for DurakDeck, which populates via iteration of suits and ranks per card
         /// </summary>
-        public DurakDeck()
+        public DurakDeck(int minimumRank = 6)
         {
             for (int suitVal = 1; suitVal < 5; suitVal++)
             {
-                for (int rankVal = 6; rankVal < 14; rankVal++)
+                for (int rankVal = minimumRank; rankVal < 15; rankVal++)
                 {
                     this.Add(new Card((Suit)suitVal, (Rank)rankVal));
                 }

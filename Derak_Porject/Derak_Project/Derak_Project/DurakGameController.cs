@@ -111,13 +111,13 @@ namespace Derak_Project
         /// <summary>
         /// Default constructor of DurakGameConstroller()
         /// </summary>
-        public DurakGameController(bool passing = true)
+        public DurakGameController(bool passing = true, int minimumCardValue =6)
         {
             Hand.TurnEndEvent += delegate (object obj, EventArgs e) { this.EndOfTurn(); };
             Hand.CardPlayed += delegate (object obj, Card cardPlayed) { this.playCard(cardPlayed); };
             perevodnoy = passing;
             DiscardPile = new Cards();
-            deck = new DurakDeck();
+            deck = new DurakDeck(minimumCardValue);
             deck.Shuffle();
             talon = deck[0];
             playingField = new List<DurakBattle>();
