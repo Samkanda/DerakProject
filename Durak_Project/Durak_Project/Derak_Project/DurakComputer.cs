@@ -106,50 +106,76 @@ namespace Derak_Project
                         }
                     }
                 }
+
+                // If the move isnt a surrender
                 if (!surrender)
                 {
+                    // Iterate through cards that are on the playing field
                     foreach (DurakBattle front in PlayingField)
                     {
+                        // If the defence returns as null
                         if (front.Defense == null)
                         {
                             int target = 0;
+
+                            // Iterate over computer count
                             for (int i = 0; i < Count; i++)
                             {
+                                // Basically checking if attack is a valid attack
                                 if (front.Attack.suit == this[i].suit && front.Attack.rank < this[i].rank)
                                 {
+                                    // Then assign target to be used as the played card
                                     if (this[target].suit != this[i].suit || this[i].rank < this[target].rank)
                                     {
                                         target = i;
                                     }
                                 }
                             }
+
+                            // Try playing the card returned to target
                             try
                             {
                                 PlayCard(target);
-                            } catch (InvalidPlayException e) { }
+                            }
+
+                            // Catch an InvalidPlayException if the play is invalid
+                            catch (InvalidPlayException e) { }
                         }
+
+                        // If computer isnt defending and the attack suit doesnt match the trump
                         if (front.Defense == null && front.Attack.suit != Trump)
                         {
                             int target = 0;
+
+                            // Iterate over computer count
                             for (int i = 0; i < Count; i++)
                             {
+                                // If the trump is of same suit
                                 if (Trump == this[i].suit)
                                 {
+                                    // And further varify that suit isnt trump OR the rank played is less, assign target
                                     if (this[target].suit != Trump || this[i].rank < this[target].rank)
                                     {
                                         target = i;
                                     }
                                 }
                             }
+
+                            // Try playing the card returned to target
                             try
                             {
                                 PlayCard(target);
-                            } catch (InvalidPlayException e) { }
+                            } 
+                            
+                            // Catch InvalidPlayException is play is not valid
+                            catch (InvalidPlayException e) { }
                         }
                     }
                 }
                 
-            } 
+            }
+
+            // If role isn't defender...
             else
             {
                 bool escalation = false;
