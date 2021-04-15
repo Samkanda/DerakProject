@@ -97,6 +97,7 @@ namespace Derak_Project
             cardImage = Properties.Resources.ResourceManager.GetObject(imageName) as Image;
             return cardImage;
         }
+
         public virtual int CompareTo(object obj)
         {
             if (obj == null)
@@ -114,6 +115,7 @@ namespace Derak_Project
                 throw new ArgumentException("Object being compared cannot be converted to a Card");
             }
         }
+
         //public static bool operator ==(PlayingCard left, PlayingCard right)
         //{
         //    return left.CardValue == right.CardValue;

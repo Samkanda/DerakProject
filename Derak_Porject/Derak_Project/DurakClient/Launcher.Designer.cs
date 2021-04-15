@@ -95,10 +95,10 @@ namespace DurakClient
             // lblGameTitle
             // 
             this.lblGameTitle.AutoSize = true;
-            this.lblGameTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGameTitle.Location = new System.Drawing.Point(23, 23);
+            this.lblGameTitle.Font = new System.Drawing.Font("Neo Sans", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameTitle.Location = new System.Drawing.Point(23, 18);
             this.lblGameTitle.Name = "lblGameTitle";
-            this.lblGameTitle.Size = new System.Drawing.Size(512, 55);
+            this.lblGameTitle.Size = new System.Drawing.Size(485, 59);
             this.lblGameTitle.TabIndex = 3;
             this.lblGameTitle.Text = "Durak Game Launcher";
             this.lblGameTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
